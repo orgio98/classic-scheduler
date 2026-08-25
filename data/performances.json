@@ -342,6 +342,246 @@
       "dday": "종료",
       "url": "https://www.sejongpac.or.kr/portal/bbs/B0000049/view.do?nttId=49840&menuNo=200440",
       "source": "세종문화회관 티켓오픈안내"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "한화생명과 함께하는 예술의전당 11시 콘서트(12월)",
+      "open_at": "2026-09-02",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예정",
+      "price_info": "일반석 30,000원 / 3층석 15,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=79800",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "한화생명과 함께하는 예술의전당 11시 콘서트(11월)",
+      "open_at": "2026-09-02",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예정",
+      "price_info": "일반석 30,000원 / 3층석 15,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=79801",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "이지혜 x 김다솔: Beethoven II",
+      "open_at": "2026-09-01",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예정",
+      "price_info": "R석 50,000원 / S석 30,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=84174",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "2026 서울국제음악제  ‘이안 보스트리지: 슈만 시인의 사랑’",
+      "open_at": "2026-08-27",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예정",
+      "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77418",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "2026 서울국제음악제 `Serenade’",
+      "open_at": "2026-08-26",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예정",
+      "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77421",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "조성현 바흐 플루트 소나타 전곡 리사이틀",
+      "open_at": "2026-08-25",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀, IBK기업은행챔버홀",
+      "state": "예정",
+      "price_info": "R석 55,000원 / S석 40,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77873",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "2026 서울국제음악제  `아르토 노라스와 김규연 리사이틀 : 멋진 추억`",
+      "open_at": "2026-08-25",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예정",
+      "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77419",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "2026 서울국제음악제  `인생의 여정 – 세 개의 초상`",
+      "open_at": "2026-08-20",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77422",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(12월)",
+      "open_at": "2026-08-19",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "일반석 40,000원 / 3층석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80174",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(11월)",
+      "open_at": "2026-08-19",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "일반석 40,000원 / 3층석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80176",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "2026 서울국제음악제 개막음악회 `숨, 그리고 삶`",
+      "open_at": "2026-08-19",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77423",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "2026 서울국제음악제  `SIMF오케스트라 : 빛과 그림자’",
+      "open_at": "2026-08-18",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "R석 120,000원 / S석 90,000원 / A석 60,000원 / B석 30,000원 / C석 10,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74712",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "김세준 비올라 리사이틀",
+      "open_at": "2026-08-18",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 50,000원 / S석 30,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80033",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "레 벙 프랑세",
+      "open_at": "2026-08-12",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "R석 130,000원 / S석 110,000원 / A석 90,000원 / B석 60,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=76578",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "김도현 피아노 리사이틀",
+      "open_at": "2026-08-11",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 50,000원 / S석 30,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77462",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "나 홀로 집에 인 콘서트",
+      "open_at": "2026-08-06",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "R석 110,000원 / S석 90,000원 / A석 70,000원 / B석 50,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80000",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "손열음 피아노 리사이틀",
+      "open_at": "2026-07-28",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "R석 120,000원 / S석 100,000원 / A석 80,000원 / B석 60,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "비킹구르 올라프손 피아노 리사이틀",
+      "open_at": "2026-07-28",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "R석 130,000원 / S석 110,000원 / A석 90,000원 / B석 70,000원 / C석 60,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77557",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "이원해 첼로 리사이틀",
+      "open_at": "2026-07-23",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 50,000원 / S석 40,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=78429",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "뷔에르 앙상블 제7회 정기연주회",
+      "open_at": "2026-07-21",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 50,000원 / S석 40,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=78426",
+      "source": "예술의전당 선예매 티켓오픈공지"
     }
   ],
   "performances": [
@@ -6948,6 +7188,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-08-11",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77462",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -7125,6 +7371,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-08-20",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77422",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -7377,6 +7629,12 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
+      "ticket_open": {
+        "open_at": "2026-08-18",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74712",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -7871,6 +8129,12 @@
       "venue": "고양아람누리",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-07-28",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -8026,6 +8290,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-07-28",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -8067,6 +8337,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-07-23",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=78429",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -8735,6 +9011,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-08-18",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80033",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -9037,6 +9319,12 @@
       "venue": "고양아람누리",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-07-28",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77557",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -9325,6 +9613,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-07-28",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77557",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -9984,6 +10278,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-08-12",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=76578",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -10061,6 +10361,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-08-19",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80176",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -10662,6 +10968,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-08-06",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80000",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
@@ -10858,6 +11170,12 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "ticket_open": {
+        "open_at": "2026-08-19",
+        "dday": null,
+        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80174",
+        "source": "예술의전당 선예매 티켓오픈공지"
+      },
       "is_new": false
     },
     {
