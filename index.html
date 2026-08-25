@@ -21,6 +21,7 @@
     --accent: #534ab7;
     --accent-soft: #eeedfe;
     --border: #e6e6ec;
+    --price: #b8352c;
     --sun: #d64545;
     --sat: #3a6ea8;
   }
@@ -28,9 +29,7 @@
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    padding-bottom: 40px;
+    background: var(--bg); color: var(--text); padding-bottom: 40px;
   }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 14px; }
 
@@ -38,13 +37,9 @@
   h1 { font-size: 19px; margin: 0 0 2px; font-weight: 700; }
   .sub { font-size: 12px; color: var(--muted); }
 
-  .banner {
-    display: none; background: #fff3cd; color: #8a6d09;
-    font-size: 12px; padding: 8px 14px; text-align: center;
-  }
+  .banner { display: none; background: #fff3cd; color: #8a6d09; font-size: 12px; padding: 8px 14px; text-align: center; }
   .banner.show { display: block; }
 
-  /* 뷰 전환 */
   .viewtabs { display: flex; gap: 6px; margin: 10px 0 12px; }
   .viewtab {
     flex: 1; text-align: center; padding: 9px 0; border-radius: 10px;
@@ -53,9 +48,16 @@
   }
   .viewtab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-  /* 장르 필터 */
-  .genres { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 10px; }
+  .filterrow { display: flex; align-items: center; gap: 7px; margin-bottom: 7px; }
+  .flabel { font-size: 11px; color: var(--muted); font-weight: 700; flex: 0 0 34px; }
+  .genres { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; flex: 1; }
   .genres::-webkit-scrollbar { display: none; }
+  .hallwrap { margin-bottom: 10px; }
+  .hallsel {
+    width: 100%; padding: 8px 10px; border-radius: 9px; font-size: 12.5px;
+    border: 1px solid var(--border); background: var(--card); color: var(--text);
+    font-family: inherit;
+  }
   .chip {
     flex: 0 0 auto; padding: 7px 13px; border-radius: 999px;
     background: var(--card); border: 1px solid var(--border);
@@ -63,7 +65,6 @@
   }
   .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
 
-  /* 달력 */
   .calbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
   .calbar button {
     background: var(--card); border: 1px solid var(--border); border-radius: 8px;
@@ -71,22 +72,16 @@
   }
   .calmonth { font-size: 15px; font-weight: 700; }
 
-  .cal {
-    background: var(--card); border-radius: 14px; padding: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  }
+  .cal { background: var(--card); border-radius: 14px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
   .calhead, .calgrid { display: grid; grid-template-columns: repeat(7, 1fr); }
-  .calhead div {
-    text-align: center; font-size: 11px; color: var(--muted);
-    padding: 4px 0 8px; font-weight: 600;
-  }
+  .calhead div { text-align: center; font-size: 11px; color: var(--muted); padding: 4px 0 8px; font-weight: 600; }
   .calhead div:first-child { color: var(--sun); }
   .calhead div:last-child { color: var(--sat); }
 
   .day {
     aspect-ratio: 1 / 1; display: flex; flex-direction: column;
     align-items: center; justify-content: center; gap: 3px;
-    border-radius: 9px; cursor: pointer; font-size: 13px; position: relative;
+    border-radius: 9px; cursor: pointer; font-size: 13px;
   }
   .day.empty { cursor: default; }
   .day.muted { color: #c3c3cc; }
@@ -98,34 +93,40 @@
   .dots { display: flex; gap: 2px; height: 4px; }
   .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
 
-  /* 선택일 목록 */
   .daytitle { font-size: 14px; font-weight: 700; margin: 18px 0 8px; }
 
   .card {
     display: flex; gap: 11px; background: var(--card); border-radius: 13px;
     padding: 12px; margin-bottom: 9px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   }
-  .poster {
-    width: 58px; height: 78px; border-radius: 7px; object-fit: cover;
-    background: #e4e4ea; flex-shrink: 0;
-  }
+  .poster { width: 58px; height: 78px; border-radius: 7px; object-fit: cover; background: #e4e4ea; flex-shrink: 0; }
   .info { flex: 1; min-width: 0; }
   .pname { font-size: 14px; font-weight: 650; margin: 0 0 3px; line-height: 1.35; }
   .pvenue { font-size: 11.5px; color: var(--muted); margin-bottom: 3px; }
-  .pdate { font-size: 12.5px; margin-bottom: 4px; }
-  .pcast {
-    font-size: 11.5px; background: var(--accent-soft); display: inline-block;
-    padding: 3px 8px; border-radius: 6px; line-height: 1.4;
+  .pdate { font-size: 12.5px; margin-bottom: 5px; }
+  .pcast { font-size: 11.5px; background: var(--accent-soft); display: inline-block; padding: 3px 8px; border-radius: 6px; line-height: 1.4; }
+
+  /* 가격 */
+  .pricebox { margin-top: 7px; }
+  .pricehead { font-size: 13px; font-weight: 700; color: var(--price); }
+  .seats { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .seat {
+    font-size: 11px; border: 1px solid var(--border); border-radius: 5px;
+    padding: 2px 6px; color: var(--text); background: #fafafc;
   }
-  .pprice { font-size: 11.5px; color: var(--muted); margin-top: 5px; }
-  .badge {
-    font-size: 9.5px; color: #8a6d09; background: #fff3cd;
-    border-radius: 4px; padding: 1px 5px; margin-left: 5px; vertical-align: middle;
+  .pricetext { font-size: 11.5px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+  /* 예매 링크 */
+  .booking { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .bookbtn {
+    font-size: 11.5px; font-weight: 600; text-decoration: none;
+    background: var(--accent); color: #fff; padding: 6px 11px; border-radius: 7px;
   }
-  .gtag {
-    font-size: 10px; color: var(--accent); background: var(--accent-soft);
-    border-radius: 4px; padding: 2px 6px; margin-left: 5px; vertical-align: middle;
-  }
+  .bookbtn.alt { background: var(--card); color: var(--accent); border: 1px solid var(--accent); }
+  .nolink { font-size: 11px; color: var(--muted); margin-top: 7px; }
+
+  .badge { font-size: 9.5px; color: #8a6d09; background: #fff3cd; border-radius: 4px; padding: 1px 5px; margin-left: 5px; vertical-align: middle; }
+  .gtag { font-size: 10px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 2px 6px; margin-left: 5px; vertical-align: middle; }
   .empty { color: var(--muted); text-align: center; padding: 36px 0; font-size: 13.5px; }
   .hidden { display: none; }
 </style>
@@ -146,9 +147,18 @@
     <div class="viewtab" id="tab-list">목록</div>
   </div>
 
-  <div class="genres" id="genres"></div>
+  <div class="filterrow">
+    <div class="flabel">공연장</div>
+    <div class="genres" id="venues"></div>
+  </div>
+  <div class="filterrow">
+    <div class="flabel">장르</div>
+    <div class="genres" id="genres"></div>
+  </div>
+  <div class="hallwrap">
+    <select class="hallsel" id="hallsel"></select>
+  </div>
 
-  <!-- 달력 뷰 -->
   <div id="view-cal">
     <div class="calbar">
       <button id="prev">‹</button>
@@ -165,32 +175,54 @@
     <div id="daylist"></div>
   </div>
 
-  <!-- 목록 뷰 -->
   <div id="view-list" class="hidden"></div>
 </div>
 
 <script>
 const GENRES = ["전체", "오케스트라", "오페라", "발레·무용", "실내악·독주", "합창"];
-let all = [];
-let genre = "전체";
-let view = "cal";
-let cursor = new Date();          // 현재 보고 있는 달
-let selected = todayStr();        // 선택된 날짜 YYYYMMDD
+const VENUES = ["전체", "세종문화회관", "예술의전당", "고양아람누리"];
+let all = [], genre = "전체", venue = "전체", hall = "전체", view = "cal";
+let cursor = new Date();
+let selected = todayStr();
 
 function todayStr() {
   const d = new Date();
   return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`;
 }
 function pad(n) { return String(n).padStart(2, "0"); }
-function fmt(d) { return d && d.length === 8 ? `${d.slice(0,4)}.${d.slice(4,6)}.${d.slice(6,8)}` : (d||""); }
 
-// 공연이 특정 날짜에 열리는지 (기간 내 포함 여부)
+// KOPIS는 날짜를 "2026.08.30" 형식으로 주기도 하고 "20260830" 으로 주기도 한다.
+// 숫자만 남겨 YYYYMMDD 로 통일해야 문자열 비교가 올바르게 동작한다.
+function norm(d) { return (d || "").replace(/[^0-9]/g, ""); }
+function fmt(d) {
+  const n = norm(d);
+  return n.length === 8 ? `${n.slice(0,4)}.${n.slice(4,6)}.${n.slice(6,8)}` : (d || "");
+}
+function won(n) { return n == null ? "" : n.toLocaleString("ko-KR") + "원"; }
+
 function runsOn(p, ymd) {
-  const s = p.start_date || "", e = p.end_date || s;
+  const s = norm(p.start_date), e = norm(p.end_date) || s;
   return s && ymd >= s && ymd <= e;
 }
+// 장르 + 공연장(기관) + 세부 홀을 모두 만족하는 공연만 남긴다
 function filtered() {
-  return genre === "전체" ? all : all.filter(p => p.genre === genre);
+  return all.filter(p =>
+    (genre === "전체" || p.genre === genre) &&
+    (venue === "전체" || p.venue === venue) &&
+    (hall === "전체" || p.facility_name === hall)
+  );
+}
+
+// 특정 축(장르/공연장)의 개수를 셀 때는 그 축을 뺀 나머지 조건만 적용해야
+// 칩에 표시되는 숫자가 "이걸 누르면 몇 건이 보이는지"와 일치한다.
+function countBy(axis, value) {
+  return all.filter(p =>
+    (axis === "genre" ? true : (genre === "전체" || p.genre === genre)) &&
+    (axis === "venue" ? true : (venue === "전체" || p.venue === venue)) &&
+    (axis === "venue" ? true : (hall === "전체" || p.facility_name === hall)) &&
+    (axis === "genre" ? (value === "전체" || p.genre === value)
+                      : (value === "전체" || p.venue === value))
+  ).length;
 }
 
 async function load() {
@@ -205,21 +237,55 @@ async function load() {
     document.getElementById("meta").textContent = "데이터를 불러오지 못했습니다";
     document.getElementById("banner").classList.add("show");
   }
-  renderGenres();
-  renderAll();
+  renderFilters(); renderAll();
 }
 
-function renderGenres() {
-  const el = document.getElementById("genres");
-  el.innerHTML = "";
+function renderFilters() {
+  // 공연장(기관) 칩
+  const vel = document.getElementById("venues");
+  vel.innerHTML = "";
+  VENUES.forEach(v => {
+    const c = document.createElement("div");
+    c.className = "chip" + (v === venue ? " active" : "");
+    c.textContent = `${v} (${countBy("venue", v)})`;
+    c.onclick = () => { venue = v; hall = "전체"; renderFilters(); renderAll(); };
+    vel.appendChild(c);
+  });
+
+  // 장르 칩
+  const gel = document.getElementById("genres");
+  gel.innerHTML = "";
   GENRES.forEach(g => {
-    const n = g === "전체" ? all.length : all.filter(p => p.genre === g).length;
     const c = document.createElement("div");
     c.className = "chip" + (g === genre ? " active" : "");
-    c.textContent = `${g} (${n})`;
-    c.onclick = () => { genre = g; renderGenres(); renderAll(); };
-    el.appendChild(c);
+    c.textContent = `${g} (${countBy("genre", g)})`;
+    c.onclick = () => { genre = g; renderFilters(); renderAll(); };
+    gel.appendChild(c);
   });
+
+  renderHallSelect();
+}
+
+// 선택된 기관에 속한 세부 홀 목록 (데이터에 실제로 있는 것만)
+function renderHallSelect() {
+  const sel = document.getElementById("hallsel");
+  const pool = venue === "전체" ? all : all.filter(p => p.venue === venue);
+  const halls = [...new Set(pool.map(p => p.facility_name).filter(Boolean))].sort();
+
+  if (halls.length <= 1) {
+    sel.style.display = "none";
+    hall = "전체";
+    return;
+  }
+  sel.style.display = "";
+  if (!halls.includes(hall)) hall = "전체";
+
+  sel.innerHTML = `<option value="전체">세부 공연장 전체 (${pool.length})</option>` +
+    halls.map(hn => {
+      const n = pool.filter(p => p.facility_name === hn).length;
+      return `<option value="${esc(hn)}"${hn === hall ? " selected" : ""}>${esc(hn)} (${n})</option>`;
+    }).join("");
+  sel.onchange = () => { hall = sel.value; renderAll(); };
 }
 
 function renderAll() {
@@ -230,27 +296,19 @@ function renderAll() {
 function renderCalendar() {
   const y = cursor.getFullYear(), m = cursor.getMonth();
   document.getElementById("calmonth").textContent = `${y}년 ${m+1}월`;
-
-  const first = new Date(y, m, 1);
-  const startPad = first.getDay();
+  const startPad = new Date(y, m, 1).getDay();
   const daysInMonth = new Date(y, m+1, 0).getDate();
-  const list = filtered();
-  const today = todayStr();
-
+  const list = filtered(), today = todayStr();
   const grid = document.getElementById("calgrid");
   grid.innerHTML = "";
 
   for (let i = 0; i < startPad; i++) {
-    const d = document.createElement("div");
-    d.className = "day empty";
-    grid.appendChild(d);
+    const d = document.createElement("div"); d.className = "day empty"; grid.appendChild(d);
   }
-
   for (let day = 1; day <= daysInMonth; day++) {
     const ymd = `${y}${pad(m+1)}${pad(day)}`;
     const count = list.filter(p => runsOn(p, ymd)).length;
     const dow = new Date(y, m, day).getDay();
-
     const el = document.createElement("div");
     let cls = "day";
     if (dow === 0) cls += " sun";
@@ -260,19 +318,12 @@ function renderCalendar() {
     if (count === 0) cls += " muted";
     el.className = cls;
 
-    const num = document.createElement("div");
-    num.textContent = day;
-    el.appendChild(num);
-
-    const dots = document.createElement("div");
-    dots.className = "dots";
+    const num = document.createElement("div"); num.textContent = day; el.appendChild(num);
+    const dots = document.createElement("div"); dots.className = "dots";
     for (let i = 0; i < Math.min(count, 3); i++) {
-      const dot = document.createElement("div");
-      dot.className = "dot";
-      dots.appendChild(dot);
+      const dot = document.createElement("div"); dot.className = "dot"; dots.appendChild(dot);
     }
     el.appendChild(dots);
-
     el.onclick = () => { selected = ymd; renderCalendar(); renderDayList(); };
     grid.appendChild(el);
   }
@@ -282,23 +333,58 @@ function renderDayList() {
   const list = filtered().filter(p => runsOn(p, selected));
   document.getElementById("daytitle").textContent = `${fmt(selected)} 공연 ${list.length}건`;
   document.getElementById("daylist").innerHTML =
-    list.length ? list.map(cardHtml).join("")
-                : '<div class="empty">이 날짜에는 공연이 없습니다.</div>';
+    list.length ? list.map(cardHtml).join("") : '<div class="empty">이 날짜에는 공연이 없습니다.</div>';
 }
 
 function renderList() {
   const today = todayStr();
   const list = filtered()
-    .filter(p => (p.end_date || p.start_date || "") >= today)
-    .sort((a,b) => (a.start_date||"").localeCompare(b.start_date||""));
+    .filter(p => (norm(p.end_date) || norm(p.start_date)) >= today)
+    .sort((a,b) => norm(a.start_date).localeCompare(norm(b.start_date)));
   document.getElementById("view-list").innerHTML =
-    list.length ? list.map(cardHtml).join("")
-                : '<div class="empty">표시할 공연이 없습니다.</div>';
+    list.length ? list.map(cardHtml).join("") : '<div class="empty">표시할 공연이 없습니다.</div>';
+}
+
+function priceHtml(p) {
+  const prices = p.prices || [];
+  const text = p.price_text || "";
+
+  // 파싱 실패 시(예: "전석 무료") 원문만 표시
+  if (!prices.length) {
+    return text ? `<div class="pricebox"><div class="pricehead">${esc(text)}</div></div>` : "";
+  }
+
+  const min = p.price_min, max = p.price_max;
+  const head = (min === max) ? won(min) : `${won(min)} ~ ${won(max)}`;
+  const seats = prices.map(s =>
+    `<span class="seat">${esc(s.seat)} ${won(s.amount)}</span>`
+  ).join("");
+
+  // 파싱된 좌석 외에 부가 안내가 있으면 원문도 함께 보여준다
+  const extra = text && prices.length < 2 && text.length > 20
+    ? `<div class="pricetext">${esc(text)}</div>` : "";
+
+  return `<div class="pricebox">
+    <div class="pricehead">${head}</div>
+    <div class="seats">${seats}</div>
+    ${extra}
+  </div>`;
+}
+
+function bookingHtml(p) {
+  const links = p.booking_links || [];
+  if (!links.length) {
+    return '<div class="nolink">예매 링크 정보 없음</div>';
+  }
+  return `<div class="booking">${
+    links.map((l, i) =>
+      `<a class="bookbtn${i > 0 ? " alt" : ""}" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)} 예매</a>`
+    ).join("")
+  }</div>`;
 }
 
 function cardHtml(p) {
-  const range = p.start_date === p.end_date
-    ? fmt(p.start_date)
+  const range = norm(p.start_date) === norm(p.end_date) ? fmt(p.start_date)
     : `${fmt(p.start_date)} ~ ${fmt(p.end_date)}`;
   const badge = p.genre_guessed ? '<span class="badge">장르 추정</span>' : "";
   const gtag = `<span class="gtag">${esc(p.genre)}</span>`;
@@ -314,7 +400,8 @@ function cardHtml(p) {
         <div class="pvenue">${esc(p.venue)} · ${esc(p.facility_name)}</div>
         <div class="pdate">${range}</div>
         ${cast}
-        <div class="pprice">${esc(p.price || "")}</div>
+        ${priceHtml(p)}
+        ${bookingHtml(p)}
       </div>
     </div>`;
 }
@@ -325,7 +412,6 @@ function esc(s) {
   }[c]));
 }
 
-// 이벤트
 document.getElementById("prev").onclick = () => {
   cursor = new Date(cursor.getFullYear(), cursor.getMonth()-1, 1); renderCalendar();
 };
