@@ -1,25 +1,606 @@
 {
-  "generated_at": "샘플 데이터 (Actions 실행 전)",
-  "facilities": [],
+  "generated_at": "2026-08-25",
+  "facilities": [
+    {
+      "mt10id": "FC002078",
+      "fcltynm": "(구) 송정초등학교 야외운동장",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004472",
+      "fcltynm": "(구)화남산업",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000301",
+      "fcltynm": "(사)한국국악협회 인천광역시지회(인천국악회관)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000175",
+      "fcltynm": "(재) 영화의전당",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001672",
+      "fcltynm": "(재)경기문화재단",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000534",
+      "fcltynm": "(재)구리시청소년수련관",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002093",
+      "fcltynm": "(재)정효문화재단",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003668",
+      "fcltynm": "13블럭 소극장",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002651",
+      "fcltynm": "1M SPACE (폐관)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001419",
+      "fcltynm": "1m클래식아트홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003142",
+      "fcltynm": "1미터마술",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003974",
+      "fcltynm": "1유로 프로젝트 코끼리빌라",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003153",
+      "fcltynm": "2.28기념중앙공원",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001940",
+      "fcltynm": "2001 아울렛키즈홀 [구로]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001548",
+      "fcltynm": "2001 아울렛키즈홀 [수원남문]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002818",
+      "fcltynm": "20세기소년",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002391",
+      "fcltynm": "242",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002034",
+      "fcltynm": "2D Hall(이디홀)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003555",
+      "fcltynm": "3.15 해양누리공원",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000877",
+      "fcltynm": "3.15아트센터",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001562",
+      "fcltynm": "30스튜디오 (폐관)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003784",
+      "fcltynm": "346커피스토리",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002800",
+      "fcltynm": "369마실",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002231",
+      "fcltynm": "396커피 컴퍼니",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002801",
+      "fcltynm": "4560designhaus (디자인하우스)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000420",
+      "fcltynm": "5.18기념문화센터",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002702",
+      "fcltynm": "57th gallery(57갤러리)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000797",
+      "fcltynm": "63아트홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001909",
+      "fcltynm": "63컨벤션센터",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001547",
+      "fcltynm": "640아트타워",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004104",
+      "fcltynm": "ACS.KR",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003481",
+      "fcltynm": "ACT 호텔 스카이 홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003217",
+      "fcltynm": "ADM갤러리",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003729",
+      "fcltynm": "AG아트홀 [청주]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004325",
+      "fcltynm": "AK플라자 [분당]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003487",
+      "fcltynm": "AK플라자 [수원]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004326",
+      "fcltynm": "AK플라자 [원주]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004327",
+      "fcltynm": "AK플라자 [평택]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002065",
+      "fcltynm": "ALVER(알베르)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001244",
+      "fcltynm": "AN아트홀 [서면]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004640",
+      "fcltynm": "ASB",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003959",
+      "fcltynm": "ASSA 아트홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004557",
+      "fcltynm": "Abnormal필운",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003704",
+      "fcltynm": "Alter Wave",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004906",
+      "fcltynm": "BHC 27번가 갤러리 [광주]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004959",
+      "fcltynm": "BLACK MUSE",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004483",
+      "fcltynm": "BLACKCUBE LAB(BCL)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003021",
+      "fcltynm": "BMW JOYSQUARE",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001246",
+      "fcltynm": "BNK부산은행 조은극장",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000582",
+      "fcltynm": "BOYS24 HALL(구. 메사고릴라전용관) (폐관)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003893",
+      "fcltynm": "BRST STUDIO",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004857",
+      "fcltynm": "BUNKER1 (벙커1)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004149",
+      "fcltynm": "Baby Doll (베이비돌)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003133",
+      "fcltynm": "BeIN(비인)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004067",
+      "fcltynm": "Bibistudio",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002665",
+      "fcltynm": "Blessing café",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004912",
+      "fcltynm": "BoB House [성남]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003496",
+      "fcltynm": "CGV [계양]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004357",
+      "fcltynm": "CGV [광주 터미널]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003497",
+      "fcltynm": "CGV [광주금남로]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003498",
+      "fcltynm": "CGV [대구]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004358",
+      "fcltynm": "CGV [대전 터미널]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003672",
+      "fcltynm": "CGV [대학로]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004624",
+      "fcltynm": "CGV [부산]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002756",
+      "fcltynm": "CGV [압구정]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002776",
+      "fcltynm": "CGV [영등포]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004359",
+      "fcltynm": "CGV [왕십리]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003548",
+      "fcltynm": "CGV [용산]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004360",
+      "fcltynm": "CGV [인천]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004362",
+      "fcltynm": "CGV [피카디리 1958]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004892",
+      "fcltynm": "CGV 대구한일",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003499",
+      "fcltynm": "CGV 대전",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003295",
+      "fcltynm": "CGV 서면",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003500",
+      "fcltynm": "CGV 울산삼산",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003501",
+      "fcltynm": "CGV 원주",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000343",
+      "fcltynm": "CGV신한카드아트홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001338",
+      "fcltynm": "CJB미디어센터",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000082",
+      "fcltynm": "CJ아지트 광흥창",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC000629",
+      "fcltynm": "CK아트홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004840",
+      "fcltynm": "CLUB PLUS82(+82)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003903",
+      "fcltynm": "CLUB VICTIM",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002090",
+      "fcltynm": "CLUB bender(클럽 벤더)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002104",
+      "fcltynm": "CS아트홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC001472",
+      "fcltynm": "CTS아트홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002066",
+      "fcltynm": "Cafe PPnF",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002347",
+      "fcltynm": "Cafe vave(베이브)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003340",
+      "fcltynm": "Campus D 고촌홀",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004676",
+      "fcltynm": "Converse Stage Arena 여명",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003781",
+      "fcltynm": "Corners Studio",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002014",
+      "fcltynm": "D:BASE (디:베이스)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003563",
+      "fcltynm": "DCAN센터",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002917",
+      "fcltynm": "DCAN센터 [대전]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004887",
+      "fcltynm": "DCT바(DCT Bar) [수원]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002666",
+      "fcltynm": "DDP 동대문디자인플라자",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004261",
+      "fcltynm": "DDP 패션몰",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003882",
+      "fcltynm": "DGT 아트센터",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002723",
+      "fcltynm": "DMZ 박물관 [고성]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC004418",
+      "fcltynm": "DOT [수원]",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC002003",
+      "fcltynm": "DS ART HALL(창선당)",
+      "venue": "세종문화회관"
+    },
+    {
+      "mt10id": "FC003694",
+      "fcltynm": "DSM 아트홀",
+      "venue": "세종문화회관"
+    }
+  ],
   "performances": [
     {
-      "mt20id": "sample-001",
-      "name": "샘플 오케스트라 정기연주회",
-      "start_date": "20260901",
-      "end_date": "20260901",
-      "facility_name": "세종체임버홀",
-      "venue": "세종문화회관",
-      "poster": "",
-      "cast": "지휘 홍길동 / 협연 김클래식(바이올린)",
+      "mt20id": "PF298374",
+      "name": "시네마 음악회 [부산]",
+      "start_date": "2026.09.11",
+      "end_date": "2026.09.11",
+      "facility_name": "(재) 영화의전당 (야외극장)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298374_260813_104104.jpg",
+      "cast": "서희태, 최정원, 강창모, 최정인, 김종서 등",
       "crew": "",
-      "runtime": "90분",
-      "age": "8세 이상",
-      "company": "",
-      "price": "전석 30,000원",
+      "runtime": "1시간 35분",
+      "age": "만 7세 이상",
+      "company": "(재)영화의전당",
+      "price": "전석 10,000원",
       "synopsis": "",
-      "genre_raw": "",
+      "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "genre": "오케스트라",
+      "venue": "세종문화회관",
+      "genre": "실내악·독주",
+      "genre_guessed": true
+    },
+    {
+      "mt20id": "PF286299",
+      "name": "영화의전당 BCC 시네라이브, 11시 영화음악콘서트: 합창으로 듣는 영화음악 [부산] (11월)",
+      "start_date": "2026.11.25",
+      "end_date": "2026.11.25",
+      "facility_name": "(재) 영화의전당 (하늘연극장)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286299_260304_152321.jpg",
+      "cast": "손한묵 등",
+      "crew": "",
+      "runtime": "1시간 10분",
+      "age": "만 7세 이상",
+      "company": "(재)영화의전당",
+      "price": "전석 20,000원",
+      "synopsis": "",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "세종문화회관",
+      "genre": "합창",
+      "genre_guessed": false
+    },
+    {
+      "mt20id": "PF286296",
+      "name": "영화의전당 BCC 시네라이브, 11시 영화음악콘서트: 한국을 대표하는 영화음악작곡가 이명로 [부산] (10월)",
+      "start_date": "2026.10.28",
+      "end_date": "2026.10.28",
+      "facility_name": "(재) 영화의전당 (하늘연극장)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286296_260304_151620.jpg",
+      "cast": "손한묵, 이명로 등",
+      "crew": "",
+      "runtime": "1시간 10분",
+      "age": "만 7세 이상",
+      "company": "(재)영화의전당",
+      "price": "전석 20,000원",
+      "synopsis": "",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "세종문화회관",
+      "genre": "실내악·독주",
+      "genre_guessed": true
+    },
+    {
+      "mt20id": "PF286294",
+      "name": "영화의전당 BCC 시네라이브, 11시 영화음악콘서트: 컨템포러리 필름뮤직 [부산] (9월)",
+      "start_date": "2026.09.23",
+      "end_date": "2026.09.23",
+      "facility_name": "(재) 영화의전당 (하늘연극장)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286294_260304_150850.jpg",
+      "cast": "손한묵 등",
+      "crew": "",
+      "runtime": "1시간 10분",
+      "age": "만 7세 이상",
+      "company": "(재)영화의전당",
+      "price": "전석 20,000원",
+      "synopsis": "",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "세종문화회관",
+      "genre": "실내악·독주",
+      "genre_guessed": true
+    },
+    {
+      "mt20id": "PF298647",
+      "name": "제1회 청소년 K-ARTS 페스티벌 [부산]",
+      "start_date": "2026.09.18",
+      "end_date": "2026.09.18",
+      "facility_name": "(재) 영화의전당 (하늘연극장)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298647_260818_113845.gif",
+      "cast": "조홍준, 안예은 등",
+      "crew": "",
+      "runtime": "2시간 20분",
+      "age": "만 7세 이상",
+      "company": "(사)월드엔젤피스 예술단",
+      "price": "전석 20,000원",
+      "synopsis": "",
+      "genre_raw": "복합",
+      "state": "공연예정",
+      "venue": "세종문화회관",
+      "genre": "발레·무용",
       "genre_guessed": false
     }
   ]
