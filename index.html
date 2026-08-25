@@ -148,6 +148,11 @@
   .sechead:first-child { margin-top: 4px; }
   .sechead .dot { width: 6px; height: 6px; border-radius: 50%; background: #e03e3e; }
   .sechead.plain { color: var(--muted); font-weight: 600; margin-top: 22px; }
+  .openposter {
+    display: flex; align-items: center; justify-content: center;
+    background: #fff1f0; color: #d99b95; font-size: 24px;
+  }
+  .openposter i { font-style: normal; }
   .hidden { display: none; }
 </style>
 </head>
@@ -214,7 +219,7 @@ function venueList() {
   });
   return ["전체", ...found];
 }
-let all = [], genre = "전체", venue = "전체", hall = "전체", view = "cal";
+let all = [], opens = [], genre = "전체", venue = "전체", hall = "전체", view = "cal";
 let cursor = new Date();
 let selected = todayStr();
 
@@ -266,6 +271,10 @@ async function load() {
     // 수집 스크립트가 구버전이라 타 지역 "○○예술의전당"이 섞여 있어도
     // 화면에는 나오지 않게 한다.
     all = (data.performances || []).filter(p => VENUE_ORDER.includes(p.venue));
+    // 티켓오픈 공지 원본. KOPIS는 티켓이 열린 뒤에 공연을 등록하는 경향이 있어서,
+    // 정작 "곧 열리는" 공연은 KOPIS에 아직 없는 경우가 많다.
+    // 그래서 공지 자체를 카드로 보여준다.
+    opens = (data.ticket_opens || []);
     document.getElementById("meta").textContent =
       `기준일 ${data.generated_at || "-"} · 총 ${all.length}건`;
     document.getElementById("banner").classList.remove("show");
@@ -372,6 +381,64 @@ function renderDayList() {
     list.length ? list.map(cardHtml).join("") : '<div class="empty">이 날짜에는 공연이 없습니다.</div>';
 }
 
+// 파이썬 쪽 normalize_title 과 같은 규칙 (기호·공백 제거)
+function normTitle(s) {
+  return (s || "")
+    .replace(/(티켓\s*오픈\s*안내|추가좌석\s*오픈\s*안내|마지막\s*티켓\s*오픈|\d+차\s*티켓\s*오픈|프리뷰\s*티켓\s*오픈|선예매|오픈\s*안내)/g, " ")
+    .replace(/[^0-9A-Za-z가-힣]/g, "")
+    .toLowerCase();
+}
+
+// 아직 오픈 전인 티켓오픈 공지 목록.
+// 이미 목록에 카드가 있는 공연(= ticket_open 이 붙은 공연)은 중복이므로 제외한다.
+function upcomingOpens() {
+  const today = todayStr();
+  const shownKeys = new Set(
+    all.filter(p => p.ticket_open).map(p => normTitle(p.name))
+  );
+  return opens
+    .filter(o => o.open_at && norm(o.open_at).slice(0, 8) >= today)
+    .filter(o => venue === "전체" || o.venue === venue)
+    .filter(o => {
+      const k = normTitle(o.title);
+      if (!k) return false;
+      for (const s of shownKeys) {
+        if (k === s || k.includes(s) || s.includes(k)) return false;
+      }
+      return true;
+    })
+    .sort((a, b) => norm(a.open_at).localeCompare(norm(b.open_at)));
+}
+
+// 공지 제목에서 "○○ 티켓 오픈 안내" 같은 군더더기를 떼어 공연명만 보이게 한다
+function cleanOpenTitle(s) {
+  let t = (s || "")
+    .replace(/\s*(1차|2차|3차|\d+차|프리뷰|마지막|추가좌석)?\s*(티켓\s*)?오픈\s*안내\s*$/, "")
+    .trim();
+  // 제목 전체가 <  > 로 감싸인 경우에만 그 껍데기를 벗긴다
+  if (/^[<〈《].*[>〉》]$/.test(t)) t = t.slice(1, -1).trim();
+  return t || s;
+}
+
+function openCardHtml(o) {
+  const openDay = norm(o.open_at).slice(0, 8);
+  const days = dayDiff(todayStr(), openDay);
+  const dd = o.dday && o.dday !== "종료" ? o.dday : (days === 0 ? "D-DAY" : `D-${days}`);
+  const where = [o.venue, o.hall].filter(Boolean).join(" · ");
+  const price = o.price_info ? `<div class="pprice">${esc(o.price_info)}</div>` : "";
+  const state = o.state ? `<span class="gtag">${esc(o.state)}</span>` : "";
+  return `
+    <div class="card">
+      <div class="poster openposter"><i>♪</i></div>
+      <div class="info">
+        <div class="pname">${esc(cleanOpenTitle(o.title))}<span class="newbadge">NEW</span>${state}</div>
+        <div class="pvenue">${esc(where)}</div>
+        <a class="openinfo" href="${esc(o.url)}" target="_blank" rel="noopener">예매 오픈 ${esc(prettyOpen(o.open_at))}<span class="dd">${esc(dd)}</span></a>
+        ${price}
+      </div>
+    </div>`;
+}
+
 function renderList() {
   const today = todayStr();
   const list = filtered()
@@ -398,8 +465,16 @@ function renderList() {
     return norm(a.start_date).localeCompare(norm(b.start_date));
   });
 
-  // 섹션 구분선: NEW 묶음이 끝나는 지점에 표시
   let html = "";
+
+  // ① 오픈 예정 공지 (KOPIS에 아직 없는 공연 포함) — 장르 필터가 걸리면 숨긴다
+  //    (공지에는 장르 정보가 없어서 어느 장르인지 판단할 수 없음)
+  const ups = genre === "전체" ? upcomingOpens() : [];
+  if (ups.length) {
+    html += '<div class="sechead"><i class="dot"></i>예매 오픈 예정 ' + ups.length + '건</div>';
+    html += ups.map(openCardHtml).join("");
+  }
+
   let lastRank = null;
   list.forEach(p => {
     const r = rank(p);
@@ -413,7 +488,7 @@ function renderList() {
   });
 
   document.getElementById("view-list").innerHTML =
-    list.length ? html : '<div class="empty">표시할 공연이 없습니다.</div>';
+    (list.length || ups.length) ? html : '<div class="empty">표시할 공연이 없습니다.</div>';
 }
 
 function priceHtml(p) {
