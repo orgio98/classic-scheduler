@@ -2,7 +2,7 @@
 // 데이터(JSON): 네트워크 우선 / 정적 파일: 캐시 우선
 // index.html 등을 수정했다면 CACHE_VERSION을 올려야 사용자 캐시가 갱신됩니다.
 
-const CACHE_VERSION = "v7";
+const CACHE_VERSION = "v9";
 const SHELL_CACHE = `classical-shell-${CACHE_VERSION}`;
 const DATA_CACHE = "classical-data";
 const SHELL_FILES = ["./", "./index.html", "./manifest.json"];
