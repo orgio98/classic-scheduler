@@ -254,7 +254,10 @@ async function load() {
   try {
     const res = await fetch("data/performances.json", { cache: "no-store" });
     const data = await res.json();
-    all = data.performances || [];
+    // 안전장치: 대상 4개 공연장 공연만 표시한다.
+    // 수집 스크립트가 구버전이라 타 지역 "○○예술의전당"이 섞여 있어도
+    // 화면에는 나오지 않게 한다.
+    all = (data.performances || []).filter(p => VENUE_ORDER.includes(p.venue));
     document.getElementById("meta").textContent =
       `기준일 ${data.generated_at || "-"} · 총 ${all.length}건`;
     document.getElementById("banner").classList.remove("show");

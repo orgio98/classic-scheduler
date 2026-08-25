@@ -37,32 +37,39 @@ API_BASE = "http://www.kopis.or.kr/openApi/restful"
 SERVICE_KEY = os.environ.get("KOPIS_API_KEY", "").strip()
 
 # ── 공연장 정의 ────────────────────────────────────────────────────────────
-# 검색어(search)로 KOPIS 시설을 찾고, 실제 시설명(fcltynm)을 보고 어느 기관인지
-# 판정한다. 검색어가 아니라 시설명 기준으로 판정해야 "예술의전당"으로 검색했을 때
-# 딸려오는 "세종예술의전당"을 별개 공연장으로 정확히 구분할 수 있다.
+# 시설명(fcltynm)으로 어느 기관인지 판정한다.
 #
-# VENUE_RULES 는 순서가 중요하다. 더 구체적인 이름이 먼저 와야 한다.
-# ("세종예술의전당"은 "예술의전당"을 포함하므로 반드시 앞에 있어야 함)
+# [중요] 지역명 블랙리스트 방식은 쓰지 않는다.
+#   전국에 "경주예술의전당, 계룡문화예술의전당, 군산예술의전당, 서귀포예술의전당,
+#   안동문화예술의전당, 영광예술의전당, 완도문화예술의전당, 제천예술의전당,
+#   진천예술의전당, 화성예술의전당..." 처럼 같은 이름이 끝없이 많아서
+#   제외 목록을 아무리 늘려도 계속 새는 구조였다.
+#
+#   대신 "이름이 그 기관명으로 시작하는가"로 판정한다.
+#   앞에 지역명이 붙어 있으면(예: 경주예술의전당) 다른 기관이므로 자동 제외된다.
+#     "예술의전당 [서울] (콘서트홀)"  -> 시작함  -> 서울 예술의전당 O
+#     "경주예술의전당"                -> 시작 안 함 -> 제외
+#
+# prefix 는 순서가 중요하다. 더 구체적인 이름이 먼저 와야 한다.
 VENUE_RULES = [
     {
         "label": "세종문화회관",
-        "match": ["세종문화회관", "세종대극장", "세종체임버홀", "세종S씨어터", "세종M씨어터"],
+        "prefix": ["세종문화회관"],
+        # 홀 이름만 들어오는 경우도 대비
+        "contains": ["세종대극장", "세종체임버홀", "세종S씨어터", "세종M씨어터"],
     },
     {
-        "label": "세종예술의전당",          # 세종특별자치시 소재 (서울 예술의전당과 별개)
-        "match": ["세종예술의전당"],
+        "label": "세종예술의전당",          # 세종특별자치시 소재
+        "prefix": ["세종예술의전당"],
     },
     {
         "label": "예술의전당",              # 서울 서초구 소재
-        "match": ["예술의전당"],
-        # 다른 지역 "○○예술의전당"을 배제한다 (세종은 위 규칙에서 이미 걸러짐)
-        "reject": ["안양", "의정부", "대전", "김해", "부산", "대구", "광주", "울산",
-                   "청주", "전주", "안산", "성남", "제주", "고양", "용인", "수원",
-                   "천안", "포항", "창원", "익산", "군포", "구리", "김포"],
+        "prefix": ["예술의전당"],
     },
     {
         "label": "고양아람누리",
-        "match": ["아람누리", "고양아람"],
+        "prefix": ["고양아람누리", "아람누리"],
+        "contains": ["아람음악당", "아람극장"],
     },
 ]
 
@@ -91,19 +98,26 @@ def _get(path: str, **params) -> ET.Element:
     return ET.fromstring(body)
 
 
+def _clean_name(fcltynm: str) -> str:
+    """시설명 앞의 법인 표기 등을 떼어내 접두 비교가 가능하게 만든다."""
+    s = (fcltynm or "").strip()
+    s = re.sub(r"^\(\s*(재|사|주|재단법인|사단법인)\s*\)\s*", "", s)
+    return s.strip()
+
+
 def resolve_venue(fcltynm: str) -> str | None:
     """
-    시설명으로 어느 기관인지 판정한다.
-    해당 없으면 None (= 우리 대상이 아닌 공연장이므로 제외).
+    시설명으로 기관을 판정한다. 해당 없으면 None(= 대상 아님, 제외).
+    접두 일치를 쓰므로 "경주예술의전당" 같은 타 지역 시설은 자동으로 걸러진다.
     """
-    if not fcltynm:
+    name = _clean_name(fcltynm)
+    if not name:
         return None
     for rule in VENUE_RULES:
-        if not any(k in fcltynm for k in rule["match"]):
-            continue
-        if any(x in fcltynm for x in rule.get("reject", [])):
-            return None          # 매칭은 됐지만 다른 지역 시설 -> 제외
-        return rule["label"]
+        if any(name.startswith(p) for p in rule.get("prefix", [])):
+            return rule["label"]
+        if any(k in name for k in rule.get("contains", [])):
+            return rule["label"]
     return None
 
 
