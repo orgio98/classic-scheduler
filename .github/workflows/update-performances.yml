@@ -2,8 +2,8 @@ name: Update classical performances
 
 on:
   schedule:
-    - cron: "0 21 * * *"   # 매일 06:00 KST (UTC 21:00)
-  workflow_dispatch: {}     # 수동 실행 버튼도 사용 가능
+    - cron: "0 21 * * *"
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -13,16 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Run KOPIS pipeline
         env:
           KOPIS_API_KEY: ${{ secrets.KOPIS_API_KEY }}
         run: python fetch_kopis_classical.py
-
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
