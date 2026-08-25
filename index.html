@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>클래식 공연 통합 정보</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#534ab7">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="클래식 공연">
+
+<style>
+  :root {
+    --bg: #f7f7f8;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #666;
+    --accent: #534ab7;
+    --accent-bg: #eeedfe;
+    --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    padding: 20px 16px 12px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 10;
+  }
+  h1 { font-size: 20px; margin: 0 0 2px; font-weight: 600; }
+  .sub { font-size: 13px; color: var(--muted); }
+
+  .venues { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  .tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 14px 16px 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  main { padding: 8px 16px 40px; max-width: 640px; margin: 0 auto; }
+
+  .empty { color: var(--muted); padding: 40px 0; text-align: center; font-size: 14px; }
+  .offline-banner {
+    display: none;
+    background: #fff3cd;
+    color: #997404;
+    font-size: 12px;
+    padding: 6px 16px;
+    text-align: center;
+  }
+  .offline-banner.show { display: block; }
+
+  .card {
+    display: flex;
+    gap: 12px;
+    background: var(--card);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .poster {
+    width: 64px;
+    height: 84px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #ddd;
+    flex-shrink: 0;
+  }
+  .info { flex: 1; min-width: 0; }
+  .name { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
+  .venue-line { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .date-line { font-size: 13px; margin-bottom: 4px; }
+  .cast {
+    font-size: 12px;
+    color: var(--text);
+    background: var(--accent-bg);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-top: 2px;
+  }
+  .guessed-badge {
+    font-size: 10px;
+    color: #997404;
+    background: #fff3cd;
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-left: 6px;
+  }
+  .price { font-size: 12px; color: var(--muted); margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<div class="offline-banner" id="offline-banner">오프라인 상태 — 마지막으로 받아온 목록을 보여주고 있습니다</div>
+
+<header>
+  <h1>클래식 공연 통합 정보</h1>
+  <div class="sub" id="generated-at">불러오는 중...</div>
+  <div class="venues">세종문화회관 · 예술의전당 · 고양아람누리</div>
+</header>
+
+<div class="tabs" id="tabs"></div>
+
+<main id="main">
+  <div class="empty">불러오는 중...</div>
+</main>
+
+<script>
+const GENRES = ["오케스트라", "오페라", "발레·무용", "실내악·독주", "합창"];
+let allPerformances = [];
+let currentGenre = GENRES[0];
+
+async function load() {
+  try {
+    const res = await fetch("data/performances.json", { cache: "no-store" });
+    const data = await res.json();
+    allPerformances = data.performances || [];
+    document.getElementById("generated-at").textContent =
+      `기준일 ${data.generated_at || "-"} · 총 ${allPerformances.length}건`;
+    document.getElementById("offline-banner").classList.remove("show");
+  } catch (e) {
+    document.getElementById("generated-at").textContent = "데이터를 불러오지 못했습니다.";
+    document.getElementById("offline-banner").classList.add("show");
+  }
+  renderTabs();
+  render();
+}
+
+function renderTabs() {
+  const tabsEl = document.getElementById("tabs");
+  tabsEl.innerHTML = "";
+  GENRES.forEach(g => {
+    const count = allPerformances.filter(p => p.genre === g).length;
+    const btn = document.createElement("div");
+    btn.className = "tab" + (g === currentGenre ? " active" : "");
+    btn.textContent = `${g} (${count})`;
+    btn.onclick = () => { currentGenre = g; renderTabs(); render(); };
+    tabsEl.appendChild(btn);
+  });
+}
+
+function formatDate(d) {
+  if (!d || d.length !== 8) return d || "";
+  return `${d.slice(0,4)}.${d.slice(4,6)}.${d.slice(6,8)}`;
+}
+
+function render() {
+  const mainEl = document.getElementById("main");
+  const list = allPerformances
+    .filter(p => p.genre === currentGenre)
+    .sort((a, b) => (a.start_date || "").localeCompare(b.start_date || ""));
+
+  if (!list.length) {
+    mainEl.innerHTML = '<div class="empty">해당 장르의 공연이 없습니다.</div>';
+    return;
+  }
+
+  mainEl.innerHTML = list.map(p => {
+    const dateRange = p.start_date === p.end_date
+      ? formatDate(p.start_date)
+      : `${formatDate(p.start_date)} ~ ${formatDate(p.end_date)}`;
+    const guessedBadge = p.genre_guessed ? '<span class="guessed-badge">장르 추정</span>' : "";
+    const castLine = p.cast ? `<div class="cast">${escapeHtml(p.cast)}</div>` : "";
+    const poster = p.poster
+      ? `<img class="poster" src="${escapeAttr(p.poster)}" alt="">`
+      : `<div class="poster"></div>`;
+
+    return `
+      <div class="card">
+        ${poster}
+        <div class="info">
+          <div class="name">${escapeHtml(p.name)}${guessedBadge}</div>
+          <div class="venue-line">${escapeHtml(p.venue)} · ${escapeHtml(p.facility_name)}</div>
+          <div class="date-line">${dateRange}</div>
+          ${castLine}
+          <div class="price">${escapeHtml(p.price || "")}</div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function escapeHtml(s) {
+  return (s || "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
+}
+function escapeAttr(s) { return escapeHtml(s); }
+
+load();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {
+      // 서비스 워커 등록 실패해도 페이지 자체는 정상 동작
+    });
+  });
+}
+</script>
+
+</body>
+</html>
