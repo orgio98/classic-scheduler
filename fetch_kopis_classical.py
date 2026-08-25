@@ -1,22 +1,21 @@
 """
-클래식 공연 통합 사이트 - Stage 1: KOPIS 데이터 파이프라인
+클래식 공연 통합 사이트 - KOPIS 데이터 파이프라인
 
 세종문화회관 / 예술의전당 / 고양아람누리 세 기관의 클래식(서양음악)·무용 공연을
-KOPIS(공연예술통합전산망) API로 가져와서 장르별(오케스트라/오페라/발레·무용/
-실내악·독주/합창)로 1차 분류한 뒤 data/performances.json 으로 저장한다.
+KOPIS API로 가져와서 장르별로 분류한 뒤 data/performances.json 으로 저장한다.
 
 필요 환경변수:
-    KOPIS_API_KEY - KOPIS 오픈API 서비스키 (뮤지컬 프로젝트에서 쓰던 키 재사용 가능)
+    KOPIS_API_KEY - KOPIS 오픈API 서비스키
 
 사용법:
     KOPIS_API_KEY=xxxx python fetch_kopis_classical.py
 
-참고:
-- KOPIS는 XML로만 응답한다.
-- shcate(장르코드): CCCA=서양음악(클래식), EEEA=무용(서양/한국무용)
-  (KOPIS 자체에는 오케스트라/오페라/합창처럼 더 세부적인 장르 코드가 없어서,
-   공연명 키워드로 2차 분류한다. 오분류는 나중에 웹앱에서 수동으로 고칠 수 있게
-   장르 필드를 그냥 데이터값으로 취급하고, genre_guessed=True 플래그를 남겨둔다.)
+[중요] 공연장 필터링에 대해
+  KOPIS의 공연시설 검색(prfplc)은 파라미터가 무시되면 전국 시설을 그대로 반환한다.
+  실제로 이 때문에 부산 공연이 "세종문화회관"으로 잡히는 버그가 있었다.
+  그래서 API 응답을 그대로 믿지 않고, 아래 두 단계로 직접 검증한다:
+    1) 시설명(fcltynm)에 기관 키워드가 실제로 들어있는지 확인
+    2) 공연 상세의 시설명도 한 번 더 확인 (교차 검증)
 """
 
 import json
@@ -32,10 +31,16 @@ from urllib.request import urlopen
 API_BASE = "http://www.kopis.or.kr/openApi/restful"
 SERVICE_KEY = os.environ.get("KOPIS_API_KEY", "").strip()
 
-# 조사 대상 3개 기관 (부분일치 검색 - 하위 공연장이 자동으로 다 잡힌다)
-VENUES = ["세종문화회관", "예술의전당", "고양아람누리"]
+# 대상 기관. keywords 중 하나라도 시설명에 들어있어야 그 기관으로 인정한다.
+VENUES = [
+    {"name": "세종문화회관", "keywords": ["세종문화회관", "세종대극장", "세종체임버홀", "세종М"]},
+    {"name": "예술의전당", "keywords": ["예술의전당"]},
+    {"name": "고양아람누리", "keywords": ["아람누리", "고양아람"]},
+]
 
-# 조회 기간: 오늘부터 N일 뒤까지
+# 다른 지역의 동명이칭 시설을 걸러내기 위한 제외 키워드
+EXCLUDE_KEYWORDS = ["부산", "대구", "광주", "대전", "울산", "청주", "전주", "김해", "안산", "성남"]
+
 LOOKAHEAD_DAYS = 180
 
 GENRE_ORCHESTRA = "오케스트라"
@@ -48,11 +53,9 @@ OUTPUT_PATH = Path("data/performances.json")
 
 
 def _get(path: str, **params) -> ET.Element:
-    """KOPIS API GET 요청 후 XML 루트 엘리먼트 반환."""
     if not SERVICE_KEY:
         print("오류: KOPIS_API_KEY 환경변수가 설정되어 있지 않습니다.", file=sys.stderr)
         sys.exit(1)
-
     params = {"service": SERVICE_KEY, **params}
     url = f"{API_BASE}/{path}?{urlencode(params)}"
     with urlopen(url, timeout=20) as res:
@@ -60,55 +63,93 @@ def _get(path: str, **params) -> ET.Element:
     return ET.fromstring(body)
 
 
-def find_facility_codes(venue_name: str) -> list[dict]:
-    """기관명(부분일치)으로 하위 공연장(mt10id) 전체 목록을 찾는다."""
-    root = _get("prfplc", fcltynm=venue_name, cpage="1", rows="100")
+def matches_venue(fcltynm: str, venue: dict) -> bool:
+    """시설명이 실제로 그 기관 것인지 검증한다."""
+    if not fcltynm:
+        return False
+    if not any(k in fcltynm for k in venue["keywords"]):
+        return False
+    # 서울/고양 소재가 아닌 동명 시설 제외 (예: 부산 영화의전당)
+    if any(x in fcltynm for x in EXCLUDE_KEYWORDS):
+        return False
+    return True
+
+
+def find_facilities(venue: dict) -> list[dict]:
+    """기관명으로 하위 공연장 목록을 찾고, 이름을 직접 검증해서 걸러낸다."""
     facilities = []
-    for db in root.findall("db"):
-        mt10id = db.findtext("mt10id", "").strip()
-        fcltynm = db.findtext("fcltynm", "").strip()
-        if mt10id:
-            facilities.append({"mt10id": mt10id, "fcltynm": fcltynm, "venue": venue_name})
+    seen = set()
+
+    # KOPIS 시설검색은 파라미터명이 버전에 따라 다를 수 있어 두 가지를 모두 시도한다.
+    for param in ("shprfnmfct", "fcltynm"):
+        try:
+            root = _get("prfplc", cpage="1", rows="100", **{param: venue["name"]})
+        except Exception as e:
+            print(f"  경고: 시설 검색 실패 ({param}): {e}", file=sys.stderr)
+            continue
+
+        for db in root.findall("db"):
+            mt10id = (db.findtext("mt10id") or "").strip()
+            fcltynm = (db.findtext("fcltynm") or "").strip()
+            if not mt10id or mt10id in seen:
+                continue
+            # ★ API 응답을 믿지 않고 이름으로 직접 검증
+            if not matches_venue(fcltynm, venue):
+                continue
+            seen.add(mt10id)
+            facilities.append({"mt10id": mt10id, "fcltynm": fcltynm, "venue": venue["name"]})
+
+        if facilities:
+            break
+        time.sleep(0.2)
+
     return facilities
 
 
-def find_performances(mt10id: str, shcate: str, stdate: str, eddate: str) -> list[str]:
-    """공연장 + 장르코드로 공연목록(mt20id 리스트)을 가져온다. (페이지네이션 처리)"""
-    mt20ids = []
+def find_performance_ids(mt10id: str, shcate: str, stdate: str, eddate: str) -> list[str]:
+    ids = []
     page = 1
     while True:
-        root = _get(
-            "pblprfr",
-            stdate=stdate,
-            eddate=eddate,
-            cpage=str(page),
-            rows="100",
-            prfplccd=mt10id,
-            shcate=shcate,
-        )
+        try:
+            root = _get(
+                "pblprfr",
+                stdate=stdate,
+                eddate=eddate,
+                cpage=str(page),
+                rows="100",
+                prfplccd=mt10id,
+                shcate=shcate,
+            )
+        except Exception as e:
+            print(f"  경고: 공연목록 조회 실패 ({mt10id}): {e}", file=sys.stderr)
+            break
+
         dbs = root.findall("db")
         if not dbs:
             break
         for db in dbs:
-            mt20id = db.findtext("mt20id", "").strip()
+            mt20id = (db.findtext("mt20id") or "").strip()
             if mt20id:
-                mt20ids.append(mt20id)
+                ids.append(mt20id)
         if len(dbs) < 100:
             break
         page += 1
         time.sleep(0.2)
-    return mt20ids
+    return ids
 
 
 def fetch_detail(mt20id: str) -> dict:
-    """공연 상세정보(출연진·기간·장소·가격 등)를 가져온다."""
-    root = _get(f"pblprfr/{mt20id}")
+    try:
+        root = _get(f"pblprfr/{mt20id}")
+    except Exception as e:
+        print(f"  경고: 상세 조회 실패 ({mt20id}): {e}", file=sys.stderr)
+        return {}
     db = root.find("db")
     if db is None:
         return {}
 
-    def text(tag, default=""):
-        return (db.findtext(tag) or default).strip()
+    def text(tag):
+        return (db.findtext(tag) or "").strip()
 
     return {
         "mt20id": mt20id,
@@ -117,67 +158,31 @@ def fetch_detail(mt20id: str) -> dict:
         "end_date": text("prfpdto"),
         "facility_name": text("fcltynm"),
         "poster": text("poster"),
-        "cast": text("prfcast"),  # 출연진 (지휘자·협연자 등, 자유텍스트)
-        "crew": text("prfcrew"),  # 제작진
+        "cast": text("prfcast"),
+        "crew": text("prfcrew"),
         "runtime": text("prfruntime"),
         "age": text("prfage"),
         "company": text("entrpsnmH"),
         "price": text("pcseguidance"),
-        "synopsis": text("sty"),
+        "schedule": text("dtguidance"),  # 요일별 공연시간 안내
         "genre_raw": text("genrenm"),
-        "state": text("prfstate"),  # 공연중/공연예정/공연완료
+        "state": text("prfstate"),
     }
 
 
 def guess_genre(perf: dict, shcate: str) -> tuple[str, bool]:
-    """공연명/장르 키워드로 5개 카테고리 중 하나로 분류한다. (오분류 가능 -> 수동 보정 대상)"""
     if shcate == "EEEA":
         return GENRE_DANCE, False
 
-    name = perf.get("name", "")
-    haystack = f"{name} {perf.get('genre_raw', '')}"
+    hay = f"{perf.get('name', '')} {perf.get('genre_raw', '')}"
 
-    if "오페라" in haystack:
+    if "오페라" in hay:
         return GENRE_OPERA, False
-    if "합창" in haystack:
+    if "합창" in hay or "칸타타" in hay:
         return GENRE_CHOIR, False
-    if any(k in haystack for k in ("오케스트라", "필하모닉", "교향악단", "심포니")):
+    if any(k in hay for k in ("오케스트라", "필하모닉", "교향악단", "심포니", "관현악")):
         return GENRE_ORCHESTRA, False
-    # 나머지는 실내악·독주로 기본 분류 (불확실하므로 guessed=True)
     return GENRE_CHAMBER, True
-
-
-def collect_facilities() -> list[dict]:
-    all_facilities = []
-    seen = set()
-    for venue in VENUES:
-        for f in find_facility_codes(venue):
-            if f["mt10id"] in seen:
-                continue
-            seen.add(f["mt10id"])
-            all_facilities.append(f)
-        time.sleep(0.2)
-    return all_facilities
-
-
-def collect_performances(facilities: list[dict], stdate: str, eddate: str) -> list[dict]:
-    results = {}
-    for f in facilities:
-        for shcate in ("CCCA", "EEEA"):
-            mt20ids = find_performances(f["mt10id"], shcate, stdate, eddate)
-            for mt20id in mt20ids:
-                if mt20id in results:
-                    continue
-                detail = fetch_detail(mt20id)
-                if not detail:
-                    continue
-                genre, guessed = guess_genre(detail, shcate)
-                detail["venue"] = f["venue"]
-                detail["genre"] = genre
-                detail["genre_guessed"] = guessed
-                results[mt20id] = detail
-                time.sleep(0.15)
-    return list(results.values())
 
 
 def main():
@@ -186,24 +191,63 @@ def main():
     eddate = (today + timedelta(days=LOOKAHEAD_DAYS)).strftime("%Y%m%d")
 
     print(f"[{today}] 공연장 코드 조회 중...")
-    facilities = collect_facilities()
-    print(f"  -> {len(facilities)}개 공연장 발견")
-    for f in facilities:
-        print(f"     {f['venue']} | {f['fcltynm']} ({f['mt10id']})")
+    facilities = []
+    for venue in VENUES:
+        found = find_facilities(venue)
+        print(f"  {venue['name']}: {len(found)}개 공연장")
+        for f in found:
+            print(f"     - {f['fcltynm']} ({f['mt10id']})")
+        facilities.extend(found)
+        time.sleep(0.2)
 
-    print(f"공연 목록 조회 중 ({stdate} ~ {eddate})...")
-    performances = collect_performances(facilities, stdate, eddate)
-    print(f"  -> {len(performances)}건 수집")
+    if not facilities:
+        print("오류: 공연장을 하나도 찾지 못했습니다. API 키/응답을 확인하세요.", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"\n공연 목록 조회 중 ({stdate} ~ {eddate})...")
+    results = {}
+    venue_lookup = {f["mt10id"]: f for f in facilities}
+
+    for f in facilities:
+        for shcate in ("CCCA", "EEEA"):
+            for mt20id in find_performance_ids(f["mt10id"], shcate, stdate, eddate):
+                if mt20id in results:
+                    continue
+                detail = fetch_detail(mt20id)
+                if not detail:
+                    continue
+
+                # ★ 교차 검증: 상세의 시설명도 그 기관이 맞는지 다시 확인
+                venue_def = next((v for v in VENUES if v["name"] == f["venue"]), None)
+                if venue_def and not matches_venue(detail.get("facility_name", ""), venue_def):
+                    print(f"  제외(시설 불일치): {detail.get('name')} @ {detail.get('facility_name')}")
+                    continue
+
+                genre, guessed = guess_genre(detail, shcate)
+                detail["venue"] = f["venue"]
+                detail["genre"] = genre
+                detail["genre_guessed"] = guessed
+                results[mt20id] = detail
+                time.sleep(0.15)
+
+    performances = sorted(results.values(), key=lambda p: p.get("start_date", ""))
+    print(f"\n총 {len(performances)}건 수집")
+
+    by_venue = {}
+    for p in performances:
+        by_venue[p["venue"]] = by_venue.get(p["venue"], 0) + 1
+    for v, c in by_venue.items():
+        print(f"  {v}: {c}건")
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with OUTPUT_PATH.open("w", encoding="utf-8") as f:
+    with OUTPUT_PATH.open("w", encoding="utf-8") as fp:
         json.dump(
             {
                 "generated_at": today.isoformat(),
                 "facilities": facilities,
                 "performances": performances,
             },
-            f,
+            fp,
             ensure_ascii=False,
             indent=2,
         )
