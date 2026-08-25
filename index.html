@@ -126,6 +126,18 @@
   .nolink { font-size: 11px; color: var(--muted); margin-top: 7px; }
 
   .badge { font-size: 9.5px; color: #8a6d09; background: #fff3cd; border-radius: 4px; padding: 1px 5px; margin-left: 5px; vertical-align: middle; }
+  .newbadge {
+    font-size: 9.5px; font-weight: 800; color: #fff; background: #e03e3e;
+    border-radius: 4px; padding: 1.5px 5px; margin-left: 5px; vertical-align: middle;
+    letter-spacing: 0.3px;
+  }
+  .openinfo {
+    display: inline-block; font-size: 11.5px; margin-top: 6px;
+    background: #fff1f0; color: #b8352c; border: 1px solid #f5c9c5;
+    border-radius: 6px; padding: 3px 8px; text-decoration: none;
+  }
+  .openinfo .dd { font-weight: 800; margin-left: 4px; }
+  .openinfo.done { background: #f2f2f4; color: var(--muted); border-color: var(--border); }
   .gtag { font-size: 10px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 2px 6px; margin-left: 5px; vertical-align: middle; }
   .empty { color: var(--muted); text-align: center; padding: 36px 0; font-size: 13.5px; }
   .hidden { display: none; }
@@ -384,6 +396,43 @@ function priceHtml(p) {
   </div>`;
 }
 
+// 티켓오픈이 아직 안 지났으면 "예매 오픈 예정"으로 본다
+function isUpcomingOpen(p) {
+  const t = p.ticket_open;
+  if (!t || !t.open_at) return false;
+  const openDay = norm(t.open_at).slice(0, 8);
+  return openDay >= todayStr();
+}
+
+function ticketOpenHtml(p) {
+  const t = p.ticket_open;
+  if (!t || !t.open_at) return "";
+  const upcoming = isUpcomingOpen(p);
+  const label = upcoming ? "예매 오픈" : "예매 오픈됨";
+  // 공지의 D-day 값이 있으면 그대로 쓰고, 없으면 남은 일수를 계산한다
+  let dd = t.dday || "";
+  if (!dd && upcoming) {
+    const o = norm(t.open_at).slice(0, 8);
+    const days = dayDiff(todayStr(), o);
+    dd = days === 0 ? "D-DAY" : `D-${days}`;
+  }
+  const cls = upcoming ? "openinfo" : "openinfo done";
+  const ddHtml = dd && dd !== "종료" ? `<span class="dd">${esc(dd)}</span>` : "";
+  return `<a class="${cls}" href="${esc(t.url)}" target="_blank" rel="noopener">${label} ${esc(prettyOpen(t.open_at))}${ddHtml}</a>`;
+}
+
+function prettyOpen(s) {
+  const d = norm(s);
+  if (d.length < 8) return s;
+  const base = `${d.slice(4,6)}.${d.slice(6,8)}`;
+  return d.length >= 12 ? `${base} ${d.slice(8,10)}:${d.slice(10,12)}` : base;
+}
+
+function dayDiff(a, b) {
+  const toDate = (s) => new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
+  return Math.round((toDate(b) - toDate(a)) / 86400000);
+}
+
 function bookingHtml(p) {
   const links = p.booking_links || [];
   if (!links.length) {
@@ -401,6 +450,8 @@ function cardHtml(p) {
     : `${fmt(p.start_date)} ~ ${fmt(p.end_date)}`;
   const badge = p.genre_guessed ? '<span class="badge">장르 추정</span>' : "";
   const gtag = `<span class="gtag">${esc(p.genre)}</span>`;
+  const isNew = p.is_new || isUpcomingOpen(p);
+  const newBadge = isNew ? '<span class="newbadge">NEW</span>' : "";
   const cast = p.cast ? `<div class="pcast">${esc(p.cast)}</div>` : "";
   const poster = p.poster
     ? `<img class="poster" src="${esc(p.poster)}" alt="" loading="lazy">`
@@ -409,10 +460,11 @@ function cardHtml(p) {
     <div class="card">
       ${poster}
       <div class="info">
-        <div class="pname">${esc(p.name)}${gtag}${badge}</div>
+        <div class="pname">${esc(p.name)}${newBadge}${gtag}${badge}</div>
         <div class="pvenue">${esc(p.venue)} · ${esc(p.facility_name)}</div>
         <div class="pdate">${range}</div>
         ${cast}
+        ${ticketOpenHtml(p)}
         ${priceHtml(p)}
         ${bookingHtml(p)}
       </div>

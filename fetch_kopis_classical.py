@@ -31,6 +31,8 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
+from fetch_ticket_open import collect_ticket_opens, match_ticket_opens
+
 API_BASE = "http://www.kopis.or.kr/openApi/restful"
 SERVICE_KEY = os.environ.get("KOPIS_API_KEY", "").strip()
 
@@ -323,11 +325,39 @@ def main():
         print(f"  {v}: {c}건")
     print(f"  예매링크 없는 공연: {no_link}건")
 
+    # ── 티켓오픈 공지 수집 후 공연에 매칭 ──────────────────────────────
+    print("\n티켓오픈 공지 수집 중...")
+    opens = collect_ticket_opens()
+    matched = match_ticket_opens(performances, opens)
+    print(f"  공연과 매칭된 티켓오픈 공지: {matched}건")
+
+    # ── 신규 공연 감지 ────────────────────────────────────────────────
+    # 지난 실행 결과와 비교해서 이번에 새로 등장한 공연을 표시한다.
+    # KOPIS에 공연이 올라오는 시점은 대체로 예매 오픈과 가까워서,
+    # 티켓오픈 공지가 없는 공연장(예술의전당 등)에도 NEW 표시가 붙는다.
+    prev_ids = set()
+    if OUTPUT_PATH.exists():
+        try:
+            with OUTPUT_PATH.open(encoding="utf-8") as fp:
+                prev = json.load(fp)
+            prev_ids = {p.get("mt20id") for p in prev.get("performances", [])}
+        except Exception as e:
+            print(f"  경고: 이전 데이터 읽기 실패(첫 실행이면 정상): {e}", file=sys.stderr)
+
+    new_count = 0
+    for p in performances:
+        # 이전 실행에 없던 공연 = 신규. 단 첫 실행(prev_ids 비어있음)에는 표시하지 않는다.
+        p["is_new"] = bool(prev_ids) and p.get("mt20id") not in prev_ids
+        if p["is_new"]:
+            new_count += 1
+    print(f"  신규 등록 공연: {new_count}건" + ("  (첫 실행이라 표시 안 함)" if not prev_ids else ""))
+
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUTPUT_PATH.open("w", encoding="utf-8") as fp:
         json.dump({
             "generated_at": today.isoformat(),
             "facilities": facilities,
+            "ticket_opens": opens,
             "performances": performances,
         }, fp, ensure_ascii=False, indent=2)
     print(f"저장 완료: {OUTPUT_PATH}")
