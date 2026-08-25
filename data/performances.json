@@ -29,7 +29,7 @@
     {
       "mt10id": "FC002877",
       "fcltynm": "세종예술의전당",
-      "venue": "예술의전당"
+      "venue": "세종예술의전당"
     },
     {
       "mt10id": "FC000537",
@@ -52,16 +52,6 @@
       "venue": "예술의전당"
     },
     {
-      "mt10id": "FC000019",
-      "fcltynm": "의정부예술의전당",
-      "venue": "예술의전당"
-    },
-    {
-      "mt10id": "FC001356",
-      "fcltynm": "익산예술의전당",
-      "venue": "예술의전당"
-    },
-    {
       "mt10id": "FC003948",
       "fcltynm": "제천예술의전당",
       "venue": "예술의전당"
@@ -69,11 +59,6 @@
     {
       "mt10id": "FC004886",
       "fcltynm": "진천예술의전당",
-      "venue": "예술의전당"
-    },
-    {
-      "mt10id": "FC001383",
-      "fcltynm": "천안예술의전당",
       "venue": "예술의전당"
     },
     {
@@ -119,7 +104,7 @@
       "schedule": "수요일(12:00)",
       "genre_raw": "복합",
       "state": "공연중",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "발레·무용",
       "genre_guessed": false
     },
@@ -553,7 +538,7 @@
       "schedule": "목요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
     },
@@ -756,7 +741,7 @@
       "schedule": "금요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true
     },
@@ -977,46 +962,6 @@
       "genre_guessed": true
     },
     {
-      "mt20id": "PF296014",
-      "name": "루소 오페라, 마을 점쟁이 [천안]",
-      "start_date": "20260828",
-      "end_date": "20260828",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296014_260714_102623.gif",
-      "cast": "정꽃님, 왕승원, 곽상훈, 김정현, 최진명, 류재민, 모준형 등",
-      "crew": "고제형, 이정환, 박성은 등",
-      "runtime": "1시간 15분",
-      "age": "만 7세 이상",
-      "company": "매직칸타빌레예술단",
-      "price_text": "R석 30,000원, S석 20,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 30000,
-          "text": "R석 30,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 20000,
-          "text": "S석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010079"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "오페라",
-      "genre_guessed": false
-    },
-    {
       "mt20id": "PF297431",
       "name": "피아니스트 이재혁의 실내악 시리즈 Ⅱ, 베토벤 피아노 트리오 전곡 시리즈",
       "start_date": "20260829",
@@ -1125,7 +1070,7 @@
       "schedule": "토요일(17:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
     },
@@ -1582,76 +1527,6 @@
       "genre_guessed": true
     },
     {
-      "mt20id": "PF297793",
-      "name": "제2회 한국스즈키 대전·충청·호남 연합 오케스트라 정기연주회 [천안]",
-      "start_date": "20260830",
-      "end_date": "20260830",
-      "facility_name": "천안예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297793_260805_153337.gif",
-      "cast": "",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "전체 관람가",
-      "company": "(사) 한국스즈키음악협회",
-      "price_text": "전석 5,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 5000,
-          "text": "전석 5,000원"
-        }
-      ],
-      "price_min": 5000,
-      "price_max": 5000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011396"
-        }
-      ],
-      "schedule": "일요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false
-    },
-    {
-      "mt20id": "PF294262",
-      "name": "샌드아트와 가곡으로 만나는 문학콘서트: 황순원의 별 그리움이 빛이 되다 [천안]",
-      "start_date": "20260830",
-      "end_date": "20260830",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294262_260622_120737.gif",
-      "cast": "권윤한, 정선은, 유우람, 박재현, 이수정, 박지훈, 김민수 등",
-      "crew": "",
-      "runtime": "1시간",
-      "age": "만 7세 이상",
-      "company": "나무예술기획, 노이에클랑 M.A.P.",
-      "price_text": "전석 10,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 10000,
-          "text": "전석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 10000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008561"
-        }
-      ],
-      "schedule": "일요일(17:00)",
-      "genre_raw": "복합",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "발레·무용",
-      "genre_guessed": false
-    },
-    {
       "mt20id": "PF295377",
       "name": "멜론 심포니 오케스트라 (MelON) , 디즈니+ 지브리 오케스트라 콘서트 Vol.3 [고양 (앵콜) ]",
       "start_date": "20260830",
@@ -2078,41 +1953,6 @@
         }
       ],
       "schedule": "수요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
-      "mt20id": "PF292816",
-      "name": "해설이 있는 11시 콘서트, 클라리네티스트 김한 (9월)",
-      "start_date": "20260902",
-      "end_date": "20260902",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF292816_260604_101557.gif",
-      "cast": "김한, 박종해, 송현민",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당)",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26007937"
-        }
-      ],
-      "schedule": "수요일(11:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "예술의전당",
@@ -2916,46 +2756,6 @@
       "genre_guessed": true
     },
     {
-      "mt20id": "PF296170",
-      "name": "천안예술의전당 개관14주년 기념공연: 국립합창단, 카르미나 부라나 [천안]",
-      "start_date": "20260905",
-      "end_date": "20260905",
-      "facility_name": "천안예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296170_260715_142512.gif",
-      "cast": "이혜정, 박의준, 염경묵 등",
-      "crew": "민인기, 김민서",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당)",
-      "price_text": "R석 30,000원, S석 20,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 30000,
-          "text": "R석 30,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 20000,
-          "text": "S석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010083"
-        }
-      ],
-      "schedule": "토요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "합창",
-      "genre_guessed": false
-    },
-    {
       "mt20id": "PF298486",
       "name": "허원경 클래식 기타 리사이틀",
       "start_date": "20260906",
@@ -3105,51 +2905,6 @@
         {
           "name": "예스24",
           "url": "https://ticket.yes24.com/Perf/58822"
-        }
-      ],
-      "schedule": "일요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
-      "mt20id": "PF297008",
-      "name": "시대별 연주기획 Ⅴ, 당신을 위한 세레나데 [천안]",
-      "start_date": "20260906",
-      "end_date": "20260906",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297008_260727_133746.gif",
-      "cast": "류상현, 허지윤, 강민송 등",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "NOVA ARTi(노바아르티)",
-      "price_text": "R석 30,000원, S석 20,000원, A석 10,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 30000,
-          "text": "R석 30,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 20000,
-          "text": "S석 20,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 10000,
-          "text": "A석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010805"
         }
       ],
       "schedule": "일요일(17:00)",
@@ -3585,41 +3340,6 @@
       "genre_guessed": false
     },
     {
-      "mt20id": "PF297914",
-      "name": "제5회 듀오 세레나트 정기연주회 [천안]",
-      "start_date": "20260909",
-      "end_date": "20260909",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297914_260807_104931.gif",
-      "cast": "한영화, 송가은",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 8세 이상",
-      "company": "",
-      "price_text": "전석 10,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 10000,
-          "text": "전석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 10000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010647"
-        }
-      ],
-      "schedule": "수요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
       "mt20id": "PF299035",
       "name": "퀸 엘리자베스 콩쿠르 위너스 콘서트 [제주]",
       "start_date": "20260910",
@@ -3834,7 +3554,7 @@
       "schedule": "금요일(21:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
     },
@@ -4215,56 +3935,6 @@
         }
       ],
       "schedule": "토요일(20:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
-      "mt20id": "PF292839",
-      "name": "재패니메이션 영화음악 콘서트: UNSTOPPABLE [천안]",
-      "start_date": "20260912",
-      "end_date": "20260912",
-      "facility_name": "천안예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF292839_260604_112127.gif",
-      "cast": "김유원 등",
-      "crew": "",
-      "runtime": "2시간",
-      "age": "만 7세 이상",
-      "company": "필뮤직 컴퍼니",
-      "price_text": "VIP석 100,000원, R석 80,000원, S석 60,000원, A석 50,000원",
-      "prices": [
-        {
-          "seat": "VIP석",
-          "amount": 100000,
-          "text": "VIP석 100,000원"
-        },
-        {
-          "seat": "R석",
-          "amount": 80000,
-          "text": "R석 80,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 60000,
-          "text": "S석 60,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 50000,
-          "text": "A석 50,000원"
-        }
-      ],
-      "price_min": 50000,
-      "price_max": 100000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26007584"
-        }
-      ],
-      "schedule": "토요일(15:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "예술의전당",
@@ -5270,7 +4940,7 @@
       "schedule": "금요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true
     },
@@ -5577,51 +5247,6 @@
       "genre_guessed": true
     },
     {
-      "mt20id": "PF296655",
-      "name": "천안 예술의 전당 개관 14주년 기념 공연 Ⅱ. 국립오페라단: 피가로의 결혼 [천안]",
-      "start_date": "20260919",
-      "end_date": "20260920",
-      "facility_name": "천안예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296655_260722_142148.gif",
-      "cast": "강형규, 윤정난, 이혜정, 조찬희, 김세린, 이준석, 신성희 등",
-      "crew": "뱅상 위게, 박혜진, 김광현 등",
-      "runtime": "3시간 30분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당)",
-      "price_text": "R석 70,000원, S석 50,000원, A석 30,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 70000,
-          "text": "R석 70,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 50000,
-          "text": "S석 50,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 30000,
-          "text": "A석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 70000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010562"
-        }
-      ],
-      "schedule": "토요일 ~ 일요일(15:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "오페라",
-      "genre_guessed": false
-    },
-    {
       "mt20id": "PF298999",
       "name": "홍난파가곡제: 나의 살던 고향은",
       "start_date": "20260920",
@@ -5711,7 +5336,7 @@
       "schedule": "일요일(17:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
     },
@@ -7503,7 +7128,7 @@
       "schedule": "목요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true
     },
@@ -7602,41 +7227,6 @@
       "genre_guessed": true
     },
     {
-      "mt20id": "PF294764",
-      "name": "K-클래식 콘서트 6, 문화예술컴퍼니 아레나 [천안]",
-      "start_date": "20261015",
-      "end_date": "20261015",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294764_260629_112638.gif",
-      "cast": "유지희, 정태민, 임금희, 원지혜, 김숙정, 주관균, 서석배 등",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당), 문화체육관광부",
-      "price_text": "전석 10,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 10000,
-          "text": "전석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 10000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008984"
-        }
-      ],
-      "schedule": "목요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
       "mt20id": "PF294820",
       "name": "국립심포니콘서트오케스트라: 말러, 교향곡 4번 [세종]",
       "start_date": "20261016",
@@ -7672,7 +7262,7 @@
       "schedule": "금요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
     },
@@ -7871,49 +7461,6 @@
         }
       ],
       "schedule": "토요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
-      "mt20id": "PF293869",
-      "name": "우리가 사랑한 시네마 뮤직 콘서트 [의정부]",
-      "start_date": "20261017",
-      "end_date": "20261017",
-      "facility_name": "의정부예술의전당 (소극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF293869_260616_144601.gif",
-      "cast": "배창훈, 박성근, 신호연, 박현우, 이상준",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 4세 이상",
-      "company": "스테이지M(구.프란츠스튜디오)",
-      "price_text": "전석 40,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 40000,
-          "text": "전석 40,000원"
-        }
-      ],
-      "price_min": 40000,
-      "price_max": 40000,
-      "booking_links": [
-        {
-          "name": "NHN티켓링크",
-          "url": "http://www.ticketlink.co.kr/product/63812"
-        },
-        {
-          "name": "네이버N예약",
-          "url": "https://booking.naver.com/booking/12/bizes/1674603"
-        },
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008680"
-        }
-      ],
-      "schedule": "토요일(15:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "예술의전당",
@@ -8401,7 +7948,7 @@
       "schedule": "금요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true
     },
@@ -8769,41 +8316,6 @@
         }
       ],
       "schedule": "화요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
-      "mt20id": "PF295039",
-      "name": "해설이 있는 11시 콘서트, 비올리니스트 박하양 (10월)",
-      "start_date": "20261028",
-      "end_date": "20261028",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295039_260701_134138.gif",
-      "cast": "박하양, 박영성, 송현민",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당)",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009276"
-        }
-      ],
-      "schedule": "수요일(11:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "예술의전당",
@@ -9501,41 +9013,6 @@
       "genre_guessed": true
     },
     {
-      "mt20id": "PF294972",
-      "name": "지역 아티스트와 함께하는 K-클래식 콘서트7, 메즈클라리넷 [천안]",
-      "start_date": "20261105",
-      "end_date": "20261105",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294972_260701_100250.gif",
-      "cast": "이선희, 한영화, 이민지, 조소연, 이관희, 김명신, 박애리 등",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당), 문화체육관광부",
-      "price_text": "전석 10,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 10000,
-          "text": "전석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 10000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008987"
-        }
-      ],
-      "schedule": "목요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
       "mt20id": "PF297860",
       "name": "고양시민을 위한 Orchestra + Ukulele 콜라보: 니가 있어 참 좋다",
       "start_date": "20261105",
@@ -9606,7 +9083,7 @@
       "schedule": "금요일(21:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
     },
@@ -9868,7 +9345,7 @@
       "schedule": "토요일(17:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
     },
@@ -10047,7 +9524,7 @@
       "schedule": "금요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true
     },
@@ -10139,41 +9616,6 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
-    },
-    {
-      "mt20id": "PF295037",
-      "name": "해설이 있는 11시 콘서트, 호르니스트 김홍박 (11월)",
-      "start_date": "20261125",
-      "end_date": "20261125",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295037_260701_133636.gif",
-      "cast": "김홍박, 김재원, 송현민",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당)",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009275"
-        }
-      ],
-      "schedule": "수요일(11:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
     },
     {
       "mt20id": "PF298921",
@@ -10325,7 +9767,7 @@
       "schedule": "수요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "예술의전당",
+      "venue": "세종예술의전당",
       "genre": "합창",
       "genre_guessed": false
     },
@@ -10481,45 +9923,6 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false
-    },
-    {
-      "mt20id": "PF295315",
-      "name": "지브리와 사랑에 빠지다: 지브리 영화음악 콘서트 [의정부 (앵콜) ]",
-      "start_date": "20261205",
-      "end_date": "20261205",
-      "facility_name": "의정부예술의전당 (소극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295315_260703_143652.gif",
-      "cast": "이재흠, 박성근, 신호연, 박현우, 윤현상",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 4세 이상",
-      "company": "스테이지M(구.프란츠스튜디오)",
-      "price_text": "전석 40,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 40000,
-          "text": "전석 40,000원"
-        }
-      ],
-      "price_min": 40000,
-      "price_max": 40000,
-      "booking_links": [
-        {
-          "name": "NHN티켓링크",
-          "url": "http://www.ticketlink.co.kr/product/64062"
-        },
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009241"
-        }
-      ],
-      "schedule": "토요일(15:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
     },
     {
       "mt20id": "PF294057",
@@ -10701,51 +10104,6 @@
       "genre_guessed": false
     },
     {
-      "mt20id": "PF293906",
-      "name": "지브리 & 디즈니 영화음악 오케스트라 콘서트 [익산]",
-      "start_date": "20261212",
-      "end_date": "20261212",
-      "facility_name": "익산예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF293906_260617_105020.gif",
-      "cast": "김유원, 이희주 등",
-      "crew": "",
-      "runtime": "2시간",
-      "age": "만 4세 이상",
-      "company": "필뮤직 컴퍼니",
-      "price_text": "R석 100,000원, S석 80,000원, A석 60,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 100000,
-          "text": "R석 100,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 80000,
-          "text": "S석 80,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 60000,
-          "text": "A석 60,000원"
-        }
-      ],
-      "price_min": 60000,
-      "price_max": 100000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008733"
-        }
-      ],
-      "schedule": "토요일(14:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false
-    },
-    {
       "mt20id": "PF297987",
       "name": "나 홀로 집에 인 콘서트 [서울]",
       "start_date": "20261213",
@@ -10793,45 +10151,6 @@
         }
       ],
       "schedule": "일요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
-      "mt20id": "PF297885",
-      "name": "크리스마스 영화음악 & 캐롤 콘서트 [천안]",
-      "start_date": "20261213",
-      "end_date": "20261213",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297885_260810_131709.gif",
-      "cast": "윤현상, 이영현, 박천휘, 이인원, 박준형",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 4세 이상",
-      "company": "스테이지M(구.프란츠스튜디오)",
-      "price_text": "전석 40,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 40000,
-          "text": "전석 40,000원"
-        }
-      ],
-      "price_min": 40000,
-      "price_max": 40000,
-      "booking_links": [
-        {
-          "name": "NHN티켓링크",
-          "url": "http://www.ticketlink.co.kr/product/64751"
-        },
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011329"
-        }
-      ],
-      "schedule": "일요일(15:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "예술의전당",
@@ -10935,41 +10254,6 @@
         }
       ],
       "schedule": "수요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true
-    },
-    {
-      "mt20id": "PF295057",
-      "name": "해설이 있는 11시 콘서트, 바이올리니스트 김동현 (12월)",
-      "start_date": "20261216",
-      "end_date": "20261216",
-      "facility_name": "천안예술의전당 (소공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295057_260701_144021.gif",
-      "cast": "김동현, 박종해, 송현민",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재) 천안문화재단(천안예술의전당)",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009278"
-        }
-      ],
-      "schedule": "수요일(11:00)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "예술의전당",
