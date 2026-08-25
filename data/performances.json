@@ -28,7 +28,7 @@
       "title": "<한스 짐머 영화음악 콘서트 2026_세종문화회관> 티켓 오픈 안내",
       "open_at": "2026-08-27 14:00",
       "posted_at": "2026-08-20",
-      "dday": "D-2",
+      "dday": "D-1",
       "url": "https://www.sejongpac.or.kr/portal/bbs/B0000049/view.do?nttId=50139&menuNo=200440",
       "source": "세종문화회관 티켓오픈안내"
     },
@@ -295,18 +295,6 @@
     },
     {
       "venue": "예술의전당",
-      "title": "한화생명과 함께하는 예술의전당 11시 콘서트(12월)",
-      "open_at": "2026-09-02",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예정",
-      "price_info": "일반석 30,000원 / 3층석 15,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=79800",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
       "title": "한화생명과 함께하는 예술의전당 11시 콘서트(11월)",
       "open_at": "2026-09-02",
       "posted_at": null,
@@ -315,6 +303,18 @@
       "state": "예정",
       "price_info": "일반석 30,000원 / 3층석 15,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=79801",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "한화생명과 함께하는 예술의전당 11시 콘서트(12월)",
+      "open_at": "2026-09-02",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예정",
+      "price_info": "일반석 30,000원 / 3층석 15,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=79800",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -355,26 +355,26 @@
     },
     {
       "venue": "예술의전당",
-      "title": "조성현 바흐 플루트 소나타 전곡 리사이틀",
-      "open_at": "2026-08-25",
-      "posted_at": null,
-      "dday": null,
-      "hall": "IBK기업은행챔버홀, IBK기업은행챔버홀",
-      "state": "예정",
-      "price_info": "R석 55,000원 / S석 40,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77873",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
       "title": "2026 서울국제음악제  `아르토 노라스와 김규연 리사이틀 : 멋진 추억`",
       "open_at": "2026-08-25",
       "posted_at": null,
       "dday": null,
       "hall": "IBK기업은행챔버홀",
-      "state": "예정",
+      "state": "예매",
       "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77419",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "조성현 바흐 플루트 소나타 전곡 리사이틀",
+      "open_at": "2026-08-25",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀, IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 55,000원 / S석 40,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77873",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -387,6 +387,18 @@
       "state": "예매",
       "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77422",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "2026 서울국제음악제 개막음악회 `숨, 그리고 삶`",
+      "open_at": "2026-08-19",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예매",
+      "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77423",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -411,18 +423,6 @@
       "state": "예매",
       "price_info": "일반석 40,000원 / 3층석 20,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80176",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "2026 서울국제음악제 개막음악회 `숨, 그리고 삶`",
-      "open_at": "2026-08-19",
-      "posted_at": null,
-      "dday": null,
-      "hall": "IBK기업은행챔버홀",
-      "state": "예매",
-      "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77423",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -487,18 +487,6 @@
     },
     {
       "venue": "예술의전당",
-      "title": "손열음 피아노 리사이틀",
-      "open_at": "2026-07-28",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "R석 120,000원 / S석 100,000원 / A석 80,000원 / B석 60,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
       "title": "비킹구르 올라프손 피아노 리사이틀",
       "open_at": "2026-07-28",
       "posted_at": null,
@@ -507,6 +495,18 @@
       "state": "예매",
       "price_info": "R석 130,000원 / S석 110,000원 / A석 90,000원 / B석 70,000원 / C석 60,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77557",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "손열음 피아노 리사이틀",
+      "open_at": "2026-07-28",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예매",
+      "price_info": "R석 120,000원 / S석 100,000원 / A석 80,000원 / B석 60,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -605,7 +605,7 @@
       ],
       "schedule": "화요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -645,7 +645,7 @@
       ],
       "schedule": "화요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -699,7 +699,7 @@
       ],
       "schedule": "화요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
@@ -744,7 +744,7 @@
       ],
       "schedule": "화요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -780,7 +780,7 @@
       ],
       "schedule": "수요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -820,7 +820,7 @@
       ],
       "schedule": "수요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -875,7 +875,7 @@
       ],
       "schedule": "수요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -911,7 +911,7 @@
       ],
       "schedule": "수요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "고양아람누리",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -1397,6 +1397,36 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF299322",
+      "name": "제67회 서울대학교 아마추어 오케스트라 SNUPO 정기 연주회 [고양]",
+      "start_date": "20260828",
+      "end_date": "20260828",
+      "facility_name": "고양아람누리 (아람음악당)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299322_260825_124941.jpg",
+      "cast": "곽도윤 등",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "서울대학교 아마추어 오케스트라 SNUPO",
+      "price_text": "전석무료",
+      "prices": [],
+      "price_min": null,
+      "price_max": null,
+      "booking_links": [
+        {
+          "name": "고양아람누리(고양문화재단)",
+          "url": "http://www.artgy.or.kr/PF/PF0201V.aspx?showid=0000008411"
+        }
+      ],
+      "schedule": "금요일(19:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "고양아람누리",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
     },
     {
       "mt20id": "PF297431",
@@ -5855,6 +5885,42 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF299344",
+      "name": "유재아 플루트 리사이틀",
+      "start_date": "20260929",
+      "end_date": "20260929",
+      "facility_name": "예술의전당 [서울] (리사이틀홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299344_260825_135759.gif",
+      "cast": "유재아, 에마뉘엘 스트로세",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "J&R예술기획",
+      "price_text": "전석 30,000원",
+      "prices": [
+        {
+          "seat": "전석",
+          "amount": 30000,
+          "text": "전석 30,000원"
+        }
+      ],
+      "price_min": 30000,
+      "price_max": 30000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012009"
+        }
+      ],
+      "schedule": "화요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "예술의전당",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF298526",
