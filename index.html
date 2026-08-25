@@ -140,6 +140,14 @@
   .openinfo.done { background: #f2f2f4; color: var(--muted); border-color: var(--border); }
   .gtag { font-size: 10px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 2px 6px; margin-left: 5px; vertical-align: middle; }
   .empty { color: var(--muted); text-align: center; padding: 36px 0; font-size: 13.5px; }
+  .sechead {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12.5px; font-weight: 700; color: var(--price);
+    margin: 14px 2px 8px;
+  }
+  .sechead:first-child { margin-top: 4px; }
+  .sechead .dot { width: 6px; height: 6px; border-radius: 50%; background: #e03e3e; }
+  .sechead.plain { color: var(--muted); font-weight: 600; margin-top: 22px; }
   .hidden { display: none; }
 </style>
 </head>
@@ -367,10 +375,45 @@ function renderDayList() {
 function renderList() {
   const today = todayStr();
   const list = filtered()
-    .filter(p => (norm(p.end_date) || norm(p.start_date)) >= today)
-    .sort((a,b) => norm(a.start_date).localeCompare(norm(b.start_date)));
+    .filter(p => (norm(p.end_date) || norm(p.start_date)) >= today);
+
+  // NEW 공연을 맨 위로 올린다.
+  // 달력은 '공연일' 기준이라, 공연일이 몇 달 뒤인 공연은 예매 오픈이 코앞이어도
+  // 이번 달 달력에 안 나온다. 그래서 목록에서라도 먼저 보이게 한다.
+  //
+  // 정렬 순서:
+  //   1) 예매 오픈 예정 (오픈 임박한 순 — 곧 열리는 게 위로)
+  //   2) 이번 수집에서 새로 등장한 공연 (공연일 빠른 순)
+  //   3) 나머지 (공연일 빠른 순)
+  const rank = (p) => isUpcomingOpen(p) ? 0 : (p.is_new ? 1 : 2);
+
+  list.sort((a, b) => {
+    const ra = rank(a), rb = rank(b);
+    if (ra !== rb) return ra - rb;
+    if (ra === 0) {
+      // 오픈일이 빠른 순
+      const oa = norm(a.ticket_open.open_at), ob = norm(b.ticket_open.open_at);
+      if (oa !== ob) return oa.localeCompare(ob);
+    }
+    return norm(a.start_date).localeCompare(norm(b.start_date));
+  });
+
+  // 섹션 구분선: NEW 묶음이 끝나는 지점에 표시
+  let html = "";
+  let lastRank = null;
+  list.forEach(p => {
+    const r = rank(p);
+    if (r !== lastRank) {
+      if (r === 0) html += '<div class="sechead"><i class="dot"></i>예매 오픈 예정</div>';
+      else if (r === 1) html += '<div class="sechead"><i class="dot"></i>새로 등록된 공연</div>';
+      else if (lastRank !== null) html += '<div class="sechead plain">전체 공연</div>';
+      lastRank = r;
+    }
+    html += cardHtml(p);
+  });
+
   document.getElementById("view-list").innerHTML =
-    list.length ? list.map(cardHtml).join("") : '<div class="empty">표시할 공연이 없습니다.</div>';
+    list.length ? html : '<div class="empty">표시할 공연이 없습니다.</div>';
 }
 
 function priceHtml(p) {
