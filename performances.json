@@ -1,0 +1,26 @@
+{
+  "generated_at": "샘플 데이터 (Actions 실행 전)",
+  "facilities": [],
+  "performances": [
+    {
+      "mt20id": "sample-001",
+      "name": "샘플 오케스트라 정기연주회",
+      "start_date": "20260901",
+      "end_date": "20260901",
+      "facility_name": "세종체임버홀",
+      "venue": "세종문화회관",
+      "poster": "",
+      "cast": "지휘 홍길동 / 협연 김클래식(바이올린)",
+      "crew": "",
+      "runtime": "90분",
+      "age": "8세 이상",
+      "company": "",
+      "price": "전석 30,000원",
+      "synopsis": "",
+      "genre_raw": "",
+      "state": "공연예정",
+      "genre": "오케스트라",
+      "genre_guessed": false
+    }
+  ]
+}
