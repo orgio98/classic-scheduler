@@ -180,7 +180,20 @@
 
 <script>
 const GENRES = ["전체", "오케스트라", "오페라", "발레·무용", "실내악·독주", "합창"];
-const VENUES = ["전체", "세종문화회관", "예술의전당", "고양아람누리"];
+// 공연장 목록은 데이터에서 동적으로 만든다.
+// 하드코딩하면 "세종예술의전당" 처럼 새로 구분된 공연장이 화면에 안 나온다.
+const VENUE_ORDER = ["세종문화회관", "예술의전당", "세종예술의전당", "고양아람누리"];
+function venueList() {
+  const found = [...new Set(all.map(p => p.venue).filter(Boolean))];
+  found.sort((a, b) => {
+    const ia = VENUE_ORDER.indexOf(a), ib = VENUE_ORDER.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b);
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+  return ["전체", ...found];
+}
 let all = [], genre = "전체", venue = "전체", hall = "전체", view = "cal";
 let cursor = new Date();
 let selected = todayStr();
@@ -244,7 +257,7 @@ function renderFilters() {
   // 공연장(기관) 칩
   const vel = document.getElementById("venues");
   vel.innerHTML = "";
-  VENUES.forEach(v => {
+  venueList().forEach(v => {
     const c = document.createElement("div");
     c.className = "chip" + (v === venue ? " active" : "");
     c.textContent = `${v} (${countBy("venue", v)})`;

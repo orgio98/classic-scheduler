@@ -34,14 +34,38 @@ from urllib.request import urlopen
 API_BASE = "http://www.kopis.or.kr/openApi/restful"
 SERVICE_KEY = os.environ.get("KOPIS_API_KEY", "").strip()
 
-VENUES = [
-    {"name": "세종문화회관", "keywords": ["세종문화회관", "세종대극장", "세종체임버홀", "세종S씨어터"]},
-    {"name": "예술의전당", "keywords": ["예술의전당"]},
-    {"name": "고양아람누리", "keywords": ["아람누리", "고양아람"]},
+# ── 공연장 정의 ────────────────────────────────────────────────────────────
+# 검색어(search)로 KOPIS 시설을 찾고, 실제 시설명(fcltynm)을 보고 어느 기관인지
+# 판정한다. 검색어가 아니라 시설명 기준으로 판정해야 "예술의전당"으로 검색했을 때
+# 딸려오는 "세종예술의전당"을 별개 공연장으로 정확히 구분할 수 있다.
+#
+# VENUE_RULES 는 순서가 중요하다. 더 구체적인 이름이 먼저 와야 한다.
+# ("세종예술의전당"은 "예술의전당"을 포함하므로 반드시 앞에 있어야 함)
+VENUE_RULES = [
+    {
+        "label": "세종문화회관",
+        "match": ["세종문화회관", "세종대극장", "세종체임버홀", "세종S씨어터", "세종M씨어터"],
+    },
+    {
+        "label": "세종예술의전당",          # 세종특별자치시 소재 (서울 예술의전당과 별개)
+        "match": ["세종예술의전당"],
+    },
+    {
+        "label": "예술의전당",              # 서울 서초구 소재
+        "match": ["예술의전당"],
+        # 다른 지역 "○○예술의전당"을 배제한다 (세종은 위 규칙에서 이미 걸러짐)
+        "reject": ["안양", "의정부", "대전", "김해", "부산", "대구", "광주", "울산",
+                   "청주", "전주", "안산", "성남", "제주", "고양", "용인", "수원",
+                   "천안", "포항", "창원", "익산", "군포", "구리", "김포"],
+    },
+    {
+        "label": "고양아람누리",
+        "match": ["아람누리", "고양아람"],
+    },
 ]
 
-# 타 지역 동명 시설 제외 (예: 부산 영화의전당)
-EXCLUDE_KEYWORDS = ["부산", "대구", "광주", "대전", "울산", "청주", "전주", "김해", "안산", "성남", "제주"]
+# KOPIS 시설 검색에 사용할 키워드
+SEARCH_TERMS = ["세종문화회관", "예술의전당", "세종예술의전당", "고양아람누리"]
 
 LOOKAHEAD_DAYS = 180
 
@@ -65,37 +89,56 @@ def _get(path: str, **params) -> ET.Element:
     return ET.fromstring(body)
 
 
-def matches_venue(fcltynm: str, venue: dict) -> bool:
+def resolve_venue(fcltynm: str) -> str | None:
+    """
+    시설명으로 어느 기관인지 판정한다.
+    해당 없으면 None (= 우리 대상이 아닌 공연장이므로 제외).
+    """
     if not fcltynm:
-        return False
-    if not any(k in fcltynm for k in venue["keywords"]):
-        return False
-    if any(x in fcltynm for x in EXCLUDE_KEYWORDS):
-        return False
-    return True
+        return None
+    for rule in VENUE_RULES:
+        if not any(k in fcltynm for k in rule["match"]):
+            continue
+        if any(x in fcltynm for x in rule.get("reject", [])):
+            return None          # 매칭은 됐지만 다른 지역 시설 -> 제외
+        return rule["label"]
+    return None
 
 
-def find_facilities(venue: dict) -> list[dict]:
+def find_facilities() -> list[dict]:
+    """
+    SEARCH_TERMS 로 KOPIS 시설을 검색하고, 시설명으로 기관을 판정해서 목록을 만든다.
+    검색 결과를 그대로 믿지 않고 resolve_venue() 로 직접 걸러낸다.
+    """
     facilities = []
     seen = set()
-    for param in ("shprfnmfct", "fcltynm"):
-        try:
-            root = _get("prfplc", cpage="1", rows="100", **{param: venue["name"]})
-        except Exception as e:
-            print(f"  경고: 시설 검색 실패 ({param}): {e}", file=sys.stderr)
-            continue
-        for db in root.findall("db"):
-            mt10id = (db.findtext("mt10id") or "").strip()
-            fcltynm = (db.findtext("fcltynm") or "").strip()
-            if not mt10id or mt10id in seen:
+
+    for term in SEARCH_TERMS:
+        got = False
+        for param in ("shprfnmfct", "fcltynm"):
+            try:
+                root = _get("prfplc", cpage="1", rows="100", **{param: term})
+            except Exception as ex:
+                print(f"  경고: 시설 검색 실패 ({term}/{param}): {ex}", file=sys.stderr)
                 continue
-            if not matches_venue(fcltynm, venue):
-                continue
-            seen.add(mt10id)
-            facilities.append({"mt10id": mt10id, "fcltynm": fcltynm, "venue": venue["name"]})
-        if facilities:
-            break
+
+            for db in root.findall("db"):
+                mt10id = (db.findtext("mt10id") or "").strip()
+                fcltynm = (db.findtext("fcltynm") or "").strip()
+                if not mt10id or mt10id in seen:
+                    continue
+                label = resolve_venue(fcltynm)
+                if label is None:
+                    continue
+                seen.add(mt10id)
+                facilities.append({"mt10id": mt10id, "fcltynm": fcltynm, "venue": label})
+                got = True
+
+            if got:
+                break
+            time.sleep(0.2)
         time.sleep(0.2)
+
     return facilities
 
 
@@ -231,14 +274,14 @@ def main():
     eddate = (today + timedelta(days=LOOKAHEAD_DAYS)).strftime("%Y%m%d")
 
     print(f"[{today}] 공연장 코드 조회 중...")
-    facilities = []
-    for venue in VENUES:
-        found = find_facilities(venue)
-        print(f"  {venue['name']}: {len(found)}개 공연장")
-        for f in found:
+    facilities = find_facilities()
+    by_label = {}
+    for f in facilities:
+        by_label.setdefault(f["venue"], []).append(f)
+    for label, fs in by_label.items():
+        print(f"  {label}: {len(fs)}개 공연장")
+        for f in fs:
             print(f"     - {f['fcltynm']} ({f['mt10id']})")
-        facilities.extend(found)
-        time.sleep(0.2)
 
     if not facilities:
         print("오류: 공연장을 하나도 찾지 못했습니다. API 키/응답을 확인하세요.", file=sys.stderr)
@@ -254,12 +297,14 @@ def main():
                 detail = fetch_detail(mt20id)
                 if not detail:
                     continue
-                venue_def = next((v for v in VENUES if v["name"] == f["venue"]), None)
-                if venue_def and not matches_venue(detail.get("facility_name", ""), venue_def):
-                    print(f"  제외(시설 불일치): {detail.get('name')} @ {detail.get('facility_name')}")
+                # 교차 검증: 상세의 시설명으로 다시 판정한다.
+                # 목록 API가 엉뚱한 공연을 섞어 보내는 경우를 여기서 최종적으로 걸러낸다.
+                label = resolve_venue(detail.get("facility_name", ""))
+                if label is None:
+                    print(f"  제외(대상 아님): {detail.get('name')} @ {detail.get('facility_name')}")
                     continue
                 genre, guessed = guess_genre(detail, shcate)
-                detail["venue"] = f["venue"]
+                detail["venue"] = label   # 검색어가 아니라 실제 시설명 기준
                 detail["genre"] = genre
                 detail["genre_guessed"] = guessed
                 results[mt20id] = detail
