@@ -26,8 +26,9 @@
     --sat: #3a6ea8;
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { overflow-x: hidden; }
   body {
-    margin: 0;
+    margin: 0; overflow-x: hidden; width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
     background: var(--bg); color: var(--text); padding-bottom: 40px;
   }
@@ -72,14 +73,28 @@
   }
   .calmonth { font-size: 15px; font-weight: 700; }
 
-  .cal { background: var(--card); border-radius: 14px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-  .calhead, .calgrid { display: grid; grid-template-columns: repeat(7, 1fr); }
+  .cal {
+    background: var(--card); border-radius: 14px; padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden; max-width: 100%;
+  }
+  /* minmax(0, 1fr) 이 중요하다. 그냥 1fr 이면 각 칸이 "내용 크기 이하로는 줄어들지
+     않는" 최소 너비를 갖게 되는데, 여기에 aspect-ratio 가 겹치면 사파리에서 칸 너비가
+     부풀어 격자가 화면 밖으로 넘친다 (아이폰에서 7칸 중 4칸만 보이던 원인). */
+  .calhead, .calgrid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    width: 100%;
+  }
   .calhead div { text-align: center; font-size: 11px; color: var(--muted); padding: 4px 0 8px; font-weight: 600; }
   .calhead div:first-child { color: var(--sun); }
   .calhead div:last-child { color: var(--sat); }
 
   .day {
-    aspect-ratio: 1 / 1; display: flex; flex-direction: column;
+    /* aspect-ratio 는 사파리 격자에서 너비 계산을 망가뜨려서 고정 높이로 대체.
+       min-width:0 을 함께 줘야 칸이 좁은 화면에서 제대로 줄어든다. */
+    height: 46px; min-width: 0; overflow: hidden;
+    display: flex; flex-direction: column;
     align-items: center; justify-content: center; gap: 3px;
     border-radius: 9px; cursor: pointer; font-size: 13px;
   }
@@ -154,6 +169,14 @@
   }
   .openposter i { font-style: normal; }
   .hidden { display: none; }
+
+  /* 좁은 화면 대응 */
+  @media (max-width: 400px) {
+    .day { height: 42px; font-size: 12px; }
+    .wrap { padding: 0 10px; }
+    .cal { padding: 8px 6px; }
+    h1 { font-size: 18px; }
+  }
 </style>
 </head>
 <body>
