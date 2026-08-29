@@ -86,6 +86,10 @@
     grid-template-columns: repeat(7, minmax(0, 1fr));
     width: 100%;
   }
+  /* 행 높이를 격자 쪽에서 고정한다.
+     칸에만 height를 주면, 빈 칸(달 시작 전 여백)이 섞인 행은 내용 기준으로
+     높이가 달라져 첫째·둘째 주만 유독 넓어진다. */
+  .calgrid { grid-auto-rows: 46px; }
   .calhead div { text-align: center; font-size: 11px; color: var(--muted); padding: 4px 0 8px; font-weight: 600; }
   .calhead div:first-child { color: var(--sun); }
   .calhead div:last-child { color: var(--sat); }
@@ -93,7 +97,7 @@
   .day {
     /* aspect-ratio 는 사파리 격자에서 너비 계산을 망가뜨려서 고정 높이로 대체.
        min-width:0 을 함께 줘야 칸이 좁은 화면에서 제대로 줄어든다. */
-    height: 46px; min-width: 0; overflow: hidden;
+    height: 100%; min-width: 0; overflow: hidden;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center; gap: 3px;
     border-radius: 9px; cursor: pointer; font-size: 13px;
@@ -172,7 +176,8 @@
 
   /* 좁은 화면 대응 */
   @media (max-width: 400px) {
-    .day { height: 42px; font-size: 12px; }
+    .calgrid { grid-auto-rows: 42px; }
+    .day { font-size: 12px; }
     .wrap { padding: 0 10px; }
     .cal { padding: 8px 6px; }
     h1 { font-size: 18px; }
