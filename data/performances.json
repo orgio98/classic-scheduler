@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29",
+  "generated_at": "2026-08-30",
   "facilities": [
     {
       "mt10id": "FC000020",
@@ -28,7 +28,7 @@
       "title": "2026 김동률 콘서트 ‘오래된 노래’ 티켓 오픈 안내",
       "open_at": "2026-09-04 17:00",
       "posted_at": "2026-08-27",
-      "dday": "D-5",
+      "dday": "D-4",
       "url": "https://www.sejongpac.or.kr/portal/bbs/B0000049/view.do?nttId=50150&menuNo=200440",
       "source": "세종문화회관 티켓오픈안내"
     },
@@ -331,18 +331,6 @@
     },
     {
       "venue": "예술의전당",
-      "title": "왕쯔통 피아노 리사이틀",
-      "open_at": "2026-09-01",
-      "posted_at": null,
-      "dday": null,
-      "hall": "IBK기업은행챔버홀",
-      "state": "예정",
-      "price_info": "R석 70,000원 / S석 50,000원 / A석 30,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=82253",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
       "title": "이지혜 x 김다솔: Beethoven II",
       "open_at": "2026-09-01",
       "posted_at": null,
@@ -351,6 +339,18 @@
       "state": "예정",
       "price_info": "R석 50,000원 / S석 30,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=84174",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "왕쯔통 피아노 리사이틀",
+      "open_at": "2026-09-01",
+      "posted_at": null,
+      "dday": null,
+      "hall": "IBK기업은행챔버홀",
+      "state": "예정",
+      "price_info": "R석 70,000원 / S석 50,000원 / A석 30,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=82253",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -403,30 +403,6 @@
     },
     {
       "venue": "예술의전당",
-      "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(12월)",
-      "open_at": "2026-08-19",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "일반석 40,000원 / 3층석 20,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80174",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(11월)",
-      "open_at": "2026-08-19",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "일반석 40,000원 / 3층석 20,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80176",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
       "title": "2026 서울국제음악제 개막음악회 `숨, 그리고 삶`",
       "open_at": "2026-08-19",
       "posted_at": null,
@@ -435,102 +411,6 @@
       "state": "예매",
       "price_info": "R석 60,000원 / S석 40,000원 / A석 20,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77423",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "김세준 비올라 리사이틀",
-      "open_at": "2026-08-18",
-      "posted_at": null,
-      "dday": null,
-      "hall": "IBK기업은행챔버홀",
-      "state": "예매",
-      "price_info": "R석 50,000원 / S석 30,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80033",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "2026 서울국제음악제  `SIMF오케스트라 : 빛과 그림자’",
-      "open_at": "2026-08-18",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "R석 120,000원 / S석 90,000원 / A석 60,000원 / B석 30,000원 / C석 10,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74712",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "레 벙 프랑세",
-      "open_at": "2026-08-12",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "R석 130,000원 / S석 110,000원 / A석 90,000원 / B석 60,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=76578",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "김도현 피아노 리사이틀",
-      "open_at": "2026-08-11",
-      "posted_at": null,
-      "dday": null,
-      "hall": "IBK기업은행챔버홀",
-      "state": "예매",
-      "price_info": "R석 50,000원 / S석 30,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77462",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "나 홀로 집에 인 콘서트",
-      "open_at": "2026-08-06",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "R석 110,000원 / S석 90,000원 / A석 70,000원 / B석 50,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80000",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "비킹구르 올라프손 피아노 리사이틀",
-      "open_at": "2026-07-28",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "R석 130,000원 / S석 110,000원 / A석 90,000원 / B석 70,000원 / C석 60,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77557",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "손열음 피아노 리사이틀",
-      "open_at": "2026-07-28",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "R석 120,000원 / S석 100,000원 / A석 80,000원 / B석 60,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
-      "title": "이원해 첼로 리사이틀",
-      "open_at": "2026-07-23",
-      "posted_at": null,
-      "dday": null,
-      "hall": "IBK기업은행챔버홀",
-      "state": "예매",
-      "price_info": "R석 50,000원 / S석 40,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=78429",
       "source": "예술의전당 선예매 티켓오픈공지"
     }
   ],
@@ -572,315 +452,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF297431",
-      "name": "피아니스트 이재혁의 실내악 시리즈 Ⅱ, 베토벤 피아노 트리오 전곡 시리즈",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "세종문화회관 (세종체임버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297431_260731_165306.png",
-      "cast": "이재혁, 김지선, 김민주",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 7세 이상",
-      "company": "",
-      "price_text": "전석 30,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 30000,
-          "text": "전석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=P0004785"
-        },
-        {
-          "name": "세종문화회관",
-          "url": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37485&menuNo=200320"
-        }
-      ],
-      "schedule": "토요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "세종문화회관",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF297007",
-      "name": "세종 챔버 오케스트라 웹툰 클래식: 피아노 포르테 [세종]",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297007_260727_132912.gif",
-      "cast": "김주현, 최예록",
-      "crew": "고영철",
-      "runtime": "1시간 30분",
-      "age": "만 5세 이상",
-      "company": "세종챔버오케스트라",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010936"
-        }
-      ],
-      "schedule": "토요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "세종예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF298552",
-      "name": "김태희 튜바 독주회",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "예술의전당 [서울] (리사이틀홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298552_260814_134701.gif",
-      "cast": "김태희, 임혜수, 이진호, 김태진, 이세범, 박상현",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "안디무지크(An die Musik)",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011960"
-        }
-      ],
-      "schedule": "토요일(20:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF296577",
-      "name": "피아니스트 노유리의 Pianism Ⅰ",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "예술의전당 [서울] (인춘아트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296577_260722_104544.gif",
-      "cast": "노유리",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "지클레프",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010617"
-        }
-      ],
-      "schedule": "토요일(14:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF295893",
-      "name": "피아니스트 장형준 교수 31주년 기념 제자 음악회: 동행",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "예술의전당 [서울] (IBK챔버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295893_260724_155713.gif",
-      "cast": "장형준, 김상원, 김준희, 나승혁, 맹진석, 박수정, 서지수 등",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "예인예술기획",
-      "price_text": "전석 50,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 50000,
-          "text": "전석 50,000원"
-        }
-      ],
-      "price_min": 50000,
-      "price_max": 50000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009832"
-        }
-      ],
-      "schedule": "토요일(14:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF295515",
-      "name": "제6회 Ludens String Quartet 정기연주회",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "예술의전당 [서울] (리사이틀홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295515_260707_133303.gif",
-      "cast": "양승희, 김나연, 강주이, 나윤주",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "지클레프",
-      "price_text": "전석 30,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 30000,
-          "text": "전석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009764"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59183"
-        }
-      ],
-      "schedule": "토요일(14:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF294888",
-      "name": "원재연 & 김수연 피아노 듀오 리사이틀",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "예술의전당 [서울] (IBK챔버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294888_260629_163840.gif",
-      "cast": "원재연, 김수연",
-      "crew": "",
-      "runtime": "1시간 25분",
-      "age": "만 7세 이상",
-      "company": "(주)스테이지 원",
-      "price_text": "R석 55,000원, S석 33,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 55000,
-          "text": "R석 55,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 33000,
-          "text": "S석 33,000원"
-        }
-      ],
-      "price_min": 33000,
-      "price_max": 55000,
-      "booking_links": [
-        {
-          "name": "나눔티켓",
-          "url": "https://www.nanumticket.or.kr/pe/detail.html?p_marking=&p_new=&start2=0&page_no2=1&p_idx=13836"
-        },
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009095"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59057"
-        }
-      ],
-      "schedule": "토요일(20:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF298757",
-      "name": "제39회 한국외대 관현악단 HUFSPhil 정기 연주회 [고양]",
-      "start_date": "20260829",
-      "end_date": "20260829",
-      "facility_name": "고양아람누리 (아람음악당)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298757_260818_161205.jpg",
-      "cast": "박대명 등",
-      "crew": "",
-      "runtime": "1시간 50분",
-      "age": "만 7세 이상",
-      "company": "한국외대관현악단 HUFSPhil",
-      "price_text": "전석 5,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 5000,
-          "text": "전석 5,000원"
-        }
-      ],
-      "price_min": 5000,
-      "price_max": 5000,
-      "booking_links": [
-        {
-          "name": "고양아람누리(고양문화재단)",
-          "url": "http://www.artgy.or.kr/PF/PF0201V.aspx?showid=0000008407"
-        }
-      ],
-      "schedule": "토요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "고양아람누리",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
       "mt20id": "PF298462",
       "name": "제7회 아티스타 앙상블 정기 연주회",
       "start_date": "20260830",
@@ -910,7 +481,7 @@
       ],
       "schedule": "일요일(20:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -946,7 +517,7 @@
       ],
       "schedule": "일요일(14:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -982,7 +553,7 @@
       ],
       "schedule": "일요일(14:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -1037,7 +608,7 @@
       ],
       "schedule": "일요일(17:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -1096,7 +667,7 @@
       ],
       "schedule": "일요일(17:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "고양아람누리",
       "genre": "오케스트라",
       "genre_guessed": false,
@@ -1126,7 +697,7 @@
       ],
       "schedule": "일요일(16:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "고양아람누리",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -1166,7 +737,7 @@
       ],
       "schedule": "월요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -1250,7 +821,7 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299056",
@@ -1529,7 +1100,7 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298700",
@@ -2355,7 +1926,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297848",
@@ -2733,7 +2304,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297663",
@@ -2994,7 +2565,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF293006",
@@ -3094,7 +2665,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297375",
@@ -3512,7 +3083,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299174",
@@ -3774,7 +3345,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298138",
@@ -4165,7 +3736,7 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF295615",
@@ -4332,7 +3903,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297234",
@@ -4921,7 +4492,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298803",
@@ -5799,7 +5370,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299137",
@@ -5895,12 +5466,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-11",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77462",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -6837,7 +6402,7 @@
       "venue": "세종예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298559",
@@ -6997,12 +6562,6 @@
       "venue": "고양아람누리",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-07-28",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -7084,7 +6643,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298505",
@@ -7194,12 +6753,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-07-28",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74879",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -7241,12 +6794,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-07-23",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=78429",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -7887,12 +7434,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-18",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80033",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -8140,7 +7681,7 @@
       "venue": "예술의전당",
       "genre": "오페라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297366",
@@ -8195,12 +7736,6 @@
       "venue": "고양아람누리",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-07-28",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77557",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -8448,12 +7983,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-07-28",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77557",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -8976,7 +8505,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF294873",
@@ -9072,7 +8601,7 @@
       "venue": "예술의전당",
       "genre": "오페라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298556",
@@ -9154,12 +8683,6 @@
       "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-12",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=76578",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -9211,12 +8734,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-12",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=76578",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -9298,12 +8815,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-19",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80176",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -9440,7 +8951,7 @@
       "venue": "세종예술의전당",
       "genre": "합창",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF285072",
@@ -9505,7 +9016,7 @@
       "venue": "예술의전당",
       "genre": "오페라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF281239",
@@ -9560,7 +9071,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF294057",
@@ -9610,7 +9121,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF293713",
@@ -9666,7 +9177,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF282131",
@@ -9857,12 +9368,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-06",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80000",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -9968,7 +9473,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298967",
@@ -10013,12 +9518,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-19",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80174",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -10135,7 +9634,7 @@
       "venue": "예술의전당",
       "genre": "합창",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     }
   ]
 }
