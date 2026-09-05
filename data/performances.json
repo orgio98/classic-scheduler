@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04",
+  "generated_at": "2026-09-05",
   "facilities": [
     {
       "mt10id": "FC000020",
@@ -7,14 +7,14 @@
       "venue": "세종문화회관"
     },
     {
-      "mt10id": "FC002877",
-      "fcltynm": "세종예술의전당",
-      "venue": "세종예술의전당"
-    },
-    {
       "mt10id": "FC000001",
       "fcltynm": "예술의전당 [서울]",
       "venue": "예술의전당"
+    },
+    {
+      "mt10id": "FC001513",
+      "fcltynm": "롯데콘서트홀",
+      "venue": "롯데콘서트홀"
     },
     {
       "mt10id": "FC000127",
@@ -307,14 +307,14 @@
     },
     {
       "venue": "예술의전당",
-      "title": "알렉상드르 캉토로프 피아노 리사이틀",
-      "open_at": "2026-09-09",
+      "title": "라흐마니노프 in 뉴욕",
+      "open_at": "2026-09-15",
       "posted_at": null,
       "dday": null,
-      "hall": "콘서트홀",
+      "hall": "IBK기업은행챔버홀",
       "state": "예정",
-      "price_info": "R석 110,000원 / S석 90,000원 / A석 70,000원 / B석 50,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74255",
+      "price_info": "R석 79,000원 / S석 59,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=82758",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -327,6 +327,18 @@
       "state": "예정",
       "price_info": "R석 240,000원 / S석 180,000원 / A석 120,000원 / B석 80,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74854",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "알렉상드르 캉토로프 피아노 리사이틀",
+      "open_at": "2026-09-09",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예정",
+      "price_info": "R석 110,000원 / S석 90,000원 / A석 70,000원 / B석 50,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74255",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -379,18 +391,6 @@
     },
     {
       "venue": "예술의전당",
-      "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(12월)",
-      "open_at": "2026-08-19",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예매",
-      "price_info": "일반석 40,000원 / 3층석 20,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80174",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
       "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(11월)",
       "open_at": "2026-08-19",
       "posted_at": null,
@@ -403,291 +403,106 @@
     },
     {
       "venue": "예술의전당",
-      "title": "김세준 비올라 리사이틀",
-      "open_at": "2026-08-18",
+      "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(12월)",
+      "open_at": "2026-08-19",
       "posted_at": null,
       "dday": null,
-      "hall": "IBK기업은행챔버홀",
+      "hall": "콘서트홀",
       "state": "예매",
-      "price_info": "R석 50,000원 / S석 30,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80033",
+      "price_info": "일반석 40,000원 / 3층석 20,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80174",
       "source": "예술의전당 선예매 티켓오픈공지"
     }
   ],
   "performances": [
     {
-      "mt20id": "PF291337",
-      "name": "12시 런치 콘서트 [세종]",
-      "start_date": "20260610",
-      "end_date": "20260923",
-      "facility_name": "세종예술의전당 (로비)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF291337_260514_103823.gif",
-      "cast": "유신희, 정다은, 신지현 등",
+      "mt20id": "PF281769",
+      "name": "오르간 오딧세이",
+      "start_date": "20260225",
+      "end_date": "20261216",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281769_251217_135219.gif",
+      "cast": "안갑성, 최규미 등",
       "crew": "",
-      "runtime": "1시간",
-      "age": "만 7세 이상",
-      "company": "",
-      "price_text": "전석 20,000원",
+      "runtime": "1시간 10분",
+      "age": "만 5세 이상",
+      "company": "롯데문화재단",
+      "price_text": "전석 25,000원, 시야방해석 17,500원",
       "prices": [
         {
           "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26007066"
-        }
-      ],
-      "schedule": "수요일(12:00)",
-      "genre_raw": "복합",
-      "state": "공연중",
-      "venue": "세종예술의전당",
-      "genre": "발레·무용",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF297700",
-      "name": "From Latin America 남미로부터, 이동휘 클래식기타 독주회",
-      "start_date": "20260904",
-      "end_date": "20260904",
-      "facility_name": "세종문화회관 (세종체임버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297700_260805_103236.png",
-      "cast": "이동휘",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 8세 이상",
-      "company": "",
-      "price_text": "R석 50,000원, S석 30,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 50000,
-          "text": "R석 50,000원"
+          "amount": 25000,
+          "text": "전석 25,000원"
         },
         {
-          "seat": "S석",
-          "amount": 30000,
-          "text": "S석 30,000원"
+          "seat": "시야방해석",
+          "amount": 17500,
+          "text": "시야방해석 17,500원"
         }
       ],
-      "price_min": 30000,
-      "price_max": 50000,
+      "price_min": 17500,
+      "price_max": 25000,
       "booking_links": [
         {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=P0004776"
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/60117"
         },
         {
-          "name": "세종문화회관",
-          "url": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37504&menuNo=200320"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "세종문화회관",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF299124",
-      "name": "주인혜 트롬본 독주회",
-      "start_date": "20260904",
-      "end_date": "20260904",
-      "facility_name": "예술의전당 [서울] (리사이틀홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299124_260821_163520.gif",
-      "cast": "주인혜, 신재민, 김예원",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "아폴로 뮤직",
-      "price_text": "전석 30,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 30000,
-          "text": "전석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 30000,
-      "booking_links": [
-        {
           "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012085"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF297799",
-      "name": "유다윤 바이올린 리사이틀",
-      "start_date": "20260904",
-      "end_date": "20260904",
-      "facility_name": "예술의전당 [서울] (IBK챔버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297799_260805_160047.gif",
-      "cast": "유다윤, 김준형",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 7세 이상",
-      "company": "(주)더브릿지컴퍼니",
-      "price_text": "전석 30,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 30000,
-          "text": "전석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011436"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF297293",
-      "name": "조수미 세계무대 데뷔 40주년 기념공연: Continuum [서울 서초]",
-      "start_date": "20260904",
-      "end_date": "20260904",
-      "facility_name": "예술의전당 [서울] (콘서트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297293_260730_131611.gif",
-      "cast": "조수미, 최영선, 진원, 알렉스 볼코프 등",
-      "crew": "",
-      "runtime": "2시간",
-      "age": "만 7세 이상",
-      "company": "(주)SMI엔터테인먼트",
-      "price_text": "R석 160,000원, S석 140,000원, A석 120,000원, B석 100,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 160000,
-          "text": "R석 160,000원"
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=25017269"
         },
         {
-          "seat": "S석",
-          "amount": 140000,
-          "text": "S석 140,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 120000,
-          "text": "A석 120,000원"
-        },
-        {
-          "seat": "B석",
-          "amount": 100000,
-          "text": "B석 100,000원"
-        }
-      ],
-      "price_min": 100000,
-      "price_max": 160000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010624"
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260922"
         },
         {
           "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59442"
+          "url": "https://ticket.yes24.com/Perf/56413"
         }
       ],
-      "schedule": "금요일(19:30)",
+      "schedule": "수요일(11:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
+      "state": "공연중",
+      "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": false
+      "is_new": true
     },
     {
-      "mt20id": "PF297020",
-      "name": "제11회 앙상블S 정기 연주회",
-      "start_date": "20260904",
-      "end_date": "20260904",
-      "facility_name": "예술의전당 [서울] (인춘아트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297020_260727_140610.gif",
-      "cast": "김혜란, 설지영, 김보영, 최서윤, 전유진, 이경원, 조혜민 등",
-      "crew": "김혜란, 함지민, 김회진 등",
-      "runtime": "1시간 30분",
+      "mt20id": "PF294633",
+      "name": "클래식 레볼루션 X 이화경향음악콩쿠르 수상자 마스터클래스",
+      "start_date": "20260827",
+      "end_date": "20260905",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294633_260625_140347.jpg",
+      "cast": "앙투안 타메스티, 문웅휘, 이진상, 레오니다스 카바코스 등",
+      "crew": "",
+      "runtime": "",
       "age": "만 7세 이상",
-      "company": "앙상블 S, 인터뮤직(intermusic)",
-      "price_text": "전석 30,000원",
+      "company": "경향신문, 롯데문화재단",
+      "price_text": "전석 5,000원",
       "prices": [
         {
           "seat": "전석",
-          "amount": 30000,
-          "text": "전석 30,000원"
+          "amount": 5000,
+          "text": "전석 5,000원"
         }
       ],
-      "price_min": 30000,
-      "price_max": 30000,
+      "price_min": 5000,
+      "price_max": 5000,
       "booking_links": [
         {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010820"
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261133"
         }
       ],
-      "schedule": "금요일(19:30)",
+      "schedule": "화요일(10:30), 목요일(10:30), 토요일(10:30,13:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연완료",
-      "venue": "예술의전당",
+      "state": "공연중",
+      "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF295354",
-      "name": "고양이 에다, 권율장군을 만나다 [고양]",
-      "start_date": "20260904",
-      "end_date": "20260904",
-      "facility_name": "고양아람누리 (새라새극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295354_260706_111533.png",
-      "cast": "",
-      "crew": "유지혜, 신지웅, 김창영 등",
-      "runtime": "1시간",
-      "age": "24개월 이상",
-      "company": "(재)고양문화재단",
-      "price_text": "전석무료",
-      "prices": [],
-      "price_min": null,
-      "price_max": null,
-      "booking_links": [
-        {
-          "name": "고양아람누리(고양문화재단)",
-          "url": "http://www.artgy.or.kr/PF/PF0201V.aspx?showid=0000008365"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "복합",
-      "state": "공연완료",
-      "venue": "고양아람누리",
-      "genre": "발레·무용",
-      "genre_guessed": false,
-      "is_new": false
+      "is_new": true
     },
     {
       "mt20id": "PF297812",
@@ -952,6 +767,120 @@
       "is_new": false
     },
     {
+      "mt20id": "PF297805",
+      "name": "퀸 엘리자베스 콩쿠르 위너스 콘서트 [서울]",
+      "start_date": "20260905",
+      "end_date": "20260905",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297805_260806_101115.gif",
+      "cast": "에토레 파가노, 김태연, 와타루 히사스에 등",
+      "crew": "",
+      "runtime": "1시간 20분",
+      "age": "만 7세 이상",
+      "company": "SBU&Partner(에스비유)",
+      "price_text": "R석 60,000원, S석 40,000원, A석 25,000원, 시야방해 S석 28,000원, 시야방해 A석 17,500원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 60000,
+          "text": "R석 60,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 40000,
+          "text": "S석 40,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 25000,
+          "text": "A석 25,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 28000,
+          "text": "시야방해 S석 28,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 17500,
+          "text": "시야방해 A석 17,500원"
+        }
+      ],
+      "price_min": 17500,
+      "price_max": 60000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011449"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261168"
+        }
+      ],
+      "schedule": "토요일(11:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연중",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
+      "mt20id": "PF296998",
+      "name": "서울중앙음악학원 개원 10주년 기념 연주회: A Decade of Passion",
+      "start_date": "20260905",
+      "end_date": "20260905",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296998_260814_181245.gif",
+      "cast": "김수언, 김서현, 류현석, 이현정, 고윤서, 백수현, 최수진 등",
+      "crew": "이선이",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "서울중앙음악학원",
+      "price_text": "R석 70,000원, S석 50,000원, A석 30,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 70000,
+          "text": "R석 70,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 50000,
+          "text": "S석 50,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 30000,
+          "text": "A석 30,000원"
+        }
+      ],
+      "price_min": 30000,
+      "price_max": 70000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010733"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261158"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/59398"
+        }
+      ],
+      "schedule": "토요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연중",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298486",
       "name": "허원경 클래식 기타 리사이틀",
       "start_date": "20260906",
@@ -1113,6 +1042,117 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF298500",
+      "name": "서울 학생 유니온 오케스트라 두 번째 프로젝트",
+      "start_date": "20260906",
+      "end_date": "20260906",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298500_260814_101917.jpg",
+      "cast": "이용진, 서재이, 김이현, 강푸름, 심연서, 손지유, 김시후 등",
+      "crew": "",
+      "runtime": "1시간",
+      "age": "만 4세 이상",
+      "company": "아트인뮤직 컴퍼니",
+      "price_text": "전석 20,000원",
+      "prices": [
+        {
+          "seat": "전석",
+          "amount": 20000,
+          "text": "전석 20,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 20000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261178"
+        }
+      ],
+      "schedule": "일요일(11:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
+      "mt20id": "PF295030",
+      "name": "김세현 피아노 리사이틀",
+      "start_date": "20260906",
+      "end_date": "20260906",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295030_260701_132105.gif",
+      "cast": "김세현",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "(주) 크레디아뮤직앤아티스트",
+      "price_text": "R석 90,000원, S석 70,000원, A석 50,000원, B석 30,000원, 시야방해R 70,000원, 시야방해S 50,000원, 시야방해A 30,000원, 시야방해B 25,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 90000,
+          "text": "R석 90,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 70000,
+          "text": "S석 70,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 50000,
+          "text": "50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 30000,
+          "text": "30,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 25000,
+          "text": "25,000원"
+        }
+      ],
+      "price_min": 25000,
+      "price_max": 90000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009176"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261132"
+        }
+      ],
+      "schedule": "일요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF297848",
@@ -1493,6 +1533,61 @@
       "is_new": false
     },
     {
+      "mt20id": "PF295817",
+      "name": "김정원과 친구들 20주년 기념 콘서트",
+      "start_date": "20260909",
+      "end_date": "20260909",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295817_260710_143228.gif",
+      "cast": "김정원, 이진상, 김동현, 문태국, 임지영, 신경식",
+      "crew": "",
+      "runtime": "2시간 30분",
+      "age": "만 7세 이상",
+      "company": "(주)아트앤아티스트",
+      "price_text": "R석 110,000원, S석 88,000원, A석 66,000원, B석 44,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 110000,
+          "text": "R석 110,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 88000,
+          "text": "S석 88,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 66000,
+          "text": "A석 66,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 44000,
+          "text": "B석 44,000원"
+        }
+      ],
+      "price_min": 44000,
+      "price_max": 110000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009683"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261137"
+        }
+      ],
+      "schedule": "수요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF299716",
       "name": "운지회 체임버 오케스트라 시리즈 ⅩⅩ",
       "start_date": "20260910",
@@ -1650,6 +1745,66 @@
       "is_new": false
     },
     {
+      "mt20id": "PF281251",
+      "name": "제830회 KBS교향악단 정기연주회",
+      "start_date": "20260910",
+      "end_date": "20260910",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281251_260818_170348.gif",
+      "cast": "피에타리 잉키넨, 보리스 길트버그 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "(재)KBS교향악단",
+      "price_text": "R석 120,000원, S석 100,000원, A석 70,000원, B석 40,000원, C석 10,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 70000,
+          "text": "A석 70,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 40000,
+          "text": "B석 40,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 10000,
+          "text": "C석 10,000원"
+        }
+      ],
+      "price_min": 10000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=25017032"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260927"
+        }
+      ],
+      "schedule": "목요일(20:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF299608",
       "name": "제3회 루체 혼성합창단 정기연주회 [고양]",
       "start_date": "20260910",
@@ -1713,42 +1868,6 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF296513",
-      "name": "국립심포니콘서트오케스트라 심야음악회: 별 헤는 밤, 별 둘 [세종]",
-      "start_date": "20260911",
-      "end_date": "20260911",
-      "facility_name": "세종예술의전당 (시크릿씨어터(3F) )",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296513_260721_110626.gif",
-      "cast": "김성진 등",
-      "crew": "",
-      "runtime": "1시간 10분",
-      "age": "만 7세 이상",
-      "company": "(재) 세종시문화관광재단(세종문화예술회관), (재)코리안심포니오케스트라(국립심포니오케스트라)",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010125"
-        }
-      ],
-      "schedule": "금요일(21:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false,
       "is_new": false
     },
     {
@@ -1922,6 +2041,70 @@
       "genre": "오케스트라",
       "genre_guessed": false,
       "is_new": false
+    },
+    {
+      "mt20id": "PF277365",
+      "name": "서울시향 최수열의 스크랴빈 교향곡 4번",
+      "start_date": "20260911",
+      "end_date": "20260911",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277365_260402_161543.gif",
+      "cast": "최수열, 크리스티안 베자위덴하우트 등",
+      "crew": "",
+      "runtime": "1시간 20분",
+      "age": "만 7세 이상",
+      "company": "(재) 서울시립교향악단",
+      "price_text": "R석 100,000원, S석 80,000원, A석 50,000원, B석 30,000원, C석 10,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 80000,
+          "text": "S석 80,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 10000,
+          "text": "C석 10,000원"
+        }
+      ],
+      "price_min": 10000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/59428"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=25013727"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260901"
+        }
+      ],
+      "schedule": "금요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF297375",
@@ -2195,6 +2378,126 @@
       "is_new": false
     },
     {
+      "mt20id": "PF299136",
+      "name": "피아니스트 고연경 & 오르가니스트 이예원 듀오 콘서트",
+      "start_date": "20260912",
+      "end_date": "20260912",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299136_260821_180407.png",
+      "cast": "고연경, 이예원",
+      "crew": "",
+      "runtime": "1시간 10분",
+      "age": "만 7세 이상",
+      "company": "클래시카 서울",
+      "price_text": "R석 50,000원, S석 30,000원, A석 20,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 50000,
+          "text": "R석 50,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 30000,
+          "text": "S석 30,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 20000,
+          "text": "A석 20,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 50000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261180"
+        }
+      ],
+      "schedule": "토요일(11:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
+      "mt20id": "PF283088",
+      "name": "함신익과 심포니 송 마스터즈 시리즈 Ⅴ, 전람회의 그림",
+      "start_date": "20260912",
+      "end_date": "20260912",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283088_260113_134257.png",
+      "cast": "함신익, 유성호 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "심포니 송",
+      "price_text": "R석 100,000원, S석 70,000원, A석 50,000원, B석 30,000원, C석 20,000원, 시야방해 R석  70,000원, 시야방해 A석  30,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 70000,
+          "text": "S석 70,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 20000,
+          "text": "C석 20,000원"
+        },
+        {
+          "seat": "시야방해 R석",
+          "amount": 70000,
+          "text": "시야방해 R석  70,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 30000,
+          "text": "시야방해 A석  30,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26000075"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260962"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/56694"
+        }
+      ],
+      "schedule": "토요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF289405",
       "name": "국립심포니오케스트라: 슈만, 교향곡 제2번 [고양]",
       "start_date": "20260912",
@@ -2408,6 +2711,76 @@
       "is_new": false
     },
     {
+      "mt20id": "PF294855",
+      "name": "아우구스틴 하델리히 무반주 바이올린 리사이틀",
+      "start_date": "20260913",
+      "end_date": "20260913",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294855_260629_152642.gif",
+      "cast": "아우구스틴 하델리히",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "(주)빈체로",
+      "price_text": "R석 130,000원, S석 100,000원, A석 70,000원, B석 50,000원, 시야방해R  91,000원, 시야방해S  70,000원, 시야방해A  49,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 130000,
+          "text": "R석 130,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 70000,
+          "text": "A석 70,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 50000,
+          "text": "B석 50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 91000,
+          "text": "91,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 49000,
+          "text": "49,000원"
+        }
+      ],
+      "price_min": 49000,
+      "price_max": 130000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008822"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/260738"
+        }
+      ],
+      "schedule": "일요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF299929",
       "name": "제17회 MS필하모닉 오케스트라 정기연주회",
       "start_date": "20260913",
@@ -2472,6 +2845,62 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF297426",
+      "name": "제4회 백세합창단 정기연주회",
+      "start_date": "20260914",
+      "end_date": "20260914",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297426_260731_162345.jpg",
+      "cast": "김윤경, 고성현, 김상경 등",
+      "crew": "최동천",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "백세합창단",
+      "price_text": "R석 80,000원, 시야방해R 70,000원, S석 60,000원, 시야방해S 50,000원, A석 20,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 80000,
+          "text": "R석 80,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 60000,
+          "text": "S석 60,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 50000,
+          "text": "50,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 20000,
+          "text": "A석 20,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 80000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261162"
+        }
+      ],
+      "schedule": "월요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "합창",
+      "genre_guessed": false,
+      "is_new": true
     },
     {
       "mt20id": "PF298488",
@@ -2700,6 +3129,77 @@
       "is_new": false
     },
     {
+      "mt20id": "PF298176",
+      "name": "심포닉 하모니카 with 전제덕, 박종성, 밀레니엄심포니오케스트라",
+      "start_date": "20260915",
+      "end_date": "20260915",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298176_260811_103900.jpg",
+      "cast": "박종성, 전제덕, 최영선 등",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "(재)CBS",
+      "price_text": "R석 160,000원, S석 130,000원, A석 100,000원, B석 70,000원, C석 40,000원, 시야방해R 112,000원, 시야방해S 91,000원, 시야방해A 70,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 160000,
+          "text": "R석 160,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 130000,
+          "text": "S석 130,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 100000,
+          "text": "A석 100,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 70000,
+          "text": "B석 70,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 40000,
+          "text": "C석 40,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 112000,
+          "text": "112,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 91000,
+          "text": "91,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        }
+      ],
+      "price_min": 40000,
+      "price_max": 160000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261171"
+        }
+      ],
+      "schedule": "화요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF299859",
       "name": "제9회 앙상블 비트윈 정기연주회",
       "start_date": "20260916",
@@ -2907,6 +3407,85 @@
       "genre": "오케스트라",
       "genre_guessed": false,
       "is_new": false
+    },
+    {
+      "mt20id": "PF297817",
+      "name": "한국 가곡의 밤: 우리 가곡, 마음의 노래",
+      "start_date": "20260916",
+      "end_date": "20260916",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297817_260824_144257.jpg",
+      "cast": "홍지원, 권형신, 양진모, 윤정수, 박유리, 손혜수, 우지연 등",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "(사)뉴서울오페라단",
+      "price_text": "R석 170,000원, S석 100,000원, A석 70,000원, B석 50,000원, C석 30,000원, 시야방해A 35,000원, 시야방해B 25,000원, 시야방해C 15,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 170000,
+          "text": "R석 170,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 70000,
+          "text": "A석 70,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 50000,
+          "text": "B석 50,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 30000,
+          "text": "C석 30,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 35000,
+          "text": "35,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 25000,
+          "text": "25,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 15000,
+          "text": "15,000원"
+        }
+      ],
+      "price_min": 15000,
+      "price_max": 170000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/64982"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011363"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261169"
+        }
+      ],
+      "schedule": "수요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF298342",
@@ -3131,6 +3710,72 @@
       "is_new": false
     },
     {
+      "mt20id": "PF298899",
+      "name": "CBS 레이디스 싱어즈 첫번째 연주회: 오픈 마인드",
+      "start_date": "20260917",
+      "end_date": "20260917",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298899_260820_102405.jpg",
+      "cast": "박지훈, 엄인호, 김성희, 김영미, 고석진, 임선애 등",
+      "crew": "박지훈 등",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "스튜디오이앤에프(스튜디오E&F)",
+      "price_text": "R석 100,000원, S석 80,000원, A석 60,000원, B석 40,000원, 시야방해 R석 70,000원, 시야방해 S석 56,000원, 시야방해 A석 42,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 80000,
+          "text": "S석 80,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 60000,
+          "text": "A석 60,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 40000,
+          "text": "B석 40,000원"
+        },
+        {
+          "seat": "시야방해 R석",
+          "amount": 70000,
+          "text": "시야방해 R석 70,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 56000,
+          "text": "시야방해 S석 56,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 42000,
+          "text": "시야방해 A석 42,000원"
+        }
+      ],
+      "price_min": 40000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261183"
+        }
+      ],
+      "schedule": "목요일(20:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298576",
       "name": "제190회 한국독일가곡연구회 정기연주회: 연가곡 시리즈 Ⅲ",
       "start_date": "20260918",
@@ -3162,42 +3807,6 @@
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "세종문화회관",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF295615",
-      "name": "세종예술의전당 시크릿콘서트, 콜레기움 무지쿰 서울 & 임선혜: 바흐와 커피",
-      "start_date": "20260918",
-      "end_date": "20260918",
-      "facility_name": "세종예술의전당 (시크릿씨어터(3F) )",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295615_260708_134108.gif",
-      "cast": "김선아, 백승록, 임선혜, 김효종, 우경식, 송현민 등",
-      "crew": "김선아 등",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "문화체육관광부",
-      "price_text": "전석 50,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 50000,
-          "text": "전석 50,000원"
-        }
-      ],
-      "price_min": 50000,
-      "price_max": 50000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009701"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
@@ -3368,6 +3977,76 @@
       "genre": "오케스트라",
       "genre_guessed": false,
       "is_new": false
+    },
+    {
+      "mt20id": "PF294512",
+      "name": "재패니메이션 영화음악 콘서트: UNSTOPPABLE",
+      "start_date": "20260918",
+      "end_date": "20260918",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294512_260624_114947.gif",
+      "cast": "백윤학 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "아트인뮤직 컴퍼니",
+      "price_text": "R석 120,000원, S석 100,000원, A석 80,000원, B석 70,000원, 시야방해S 60,000원, 시야방해A 50,000원, 시야방해B 40,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 80000,
+          "text": "A석 80,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 70000,
+          "text": "B석 70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 60000,
+          "text": "60,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 50000,
+          "text": "50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 40000,
+          "text": "40,000원"
+        }
+      ],
+      "price_min": 40000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008929"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261127"
+        }
+      ],
+      "schedule": "금요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF297234",
@@ -3555,6 +4234,66 @@
       "is_new": false
     },
     {
+      "mt20id": "PF293719",
+      "name": "경기필 마스터피스 시리즈 Ⅳ. 베토벤 교향곡 7번 [서울]",
+      "start_date": "20260919",
+      "end_date": "20260919",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF293719_260615_133605.jpg",
+      "cast": "이얼, 백건우 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "(재)경기아트센터",
+      "price_text": "R석 80,000원, S석 60,000원, A석 50,000원, B석 30,000원, C석 20,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 80000,
+          "text": "R석 80,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 60000,
+          "text": "S석 60,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 20000,
+          "text": "C석 20,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 80000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008511"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/260739"
+        }
+      ],
+      "schedule": "토요일(17:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298999",
       "name": "홍난파가곡제: 나의 살던 고향은",
       "start_date": "20260920",
@@ -3607,47 +4346,6 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF294871",
-      "name": "국립심포니콘서트오케스트라, 라흐마니노프, 교향곡 2번 [세종]",
-      "start_date": "20260920",
-      "end_date": "20260920",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294871_260629_160432.gif",
-      "cast": "김성진, 안드레아 구그닌 등",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 8세 이상",
-      "company": "(재)코리안심포니오케스트라(국립심포니오케스트라)",
-      "price_text": "R석 20,000원, S석 10,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 20000,
-          "text": "R석 20,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 10000,
-          "text": "S석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009074"
-        }
-      ],
-      "schedule": "일요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false,
       "is_new": false
     },
     {
@@ -3867,6 +4565,76 @@
       "is_new": false
     },
     {
+      "mt20id": "PF298348",
+      "name": "영화와 애니메이션 OST 오케스트라 콘서트",
+      "start_date": "20260920",
+      "end_date": "20260920",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298348_260812_141046.gif",
+      "cast": "김진환, 김정연, 박주영, 홍채린 등",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "서울내셔널심포니오케스트라",
+      "price_text": "R석 120,000원, S석 100,000원, A석 80,000원, B석 70,000원, 시야방해R  60,000원, 시야방해S  50,000원, 시야방해A  40,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 80000,
+          "text": "A석 80,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 70000,
+          "text": "B석 70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 60000,
+          "text": "60,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 50000,
+          "text": "50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 40000,
+          "text": "40,000원"
+        }
+      ],
+      "price_min": 40000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011679"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261175"
+        }
+      ],
+      "schedule": "일요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF299772",
       "name": "제5회 한국중국가곡연구회 정기 음악회",
       "start_date": "20260921",
@@ -3903,6 +4671,81 @@
       "is_new": false
     },
     {
+      "mt20id": "PF299224",
+      "name": "제32회 포스메가남성합창단 정기연주회",
+      "start_date": "20260921",
+      "end_date": "20260921",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299224_260824_141830.png",
+      "cast": "강기성, 최혜진, 문형근, 김광남, 주선중, 최우제 등",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "포스메가 남성합창단",
+      "price_text": "R석 100,000원, S석 70,000원, A석 50,000원, B석 30,000원, 시야방해R  70,000원, 시야방해S  49,000원, 시야방해A  35,000원, 시야방해B  21,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 70000,
+          "text": "S석 70,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 49000,
+          "text": "49,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 35000,
+          "text": "35,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 21000,
+          "text": "21,000원"
+        }
+      ],
+      "price_min": 21000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012058"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261184"
+        }
+      ],
+      "schedule": "월요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "합창",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF300178",
       "name": "제3회 김종균 작곡발표회: 古典 & Classic",
       "start_date": "20260922",
@@ -3934,42 +4777,6 @@
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
       "venue": "세종문화회관",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": true
-    },
-    {
-      "mt20id": "PF299733",
-      "name": "테너 나대주 독창회: 시인의 사랑 [세종]",
-      "start_date": "20260922",
-      "end_date": "20260922",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299733_260831_140657.gif",
-      "cast": "나대주, 고진욱, 유수진, 김푸르리, 이제석",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "전체 관람가",
-      "company": "",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012437"
-        }
-      ],
-      "schedule": "화요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
@@ -4111,6 +4918,47 @@
       "is_new": false
     },
     {
+      "mt20id": "PF298122",
+      "name": "Project 9의 시리즈 1. Beethoven Symphony 9: Choral",
+      "start_date": "20260922",
+      "end_date": "20260922",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298122_260810_145822.jpg",
+      "cast": "박영민, 김샤론, 손진희, 임홍재, 나건용 등",
+      "crew": "",
+      "runtime": "1시간 30분",
+      "age": "만 7세 이상",
+      "company": "",
+      "price_text": "일반석 30,000원, 시야방해석 21,000원",
+      "prices": [
+        {
+          "seat": "반석",
+          "amount": 30000,
+          "text": "일반석 30,000원"
+        },
+        {
+          "seat": "시야방해석",
+          "amount": 21000,
+          "text": "시야방해석 21,000원"
+        }
+      ],
+      "price_min": 21000,
+      "price_max": 30000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261172"
+        }
+      ],
+      "schedule": "화요일(20:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298803",
       "name": "성보경 피아노 독주회",
       "start_date": "20260923",
@@ -4233,6 +5081,80 @@
       "is_new": false
     },
     {
+      "mt20id": "PF298946",
+      "name": "제4회 이데아 프로젝트: 천인교향곡",
+      "start_date": "20260924",
+      "end_date": "20260924",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298946_260820_130811.gif",
+      "cast": "진성원, 최희윤, 김효주, 박건우, 이미란, 강은현, 정아영 등",
+      "crew": "정송이, 김우중, 조석준 등",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "SBU&Partner(에스비유), 이데아 오케스트라",
+      "price_text": "R석 30,000원, S석 20,000원, A석 10,000원, B석 5,000원, 시야방해R  21,000원, 시야방해S  14,000원, 시야방해A  7,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 30000,
+          "text": "R석 30,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 20000,
+          "text": "S석 20,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 10000,
+          "text": "A석 10,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 5000,
+          "text": "B석 5,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 21000,
+          "text": "21,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 14000,
+          "text": "14,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 7000,
+          "text": "7,000원"
+        }
+      ],
+      "price_min": 5000,
+      "price_max": 30000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011794"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261179"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/59701"
+        }
+      ],
+      "schedule": "목요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298410",
       "name": "이지영 플루트 독주회",
       "start_date": "20260926",
@@ -4273,6 +5195,182 @@
       "is_new": false
     },
     {
+      "mt20id": "PF299308",
+      "name": "리움챔버오케스트라, 그랜드 콘체르토 콘서트 Ⅳ",
+      "start_date": "20260926",
+      "end_date": "20260926",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299308_260825_111332.jpeg",
+      "cast": "정홍식, 이진성, 이영수, 백은교 등",
+      "crew": "",
+      "runtime": "1시간 50분",
+      "age": "만 7세 이상",
+      "company": "리움챔버오케스트라",
+      "price_text": "R석 100,000원, S석 60,000원, A석 20,000원, 시야방해 A석 14,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 60000,
+          "text": "S석 60,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 20000,
+          "text": "A석 20,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 14000,
+          "text": "시야방해 A석 14,000원"
+        }
+      ],
+      "price_min": 14000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261188"
+        }
+      ],
+      "schedule": "토요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
+      "mt20id": "PF297535",
+      "name": "신카이 마코토 하이라이트 필름 콘서트 [서울 송파]",
+      "start_date": "20260927",
+      "end_date": "20260927",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297535_260803_142525.gif",
+      "cast": "남기범 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "(주) 엔오에이 (NOA Inc.)",
+      "price_text": "R석 140,000원, S석 110,000원, A석 90,000원, B석 70,000원, C석 60,000원, 시야방해 S석 50,000원, 시야방해 A석 40,000원, 시야방해 B석 30,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 140000,
+          "text": "R석 140,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 110000,
+          "text": "S석 110,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 90000,
+          "text": "A석 90,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 70000,
+          "text": "B석 70,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 60000,
+          "text": "C석 60,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 50000,
+          "text": "시야방해 S석 50,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 40000,
+          "text": "시야방해 A석 40,000원"
+        },
+        {
+          "seat": "시야방해 B석",
+          "amount": 30000,
+          "text": "시야방해 B석 30,000원"
+        }
+      ],
+      "price_min": 30000,
+      "price_max": 140000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011159"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261166"
+        }
+      ],
+      "schedule": "일요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
+      "mt20id": "PF298788",
+      "name": "제22주년 윤학원 코랄 기념 연주: 하모니로 드리는 감사의 합창",
+      "start_date": "20260928",
+      "end_date": "20260928",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298788_260819_102240.jpg",
+      "cast": "윤의중, 이수진, 최윤아 등",
+      "crew": "조수정",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "서울코러스센터, 윤학원 코랄",
+      "price_text": "R석 50,000원, S석 30,000원, A석 20,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 50000,
+          "text": "R석 50,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 30000,
+          "text": "S석 30,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 20000,
+          "text": "A석 20,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 50000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012031"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261182"
+        }
+      ],
+      "schedule": "월요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "합창",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF300163",
       "name": "이인혁 하모니스트 연주회",
       "start_date": "20260929",
@@ -4306,7 +5404,7 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299344",
@@ -4379,6 +5477,61 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF296891",
+      "name": "지용 피아노 리사이틀",
+      "start_date": "20260929",
+      "end_date": "20260929",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296891_260724_131749.png",
+      "cast": "김지용",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "MOC프로덕션(목프로덕션)",
+      "price_text": "R석 80,000원, S석 65,000원, A석 50,000원, B석 35,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 80000,
+          "text": "R석 80,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 65000,
+          "text": "S석 65,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 35000,
+          "text": "B석 35,000원"
+        }
+      ],
+      "price_min": 35000,
+      "price_max": 80000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010548"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261155"
+        }
+      ],
+      "schedule": "화요일(20:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF299364",
@@ -4680,6 +5833,74 @@
       "is_new": false
     },
     {
+      "mt20id": "PF291286",
+      "name": "W필하모닉오케스트라 마스터 시리즈 Ⅲ. 로맨틱 러시아: 차이코프스키 & 라흐마니노프",
+      "start_date": "20261001",
+      "end_date": "20261001",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF291286_260513_132301.png",
+      "cast": "김남윤, 아비람 라이케르트 등",
+      "crew": "김남윤",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "(재)더블유필하모닉오케스트라",
+      "price_text": "R석 100,000원, S석 80,000원, A석 50,000원, B석 30,000원, C석 20,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 80000,
+          "text": "S석 80,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 20000,
+          "text": "C석 20,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/63072"
+        },
+        {
+          "name": "네이버N예약",
+          "url": "https://booking.naver.com/booking/5/bizes/1708084"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26006795"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261084"
+        }
+      ],
+      "schedule": "목요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF299904",
       "name": "리수스 콰르텟과 함께하는 반도네온 실내악의 밤",
       "start_date": "20261002",
@@ -4806,6 +6027,102 @@
       "is_new": false
     },
     {
+      "mt20id": "PF300091",
+      "name": "제77회 이탈리아 성악회 정기연주회",
+      "start_date": "20261002",
+      "end_date": "20261002",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF300091_260903_165527.png",
+      "cast": "최인애, 박현옥, 신재은, 장수민, 송선아, 배연희, 김소희 등",
+      "crew": "오동국",
+      "runtime": "1시간 30분",
+      "age": "만 7세 이상",
+      "company": "이탈리아 성악회",
+      "price_text": "R석 100,000원, S석 70,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 70000,
+          "text": "S석 70,000원"
+        }
+      ],
+      "price_min": 70000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261194"
+        }
+      ],
+      "schedule": "금요일(11:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
+      "mt20id": "PF293575",
+      "name": "일리야 라쉬코프스키, 라흐마니노프 3개의 피아노 협주곡 [서울]",
+      "start_date": "20261002",
+      "end_date": "20261002",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF293575_260612_142051.gif",
+      "cast": "일리야 라쉬코프스키 등",
+      "crew": "",
+      "runtime": "2시간 30분",
+      "age": "만 7세 이상",
+      "company": "(사)밀레니엄심포니오케스트라",
+      "price_text": "R석 120,000원, S석 90,000원, A석 70,000원, B석 50,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 90000,
+          "text": "S석 90,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 70000,
+          "text": "A석 70,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 50000,
+          "text": "B석 50,000원"
+        }
+      ],
+      "price_min": 50000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008367"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261125"
+        }
+      ],
+      "schedule": "금요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298318",
       "name": "첼리스트 주연선 리사이틀",
       "start_date": "20261003",
@@ -4891,6 +6208,76 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF295300",
+      "name": "지브리 & 디즈니 영화음악 FESTA [서울] (10.03)",
+      "start_date": "20261003",
+      "end_date": "20261003",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295300_260703_135727.gif",
+      "cast": "백윤학, 이희주 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 4세 이상",
+      "company": "아트인뮤직 컴퍼니",
+      "price_text": "R석 120,000원, S석 100,000원, A석 80,000원, B석 70,000원, 시야방해 S석 60,000원, 시야방해 A석 50,000원, 시야방해 B석 40,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 80000,
+          "text": "A석 80,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 70000,
+          "text": "B석 70,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 60000,
+          "text": "시야방해 S석 60,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 50000,
+          "text": "시야방해 A석 50,000원"
+        },
+        {
+          "seat": "시야방해 B석",
+          "amount": 40000,
+          "text": "시야방해 B석 40,000원"
+        }
+      ],
+      "price_min": 40000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009493"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261136"
+        }
+      ],
+      "schedule": "토요일(14:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF282143",
@@ -5060,6 +6447,81 @@
       "is_new": false
     },
     {
+      "mt20id": "PF297613",
+      "name": "지브리 & 디즈니 오케스트라 콘서트 (10.04)",
+      "start_date": "20261004",
+      "end_date": "20261004",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297613_260804_111944.jpg",
+      "cast": "남기범 등",
+      "crew": "남기범, 안평강",
+      "runtime": "1시간 50분",
+      "age": "만 7세 이상",
+      "company": "(주) 엔오에이 (NOA Inc.)",
+      "price_text": "R석 130,000원, S석 110,000원, A석 90,000원, B석 70,000원, C석 60,000원, 시야방해S 50,000원, 시야방해A 40,000원, 시야방해B 30,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 130000,
+          "text": "R석 130,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 110000,
+          "text": "S석 110,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 90000,
+          "text": "A석 90,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 70000,
+          "text": "B석 70,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 60000,
+          "text": "C석 60,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 50000,
+          "text": "50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 40000,
+          "text": "40,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 30000,
+          "text": "30,000원"
+        }
+      ],
+      "price_min": 30000,
+      "price_max": 130000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011233"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261167"
+        }
+      ],
+      "schedule": "일요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF300136",
       "name": "누구나 클래식 with 국립심포니오케스트라",
       "start_date": "20261006",
@@ -5108,7 +6570,7 @@
       "venue": "세종문화회관",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299955",
@@ -5200,6 +6662,74 @@
       "genre": "오케스트라",
       "genre_guessed": false,
       "is_new": false
+    },
+    {
+      "mt20id": "PF288063",
+      "name": "오르간 시리즈 II. 올리비에 라트리 & 이신영: 포 핸즈",
+      "start_date": "20261006",
+      "end_date": "20261006",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF288063_260326_124808.jpg",
+      "cast": "올리비에 라트리, 이신영",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "롯데문화재단",
+      "price_text": "R석 70,000원, S석 50,000원, A석 30,000원, 시야방해R 49,000원, 시야방해S 35,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 70000,
+          "text": "R석 70,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 50000,
+          "text": "S석 50,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 30000,
+          "text": "A석 30,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 49000,
+          "text": "49,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 35000,
+          "text": "35,000원"
+        }
+      ],
+      "price_min": 30000,
+      "price_max": 70000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/62221"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26004132"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/261021"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/57675"
+        }
+      ],
+      "schedule": "화요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF299789",
@@ -5608,6 +7138,61 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF299433",
+      "name": "말러리안 시리즈 10 FINALE, 말러 교향곡 2번: Ewiger Gesang",
+      "start_date": "20261009",
+      "end_date": "20261009",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299433_260826_141511.jpg",
+      "cast": "진솔, 강혜정, 김세린 등",
+      "crew": "진솔",
+      "runtime": "1시간 30분",
+      "age": "만 7세 이상",
+      "company": "말러리안",
+      "price_text": "R석 90,000원, S석 60,000원, A석 40,000원, B석 20,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 90000,
+          "text": "R석 90,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 60000,
+          "text": "S석 60,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 40000,
+          "text": "A석 40,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 20000,
+          "text": "B석 20,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 90000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/65131"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261189"
+        }
+      ],
+      "schedule": "금요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF299618",
@@ -6061,47 +7646,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF299485",
-      "name": "아트하우스 17 내한공연 [세종]",
-      "start_date": "20261014",
-      "end_date": "20261014",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299485_260827_113555.gif",
-      "cast": "소피 데인먼, 디트리히 헨셸 등",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 7세 이상",
-      "company": "세종특별자치시청",
-      "price_text": "R석 50,000원, S석 30,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 50000,
-          "text": "R석 50,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 30000,
-          "text": "S석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 50000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012306"
-        }
-      ],
-      "schedule": "수요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
       "mt20id": "PF299391",
       "name": "제18회 서울국제음악제, 아르토 노라스와 김규연 리사이틀: 멋진 추억",
       "start_date": "20261014",
@@ -6207,52 +7751,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF294166",
-      "name": "일리야 라쉬코프스키, 라흐마니노프 3개의 피아노 협주곡 [세종]",
-      "start_date": "20261015",
-      "end_date": "20261015",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294166_260619_144637.gif",
-      "cast": "일리야 라쉬코프스키 등",
-      "crew": "",
-      "runtime": "2시간 30분",
-      "age": "만 7세 이상",
-      "company": "(사)밀레니엄심포니오케스트라",
-      "price_text": "R석 120,000원, S석 90,000원, A석 70,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 120000,
-          "text": "R석 120,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 90000,
-          "text": "S석 90,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 70000,
-          "text": "A석 70,000원"
-        }
-      ],
-      "price_min": 70000,
-      "price_max": 120000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26008745"
-        }
-      ],
-      "schedule": "목요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
       "mt20id": "PF298472",
       "name": "유미향 피아노 독주회: 베토벤 피아노 소나타 전곡 연주회 Ⅳ",
       "start_date": "20261015",
@@ -6346,47 +7844,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF294820",
-      "name": "국립심포니콘서트오케스트라: 말러, 교향곡 4번 [세종]",
-      "start_date": "20261016",
-      "end_date": "20261016",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294820_260629_141944.gif",
-      "cast": "김성진, 김도현, 홍주영 등",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 7세 이상",
-      "company": "(재)코리안심포니오케스트라(국립심포니오케스트라)",
-      "price_text": "R석 20,000원, S석 10,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 20000,
-          "text": "R석 20,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 10000,
-          "text": "S석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009089"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false,
       "is_new": false
     },
     {
@@ -6529,6 +7986,81 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF299027",
+      "name": "제18회 서울국제음악제, 폐막음악회: SIMF오케스트라 with 크시슈토프 우르반스키",
+      "start_date": "20261016",
+      "end_date": "20261016",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299027_260821_105527.jpg",
+      "cast": "크시슈토프 우르반스키, 김계희, 김재원, 송지원, 견나현, 김수언, 박민 등",
+      "crew": "",
+      "runtime": "1시간 30분",
+      "age": "만 7세 이상",
+      "company": "서울국제음악제",
+      "price_text": "R석 120,000원, S석 90,000원, A석 60,000원, B석 30,000원, C석 10,000원, 시야방해 R석 90,000원, 시야방해 S석 60,000원, 시야방해 A석 30,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 90000,
+          "text": "S석 90,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 60000,
+          "text": "A석 60,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 10000,
+          "text": "C석 10,000원"
+        },
+        {
+          "seat": "시야방해 R석",
+          "amount": 90000,
+          "text": "시야방해 R석 90,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 60000,
+          "text": "시야방해 S석 60,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 30000,
+          "text": "시야방해 A석 30,000원"
+        }
+      ],
+      "price_min": 10000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012169"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261185"
+        }
+      ],
+      "schedule": "금요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
     },
     {
       "mt20id": "PF297367",
@@ -6791,7 +8323,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299937",
@@ -7026,42 +8558,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF299540",
-      "name": "라 칼라스 [세종]",
-      "start_date": "20261021",
-      "end_date": "20261021",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299540_260827_143338.gif",
-      "cast": "정희경, 김재민, 김영하, 김미아",
-      "crew": "유인촌, 강혜경 등",
-      "runtime": "1시간 10분",
-      "age": "만 7세 이상",
-      "company": "세종특별자치시청",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012492"
-        }
-      ],
-      "schedule": "수요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
       "mt20id": "PF291310",
       "name": "낭만주의 거장, 시벨리우스",
       "start_date": "20261021",
@@ -7115,6 +8611,71 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF298311",
+      "name": "슈테른 필하모닉 더블 심포니 베토벤 7 & 5",
+      "start_date": "20261021",
+      "end_date": "20261021",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298311_260812_112411.jpg",
+      "cast": "권정환 등",
+      "crew": "",
+      "runtime": "1시간 50분",
+      "age": "만 7세 이상",
+      "company": "선민엠엔에스 (MNS), 슈테른 필하모닉 오케스트라",
+      "price_text": "R석 50,000원, 시야방해R 35,000원, S석 30,000원, 시야방해S 21,000원, A석 20,000원, 시야방해A 14,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 50000,
+          "text": "R석 50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 35000,
+          "text": "35,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 30000,
+          "text": "S석 30,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 21000,
+          "text": "21,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 20000,
+          "text": "A석 20,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 14000,
+          "text": "14,000원"
+        }
+      ],
+      "price_min": 14000,
+      "price_max": 50000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011680"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261176"
+        }
+      ],
+      "schedule": "수요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
     },
     {
       "mt20id": "PF299019",
@@ -7177,6 +8738,94 @@
       "is_new": false
     },
     {
+      "mt20id": "PF294503",
+      "name": "유카페카 사라스테 & 헬싱키 필하모닉 오케스트라",
+      "start_date": "20261022",
+      "end_date": "20261022",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294503_260626_141649.jpg",
+      "cast": "유카페카 사라스테, 양인모 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "롯데문화재단",
+      "price_text": "R석 280,000원, S석 220,000원, A석 180,000원, B석 110,000원, C석 60,000원, 시야방해R 196,000원, 시야방해S 154,000원, 시야방해A 126,000원, 시야방해B 77,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 280000,
+          "text": "R석 280,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 220000,
+          "text": "S석 220,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 180000,
+          "text": "A석 180,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 110000,
+          "text": "B석 110,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 60000,
+          "text": "C석 60,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 196000,
+          "text": "196,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 154000,
+          "text": "154,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 126000,
+          "text": "126,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 77000,
+          "text": "77,000원"
+        }
+      ],
+      "price_min": 60000,
+      "price_max": 280000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/63680"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "https://tickets.interpark.com/goods/26008398"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261113"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/58888"
+        }
+      ],
+      "schedule": "목요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF282069",
       "name": "서울시합창단, 가곡시대",
       "start_date": "20261023",
@@ -7235,42 +8884,6 @@
       "venue": "세종문화회관",
       "genre": "합창",
       "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF295636",
-      "name": "세종예술의전당 시크릿콘서트, 셰프 로시니의 식탁: 최원휘 & 홍혜란",
-      "start_date": "20261023",
-      "end_date": "20261023",
-      "facility_name": "세종예술의전당 (시크릿씨어터(3F) )",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295636_260708_142416.gif",
-      "cast": "최원휘, 홍혜란, 정태양, 송현민",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "(재) 세종시문화관광재단(세종문화예술회관), 세종특별자치시청",
-      "price_text": "전석 50,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 50000,
-          "text": "전석 50,000원"
-        }
-      ],
-      "price_min": 50000,
-      "price_max": 50000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009779"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
       "is_new": false
     },
     {
@@ -7358,6 +8971,70 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF277338",
+      "name": "서울시향 얍 판 츠베덴의 모차르트: 레퀴엠 ①",
+      "start_date": "20261023",
+      "end_date": "20261023",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277338_260721_164146.gif",
+      "cast": "얍 판 츠베덴, 루카스 유센, 아르투르 유센, 홍주영, 이아경, 손지훈, 이동환 등",
+      "crew": "",
+      "runtime": "1시간 25분",
+      "age": "만 7세 이상",
+      "company": "(재) 서울시립교향악단",
+      "price_text": "R석 150,000원, S석 120,000원, A석 80,000원, B석 40,000원, C석 10,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 150000,
+          "text": "R석 150,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 120000,
+          "text": "S석 120,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 80000,
+          "text": "A석 80,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 40000,
+          "text": "B석 40,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 10000,
+          "text": "C석 10,000원"
+        }
+      ],
+      "price_min": 10000,
+      "price_max": 150000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/59429"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=25013701"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260891"
+        }
+      ],
+      "schedule": "금요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF299871",
@@ -7614,12 +9291,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "ticket_open": {
-        "open_at": "2026-08-18",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=80033",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -7716,6 +9387,61 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF300017",
+      "name": "낭만주의 거장, 차이코프스키 & 라흐마니노프 & 신세계로부터 [서울]",
+      "start_date": "20261028",
+      "end_date": "20261028",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF300017_260903_110812.gif",
+      "cast": "최영선, 송지원, 유성호 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "두남재엔터테인먼트(주)",
+      "price_text": "R석 120,000원, S석 90,000원, A석 70,000원, B석 50,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 90000,
+          "text": "S석 90,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 70000,
+          "text": "A석 70,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 50000,
+          "text": "B석 50,000원"
+        }
+      ],
+      "price_min": 50000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012678"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261193"
+        }
+      ],
+      "schedule": "수요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF298811",
@@ -7915,6 +9641,81 @@
       "is_new": false
     },
     {
+      "mt20id": "PF296224",
+      "name": "스미노 하야토 피아노 리사이틀",
+      "start_date": "20261029",
+      "end_date": "20261029",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296224_260716_113949.png",
+      "cast": "스미노 하야토",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "(주)마스트미디어",
+      "price_text": "R석 110,000원, S석 90,000원, A석 70,000원, B석 50,000원, 시야방해R  88,000원, 시야방해S  72,000원, 시야방해A  56,000원, 시야방해B  40,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 110000,
+          "text": "R석 110,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 90000,
+          "text": "S석 90,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 70000,
+          "text": "A석 70,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 50000,
+          "text": "B석 50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 88000,
+          "text": "88,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 72000,
+          "text": "72,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 56000,
+          "text": "56,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 40000,
+          "text": "40,000원"
+        }
+      ],
+      "price_min": 40000,
+      "price_max": 110000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "https://tickets.interpark.com/goods/26010122"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261143"
+        }
+      ],
+      "schedule": "목요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF297366",
       "name": "아람 클래식, 비킹구르 올라프손 피아노 리사이틀 [고양]",
       "start_date": "20261029",
@@ -8011,6 +9812,81 @@
       "is_new": false
     },
     {
+      "mt20id": "PF297223",
+      "name": "한수진 x 잉글리시 체임버 오케스트라",
+      "start_date": "20261030",
+      "end_date": "20261030",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297223_260729_140020.png",
+      "cast": "한수진 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "(주)에스에이치아트앤클래식(SH아트앤클래식)",
+      "price_text": "R석 200,000원, S석 150,000원, A석 100,000원, B석 50,000원, C석 30,000원, 시야방해R  100,000원, 시야방해S  75,000원, 시야방해A  50,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 200000,
+          "text": "R석 200,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 150000,
+          "text": "S석 150,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 100000,
+          "text": "A석 100,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 50000,
+          "text": "B석 50,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 30000,
+          "text": "C석 30,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 100000,
+          "text": "100,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 75000,
+          "text": "75,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 50000,
+          "text": "50,000원"
+        }
+      ],
+      "price_min": 30000,
+      "price_max": 200000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011040"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261159"
+        }
+      ],
+      "schedule": "금요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF300122",
       "name": "바리톤 김주택 뮤직 라이브러리, Act 5. Le Canzoni",
       "start_date": "20261031",
@@ -8049,7 +9925,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299584",
@@ -8467,42 +10343,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF296517",
-      "name": "국립심포니콘서트오케스트라 심야음악회: 별 헤는 밤, 별 셋 [세종]",
-      "start_date": "20261106",
-      "end_date": "20261106",
-      "facility_name": "세종예술의전당 (시크릿씨어터(3F) )",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296517_260721_111129.gif",
-      "cast": "김성진, 김종윤 등",
-      "crew": "",
-      "runtime": "1시간 10분",
-      "age": "만 7세 이상",
-      "company": "(재) 세종시문화관광재단(세종문화예술회관), (재)코리안심포니오케스트라(국립심포니오케스트라)",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010130"
-        }
-      ],
-      "schedule": "금요일(21:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
       "mt20id": "PF299388",
       "name": "조성현 바흐 플루트 소나타 전곡 리사이틀 [서울]",
       "start_date": "20261106",
@@ -8780,45 +10620,74 @@
       "is_new": false
     },
     {
-      "mt20id": "PF294873",
-      "name": "국립심포니콘서트오케스트라, 드보르자크, 교향곡 9번 신세계로부터 [세종]",
-      "start_date": "20261114",
-      "end_date": "20261114",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294873_260629_161049.gif",
-      "cast": "김성진, 김희재 등",
+      "mt20id": "PF296018",
+      "name": "재패니메이션 영화음악 콘서트: UNSTOPPABLE",
+      "start_date": "20261113",
+      "end_date": "20261113",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296018_260714_103419.gif",
+      "cast": "백윤학 등",
       "crew": "",
-      "runtime": "1시간 40분",
+      "runtime": "2시간",
       "age": "만 7세 이상",
-      "company": "(재)코리안심포니오케스트라(국립심포니오케스트라)",
-      "price_text": "R석 20,000원, S석 10,000원",
+      "company": "필뮤직 컴퍼니",
+      "price_text": "R석 120,000원, S석 100,000원, A석 80,000원, B석 70,000원, 시야방해S  60,000원, 시야방해A 50,000원, 시야방해B 40,000원",
       "prices": [
         {
           "seat": "R석",
-          "amount": 20000,
-          "text": "R석 20,000원"
+          "amount": 120000,
+          "text": "R석 120,000원"
         },
         {
           "seat": "S석",
-          "amount": 10000,
-          "text": "S석 10,000원"
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 80000,
+          "text": "A석 80,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 70000,
+          "text": "B석 70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 60000,
+          "text": "60,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 50000,
+          "text": "50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 40000,
+          "text": "40,000원"
         }
       ],
-      "price_min": 10000,
-      "price_max": 20000,
+      "price_min": 40000,
+      "price_max": 120000,
       "booking_links": [
         {
           "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009113"
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010080"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261146"
         }
       ],
-      "schedule": "토요일(17:00)",
+      "schedule": "금요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "is_new": false
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF300156",
@@ -8854,7 +10723,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF294522",
@@ -8912,6 +10781,71 @@
       "is_new": false
     },
     {
+      "mt20id": "PF298969",
+      "name": "히사이시 조 영화음악 콘서트 파이널 [서울]",
+      "start_date": "20261114",
+      "end_date": "20261114",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298969_260820_135939.png",
+      "cast": "김재원 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "라이브러리컴퍼니",
+      "price_text": "R석 130,000원, S석 100,000원, A석 70,000원, B석 50,000원, 시야방해S  70,000원, 시야방해A  49,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 130000,
+          "text": "R석 130,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 70000,
+          "text": "A석 70,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 50000,
+          "text": "B석 50,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 49000,
+          "text": "49,000원"
+        }
+      ],
+      "price_min": 49000,
+      "price_max": 130000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012030"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261181"
+        }
+      ],
+      "schedule": "토요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298556",
       "name": "멘델스존, 바흐를 만나다",
       "start_date": "20261115",
@@ -8953,45 +10887,161 @@
       "is_new": false
     },
     {
-      "mt20id": "PF299529",
-      "name": "레 벙 프랑세 내한공연 [세종]",
-      "start_date": "20261117",
-      "end_date": "20261117",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299529_260827_141309.gif",
-      "cast": "에마뉘엘 파위, 프랑수아 를뢰, 폴 메이어, 라도반 블라트코비치, 질베르 오댕, 에릭 르 사쥬",
+      "mt20id": "PF283084",
+      "name": "함신익과 심포니 송 마스터즈 시리즈 Ⅶ, 브람스 페스티벌",
+      "start_date": "20261116",
+      "end_date": "20261116",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283084_260113_132822.gif",
+      "cast": "함신익, 유영욱 등",
       "crew": "",
       "runtime": "2시간",
       "age": "만 7세 이상",
-      "company": "세종특별자치시청",
-      "price_text": "R석 70,000원, S석 50,000원",
+      "company": "심포니 송",
+      "price_text": "R석 100,000원, S석 70,000원, A석 50,000원, B석 30,000원, C석 20,000원, 시야방해R  70,000원, 시야방해A  30,000원",
       "prices": [
         {
           "seat": "R석",
-          "amount": 70000,
-          "text": "R석 70,000원"
+          "amount": 100000,
+          "text": "R석 100,000원"
         },
         {
           "seat": "S석",
+          "amount": 70000,
+          "text": "S석 70,000원"
+        },
+        {
+          "seat": "A석",
           "amount": 50000,
-          "text": "S석 50,000원"
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 20000,
+          "text": "C석 20,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 30000,
+          "text": "30,000원"
         }
       ],
-      "price_min": 50000,
-      "price_max": 70000,
+      "price_min": 20000,
+      "price_max": 100000,
       "booking_links": [
         {
           "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012299"
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26000077"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260964"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/56693"
+        }
+      ],
+      "schedule": "월요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
+      "mt20id": "PF297330",
+      "name": "테오도르 쿠렌치스 & 유토피아 오케스트라 (11.17)",
+      "start_date": "20261117",
+      "end_date": "20261117",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297330_260730_150303.jpg",
+      "cast": "테오도르 쿠렌치스, 다니엘 로자코비치, 알렉산더 멜니코프 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "롯데문화재단",
+      "price_text": "R석 380,000원, S석 280,000원, A석 200,000원, B석 140,000원, C석 80,000원, 시야방해R 266,000원, 시야방해S 196,000원, 시야방해A 140,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 380000,
+          "text": "R석 380,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 280000,
+          "text": "S석 280,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 200000,
+          "text": "A석 200,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 140000,
+          "text": "B석 140,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 80000,
+          "text": "C석 80,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 266000,
+          "text": "266,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 196000,
+          "text": "196,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 140000,
+          "text": "140,000원"
+        }
+      ],
+      "price_min": 80000,
+      "price_max": 380000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/64584"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011008"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261165"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/59408"
         }
       ],
       "schedule": "화요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
     },
     {
       "mt20id": "PF298398",
@@ -9045,6 +11095,94 @@
       "is_new": false
     },
     {
+      "mt20id": "PF297326",
+      "name": "테오도르 쿠렌치스 & 유토피아 오케스트라 (11.18)",
+      "start_date": "20261118",
+      "end_date": "20261118",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297326_260730_145431.jpg",
+      "cast": "테오도르 쿠렌치스, 알렉산더 멜니코프 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "롯데문화재단",
+      "price_text": "R석 380,000원, S석 280,000원, A석 190,000원, B석 120,000원, C석 60,000원, 시야방해 R석 266,000원, 시야방해 S석 196,000원, 시야방해 A석 133,000원, 시야방해 B석 84,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 380000,
+          "text": "R석 380,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 280000,
+          "text": "S석 280,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 190000,
+          "text": "A석 190,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 120000,
+          "text": "B석 120,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 60000,
+          "text": "C석 60,000원"
+        },
+        {
+          "seat": "시야방해 R석",
+          "amount": 266000,
+          "text": "시야방해 R석 266,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 196000,
+          "text": "시야방해 S석 196,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 133000,
+          "text": "시야방해 A석 133,000원"
+        },
+        {
+          "seat": "시야방해 B석",
+          "amount": 84000,
+          "text": "시야방해 B석 84,000원"
+        }
+      ],
+      "price_min": 60000,
+      "price_max": 380000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/64522"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "https://tickets.interpark.com/goods/26010819"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261157"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/59401"
+        }
+      ],
+      "schedule": "수요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF300068",
       "name": "한화생명과 함께하는 예술의전당 11시 콘서트 (11월)",
       "start_date": "20261119",
@@ -9090,40 +11228,68 @@
       "is_new": false
     },
     {
-      "mt20id": "PF295630",
-      "name": "세종예술의전당 시크릿콘서트, 김세일 & 김수연: 슈베르트와 맥주",
-      "start_date": "20261120",
+      "mt20id": "PF277462",
+      "name": "서울시향 한누 린투의 프로코피예프: 로미오와 줄리엣",
+      "start_date": "20261119",
       "end_date": "20261120",
-      "facility_name": "세종예술의전당 (시크릿씨어터(3F) )",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF295630_260708_141038.gif",
-      "cast": "김세일, 김수연, 송현민",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF277462_260721_164606.gif",
+      "cast": "한누 린투, 한재민, 강윤지 등",
       "crew": "",
       "runtime": "1시간 30분",
       "age": "만 7세 이상",
-      "company": "문화체육관광부",
-      "price_text": "전석 50,000원",
+      "company": "(재) 서울시립교향악단",
+      "price_text": "R석 100,000원, S석 80,000원, A석 50,000원, B석 30,000원, C석 10,000원",
       "prices": [
         {
-          "seat": "전석",
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 80000,
+          "text": "S석 80,000원"
+        },
+        {
+          "seat": "A석",
           "amount": 50000,
-          "text": "전석 50,000원"
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 10000,
+          "text": "C석 10,000원"
         }
       ],
-      "price_min": 50000,
-      "price_max": 50000,
+      "price_min": 10000,
+      "price_max": 100000,
       "booking_links": [
         {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/59430"
+        },
+        {
           "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009780"
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=25013703"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260902"
         }
       ],
-      "schedule": "금요일(19:30)",
+      "schedule": "목요일 ~ 금요일(19:30)",
       "genre_raw": "서양음악(클래식)",
       "state": "공연예정",
-      "venue": "세종예술의전당",
+      "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": false
+      "is_new": true
     },
     {
       "mt20id": "PF298970",
@@ -9175,6 +11341,94 @@
         "source": "예술의전당 선예매 티켓오픈공지"
       },
       "is_new": false
+    },
+    {
+      "mt20id": "PF297770",
+      "name": "샤를 뒤트와 & 마르타 아르헤리치 with KBS 교향악단",
+      "start_date": "20261121",
+      "end_date": "20261122",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297770_260805_142040.jpg",
+      "cast": "샤를 뒤트와, 마르타 아르헤리치 등",
+      "crew": "",
+      "runtime": "1시간 50분",
+      "age": "만 7세 이상",
+      "company": "롯데문화재단, 한국경제신문",
+      "price_text": "R석 270,000원, S석 220,000원, 시야방해R 189,000원, A석 170,000원, 시야방해S 154,000원, B석 120,000원, 시야방해A 119,000원, 시야방해B 84,000원, C석 70,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 270000,
+          "text": "R석 270,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 220000,
+          "text": "S석 220,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 189000,
+          "text": "189,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 170000,
+          "text": "A석 170,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 154000,
+          "text": "154,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 120000,
+          "text": "B석 120,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 119000,
+          "text": "119,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 84000,
+          "text": "84,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 70000,
+          "text": "C석 70,000원"
+        }
+      ],
+      "price_min": 70000,
+      "price_max": 270000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/64609"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010234"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261148"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/59482"
+        }
+      ],
+      "schedule": "토요일 ~ 일요일(17:00)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
     },
     {
       "mt20id": "PF281238",
@@ -9325,47 +11579,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF294816",
-      "name": "국립심포니콘서트오케스트라: 베토벤, 교향곡 9번 합창 [세종]",
-      "start_date": "20261202",
-      "end_date": "20261202",
-      "facility_name": "세종예술의전당 (대공연장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF294816_260629_141258.gif",
-      "cast": "김성진, 박소영, 김정미, 김효종, 송일도 등",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(재)코리안심포니오케스트라(국립심포니오케스트라)",
-      "price_text": "R석 20,000원, S석 10,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 20000,
-          "text": "R석 20,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 10000,
-          "text": "S석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009135"
-        }
-      ],
-      "schedule": "수요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "세종예술의전당",
-      "genre": "합창",
-      "genre_guessed": false,
       "is_new": false
     },
     {
@@ -9932,6 +12145,76 @@
       "is_new": false
     },
     {
+      "mt20id": "PF299383",
+      "name": "한경아르떼필하모닉 송년음악회",
+      "start_date": "20261217",
+      "end_date": "20261217",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299383_260826_105613.jpg",
+      "cast": "홍석원, 이윤정, 김효나, 김정훈, 김서원 등",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "한경arteTV, 한경닷컴, 한국경제신문",
+      "price_text": "R석 100,000원, S석 70,000원, A석 50,000원, B석 30,000원, 시야방해 R석 70,000원, 시야방해 S석 49,000원, 시야방해 A석 35,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 70000,
+          "text": "S석 70,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "시야방해 R석",
+          "amount": 70000,
+          "text": "시야방해 R석 70,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 49000,
+          "text": "시야방해 S석 49,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 35000,
+          "text": "시야방해 A석 35,000원"
+        }
+      ],
+      "price_min": 30000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012176"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261186"
+        }
+      ],
+      "schedule": "목요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
+    },
+    {
       "mt20id": "PF298967",
       "name": "예술의전당 토요콘서트, 프리뷰 베토벤 (12월)",
       "start_date": "20261219",
@@ -10041,6 +12324,81 @@
       "genre": "합창",
       "genre_guessed": false,
       "is_new": false
+    },
+    {
+      "mt20id": "PF299744",
+      "name": "니콜라이 루간스키 피아노 리사이틀 [서울]",
+      "start_date": "20261222",
+      "end_date": "20261222",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299744_260831_142929.gif",
+      "cast": "니콜라이 루간스키",
+      "crew": "",
+      "runtime": "2시간",
+      "age": "만 7세 이상",
+      "company": "(주)마스트미디어",
+      "price_text": "R석 120,000원, S석 100,000원, A석 80,000원, B석 60,000원, 시야방해 R석 96,000원, 시야방해 S석 80,000원, 시야방해 A석 64,000원, 시야방해 B석 48,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 120000,
+          "text": "R석 120,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 100000,
+          "text": "S석 100,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 80000,
+          "text": "A석 80,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 60000,
+          "text": "B석 60,000원"
+        },
+        {
+          "seat": "시야방해 R석",
+          "amount": 96000,
+          "text": "시야방해 R석 96,000원"
+        },
+        {
+          "seat": "시야방해 S석",
+          "amount": 80000,
+          "text": "시야방해 S석 80,000원"
+        },
+        {
+          "seat": "시야방해 A석",
+          "amount": 64000,
+          "text": "시야방해 A석 64,000원"
+        },
+        {
+          "seat": "시야방해 B석",
+          "amount": 48000,
+          "text": "시야방해 B석 48,000원"
+        }
+      ],
+      "price_min": 48000,
+      "price_max": 120000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012177"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.lotteconcerthall.com/product/performance/261187"
+        }
+      ],
+      "schedule": "화요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
+      "is_new": true
     },
     {
       "mt20id": "PF283864",
