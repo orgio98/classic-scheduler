@@ -28,7 +28,7 @@
       "title": "〈2026 꿈의숲 시즌콘서트 : Fall in Autumn〉 티켓 오픈 안내",
       "open_at": "2026-09-08 14:00",
       "posted_at": "2026-09-04",
-      "dday": "D-3",
+      "dday": "D-2",
       "url": "https://www.sejongpac.or.kr/portal/bbs/B0000049/view.do?nttId=50156&menuNo=200440",
       "source": "세종문화회관 티켓오픈안내"
     },
@@ -319,18 +319,6 @@
     },
     {
       "venue": "예술의전당",
-      "title": "욘 스토르고르스 & BBC 필하모닉",
-      "open_at": "2026-09-09",
-      "posted_at": null,
-      "dday": null,
-      "hall": "콘서트홀",
-      "state": "예정",
-      "price_info": "R석 240,000원 / S석 180,000원 / A석 120,000원 / B석 80,000원",
-      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74854",
-      "source": "예술의전당 선예매 티켓오픈공지"
-    },
-    {
-      "venue": "예술의전당",
       "title": "알렉상드르 캉토로프 피아노 리사이틀",
       "open_at": "2026-09-09",
       "posted_at": null,
@@ -339,6 +327,18 @@
       "state": "예정",
       "price_info": "R석 110,000원 / S석 90,000원 / A석 70,000원 / B석 50,000원",
       "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74255",
+      "source": "예술의전당 선예매 티켓오픈공지"
+    },
+    {
+      "venue": "예술의전당",
+      "title": "욘 스토르고르스 & BBC 필하모닉",
+      "open_at": "2026-09-09",
+      "posted_at": null,
+      "dday": null,
+      "hall": "콘서트홀",
+      "state": "예정",
+      "price_info": "R석 240,000원 / S석 180,000원 / A석 120,000원 / B석 80,000원",
+      "url": "https://www.sac.or.kr/site/main/show/show_view?SN=74854",
       "source": "예술의전당 선예매 티켓오픈공지"
     },
     {
@@ -466,6 +466,74 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
+      "is_new": false
+    },
+    {
+      "mt20id": "PF281822",
+      "name": "롯콘 마티네: 대니 구의 플레이리스트",
+      "start_date": "20260305",
+      "end_date": "20261105",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF281822_251222_110249.gif",
+      "cast": "구교현, 문재원, 윤현상, 김다미, 김지윤 등",
+      "crew": "",
+      "runtime": "1시간 20분",
+      "age": "만 7세 이상",
+      "company": "롯데문화재단",
+      "price_text": "R석 45,000원, S석 30,000원, 마티네석 10,000원, 시야방해R 31,500원, 시야방해S 21,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 45000,
+          "text": "R석 45,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 30000,
+          "text": "S석 30,000원"
+        },
+        {
+          "seat": "마티네석",
+          "amount": 10000,
+          "text": "마티네석 10,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 31500,
+          "text": "31,500원"
+        },
+        {
+          "seat": "가격",
+          "amount": 21000,
+          "text": "21,000원"
+        }
+      ],
+      "price_min": 10000,
+      "price_max": 45000,
+      "booking_links": [
+        {
+          "name": "NHN티켓링크",
+          "url": "http://www.ticketlink.co.kr/product/60412"
+        },
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=25017807"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260941"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/56414"
+        }
+      ],
+      "schedule": "목요일(11:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연중",
+      "venue": "롯데콘서트홀",
+      "genre": "실내악·독주",
+      "genre_guessed": true,
       "is_new": true
     },
     {
@@ -498,11 +566,11 @@
       ],
       "schedule": "화요일(10:30), 목요일(10:30), 토요일(10:30,13:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297812",
@@ -538,7 +606,7 @@
       ],
       "schedule": "토요일(17:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -574,7 +642,7 @@
       ],
       "schedule": "토요일(14:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -633,7 +701,7 @@
       ],
       "schedule": "토요일(17:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
@@ -669,7 +737,7 @@
       ],
       "schedule": "토요일(20:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -710,7 +778,7 @@
       ],
       "schedule": "토요일(20:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -760,7 +828,7 @@
       ],
       "schedule": "토요일(14:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -820,11 +888,11 @@
       ],
       "schedule": "토요일(11:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF296998",
@@ -874,11 +942,11 @@
       ],
       "schedule": "토요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연중",
+      "state": "공연완료",
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298486",
@@ -910,7 +978,7 @@
       ],
       "schedule": "일요일(14:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -946,7 +1014,7 @@
       ],
       "schedule": "일요일(20:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -982,7 +1050,7 @@
       ],
       "schedule": "일요일(14:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -1037,7 +1105,7 @@
       ],
       "schedule": "일요일(17:00)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
@@ -1073,11 +1141,11 @@
       ],
       "schedule": "일요일(11:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF295030",
@@ -1148,11 +1216,11 @@
       ],
       "schedule": "일요일(19:30)",
       "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
+      "state": "공연중",
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297848",
@@ -1585,7 +1653,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299716",
@@ -1802,7 +1870,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299608",
@@ -2104,7 +2172,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297375",
@@ -2421,7 +2489,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF283088",
@@ -2495,7 +2563,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF289405",
@@ -2778,7 +2846,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299929",
@@ -2900,7 +2968,7 @@
       "venue": "롯데콘서트홀",
       "genre": "합창",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298488",
@@ -3197,7 +3265,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299859",
@@ -3485,7 +3553,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298342",
@@ -3773,7 +3841,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298576",
@@ -4046,7 +4114,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297234",
@@ -4291,7 +4359,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298999",
@@ -4632,7 +4700,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299772",
@@ -4743,7 +4811,7 @@
       "venue": "롯데콘서트홀",
       "genre": "합창",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300178",
@@ -4956,7 +5024,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298803",
@@ -5152,7 +5220,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298410",
@@ -5243,7 +5311,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297535",
@@ -5318,7 +5386,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298788",
@@ -5368,7 +5436,7 @@
       "venue": "롯데콘서트홀",
       "genre": "합창",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300163",
@@ -5531,7 +5599,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299364",
@@ -5898,7 +5966,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299904",
@@ -6065,7 +6133,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF293575",
@@ -6120,7 +6188,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298318",
@@ -6277,7 +6345,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF282143",
@@ -6519,7 +6587,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300136",
@@ -6729,7 +6797,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299789",
@@ -7192,7 +7260,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299618",
@@ -8060,7 +8128,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297367",
@@ -8675,7 +8743,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299019",
@@ -8823,7 +8891,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF282069",
@@ -9034,7 +9102,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299871",
@@ -9183,6 +9251,80 @@
       "genre": "실내악·독주",
       "genre_guessed": true,
       "is_new": false
+    },
+    {
+      "mt20id": "PF283070",
+      "name": "함신익과 심포니 송 마스터즈 시리즈 VI, 차이코프스키 스페셜",
+      "start_date": "20261024",
+      "end_date": "20261024",
+      "facility_name": "롯데콘서트홀 (롯데콘서트홀)",
+      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283070_260113_125650.gif",
+      "cast": "데럴 앙, 양정윤 등",
+      "crew": "",
+      "runtime": "1시간 40분",
+      "age": "만 7세 이상",
+      "company": "심포니 송",
+      "price_text": "R석 100,000원, S석 70,000원, A석 50,000원, B석 30,000원, C석 20,000원, 시야방해R 70,000원, 시야방해A 30,000원",
+      "prices": [
+        {
+          "seat": "R석",
+          "amount": 100000,
+          "text": "R석 100,000원"
+        },
+        {
+          "seat": "S석",
+          "amount": 70000,
+          "text": "S석 70,000원"
+        },
+        {
+          "seat": "A석",
+          "amount": 50000,
+          "text": "A석 50,000원"
+        },
+        {
+          "seat": "B석",
+          "amount": 30000,
+          "text": "B석 30,000원"
+        },
+        {
+          "seat": "C석",
+          "amount": 20000,
+          "text": "C석 20,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 70000,
+          "text": "70,000원"
+        },
+        {
+          "seat": "가격",
+          "amount": 30000,
+          "text": "30,000원"
+        }
+      ],
+      "price_min": 20000,
+      "price_max": 100000,
+      "booking_links": [
+        {
+          "name": "놀유니버스",
+          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26000076"
+        },
+        {
+          "name": "롯데콘서트홀",
+          "url": "http://www.lotteconcerthall.com/kor/Performance/ConcertDetails/260963"
+        },
+        {
+          "name": "예스24",
+          "url": "https://ticket.yes24.com/Perf/56692"
+        }
+      ],
+      "schedule": "토요일(19:30)",
+      "genre_raw": "서양음악(클래식)",
+      "state": "공연예정",
+      "venue": "롯데콘서트홀",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "is_new": true
     },
     {
       "mt20id": "PF296892",
@@ -9441,7 +9583,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298811",
@@ -9713,7 +9855,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297366",
@@ -9884,7 +10026,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300122",
@@ -10687,7 +10829,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300156",
@@ -10843,7 +10985,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298556",
@@ -10958,7 +11100,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297330",
@@ -11041,7 +11183,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298398",
@@ -11180,7 +11322,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300068",
@@ -11289,7 +11431,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298970",
@@ -11428,7 +11570,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF281238",
@@ -12212,7 +12354,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298967",
@@ -12398,7 +12540,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF283864",
