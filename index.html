@@ -267,6 +267,11 @@ function fmt(d) {
 function won(n) { return n == null ? "" : n.toLocaleString("ko-KR") + "원"; }
 
 function runsOn(p, ymd) {
+  // specific_dates 가 있으면(장기 시리즈 감지됨) 그 날짜들만 인정한다.
+  // 없으면 기존처럼 시작~종료 전체 범위를 연속 공연으로 본다.
+  if (p.specific_dates && p.specific_dates.length) {
+    return p.specific_dates.map(norm).includes(ymd);
+  }
   const s = norm(p.start_date), e = norm(p.end_date) || s;
   return s && ymd >= s && ymd <= e;
 }
@@ -595,9 +600,18 @@ function bookingHtml(p) {
 }
 
 function cardHtml(p) {
-  const range = norm(p.start_date) === norm(p.end_date) ? fmt(p.start_date)
-    : `${fmt(p.start_date)} ~ ${fmt(p.end_date)}`;
+  let range;
+  if (p.specific_dates && p.specific_dates.length >= 2 && !p.irregular_long_run) {
+    // 파싱된 정확한 날짜들을 그대로 나열 (예: 02.25 · 07.22 · 12.16)
+    range = p.specific_dates.map(fmt).join(" · ");
+  } else if (norm(p.start_date) === norm(p.end_date)) {
+    range = fmt(p.start_date);
+  } else {
+    range = `${fmt(p.start_date)} ~ ${fmt(p.end_date)}`;
+  }
   const badge = p.genre_guessed ? '<span class="badge">장르 추정</span>' : "";
+  const irregular = p.irregular_long_run
+    ? '<span class="badge">회차별 날짜 다름 — 예매처 확인</span>' : "";
   const gtag = `<span class="gtag">${esc(p.genre)}</span>`;
   const isNew = p.is_new || isUpcomingOpen(p);
   const newBadge = isNew ? '<span class="newbadge">NEW</span>' : "";
@@ -609,7 +623,7 @@ function cardHtml(p) {
     <div class="card">
       ${poster}
       <div class="info">
-        <div class="pname">${esc(p.name)}${newBadge}${gtag}${badge}</div>
+        <div class="pname">${esc(p.name)}${newBadge}${gtag}${badge}${irregular}</div>
         <div class="pvenue">${esc(p.venue)} · ${esc(p.facility_name)}</div>
         <div class="pdate">${range}</div>
         ${cast}

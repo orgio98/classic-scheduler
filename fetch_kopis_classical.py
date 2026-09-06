@@ -233,6 +233,49 @@ def parse_booking_links(db: ET.Element) -> list[dict]:
     return links
 
 
+# 장기간(예: 몇 달) 걸친 공연 중에는 매일 여는 게 아니라 시즌마다 한 번씩만
+# 여는 '연간 시리즈'가 있다. 예: 롯데콘서트홀 '오르간 오딧세이'는 2.25 / 7.22 / 12.16
+# 세 번뿐인데, KOPIS API에는 시작일(2.25)~종료일(12.16)만 있고 그 사이 모든 날에
+# 공연이 있는 것처럼 보인다. (KOPIS 자체의 한계 — 회차별 날짜 목록을 제공하지 않는다)
+#
+# '공연시간 안내'(dtguidance) 텍스트에 실제 날짜가 적혀있는 경우가 있어 이를 파싱해
+# 시도해본다. 실패하면 최소한 '매일 공연'으로는 보이지 않도록 시작일/종료일만 남긴다.
+LONG_RUN_THRESHOLD_DAYS = 30  # 이보다 길면 '연속 공연'이 아닐 수 있다고 의심
+
+_DATE_PATTERNS = [
+    re.compile(r"(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})"),      # 2026.02.25 / 2026-02-25
+    re.compile(r"(?<!\d)(\d{1,2})[.\-](\d{1,2})(?!\d)"),      # 02.25 (연도 없음, start_date 연도 사용)
+]
+
+
+def extract_specific_dates(dtguidance: str, start_date: str, end_date: str) -> list[str]:
+    """
+    '공연시간 안내' 텍스트에서 구체적인 날짜들을 뽑아본다.
+    start_date~end_date 범위 밖의 숫자(예: 상영시간 90분의 '90')는 자연히 걸러진다.
+    2개 미만이면(=구체적 날짜 나열이 아니라고 판단) 빈 리스트를 반환한다.
+    """
+    if not dtguidance or not start_date or not end_date:
+        return []
+
+    year = start_date[:4]
+    found = set()
+
+    for m in re.finditer(r"(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})", dtguidance):
+        y, mo, d = m.group(1), m.group(2).zfill(2), m.group(3).zfill(2)
+        found.add(f"{y}{mo}{d}")
+
+    # 연도 없이 "월.일"만 있는 경우 (예: "2.25, 7.22, 12.16")도 시도.
+    # 단, 위에서 이미 연도 포함 날짜를 찾았다면 혼선을 피하기 위해 생략한다.
+    if not found:
+        for m in re.finditer(r"(?<!\d)(\d{1,2})[.\-](\d{1,2})(?!\d)", dtguidance):
+            mo, d = m.group(1).zfill(2), m.group(2).zfill(2)
+            if 1 <= int(mo) <= 12 and 1 <= int(d) <= 31:
+                found.add(f"{year}{mo}{d}")
+
+    valid = sorted(d for d in found if start_date <= d <= end_date)
+    return valid if len(valid) >= 2 else []
+
+
 def fetch_detail(mt20id: str) -> dict:
     try:
         root = _get(f"pblprfr/{mt20id}")
@@ -249,7 +292,7 @@ def fetch_detail(mt20id: str) -> dict:
     price_text = text("pcseguidance")
     prices = parse_prices(price_text)
 
-    return {
+    result = {
         "mt20id": mt20id,
         "name": text("prfnm"),
         "start_date": norm_date(text("prfpdfrom")),
@@ -270,6 +313,35 @@ def fetch_detail(mt20id: str) -> dict:
         "genre_raw": text("genrenm"),
         "state": text("prfstate"),
     }
+
+    # 장기 시리즈 감지: 기간이 길고, 공연시간 안내에서 구체적 날짜를 뽑을 수 있으면
+    # 그 날짜만 실제 공연일로 표시한다. 못 뽑으면 최소한 '매일 공연'으로는 안 보이게
+    # 시작일/종료일만 남긴다 (완전히 정확하진 않지만 훨씬 낫다).
+    start_date, end_date = result["start_date"], result["end_date"]
+    if start_date and end_date and len(start_date) == 8 and len(end_date) == 8:
+        try:
+            span_days = (
+                date(int(end_date[:4]), int(end_date[4:6]), int(end_date[6:8]))
+                - date(int(start_date[:4]), int(start_date[4:6]), int(start_date[6:8]))
+            ).days
+        except ValueError:
+            span_days = 0
+
+        if span_days >= LONG_RUN_THRESHOLD_DAYS:
+            specific = extract_specific_dates(result["schedule"], start_date, end_date)
+            if specific:
+                result["specific_dates"] = specific
+                result["irregular_long_run"] = False
+                print(f"    날짜 파싱 성공: {result['name']} -> {specific}")
+            else:
+                # 파싱 실패: 시작일/종료일 두 곳에만 표시하도록 프론트에 신호를 준다.
+                result["specific_dates"] = [start_date, end_date]
+                result["irregular_long_run"] = True
+                print(f"    경고: 장기 공연인데 날짜 파싱 실패 (시작/종료일만 표시): "
+                      f"{result['name']} ({start_date}~{end_date}) "
+                      f"dtguidance={result['schedule'][:60]!r}")
+
+    return result
 
 
 def guess_genre(perf: dict, shcate: str) -> tuple[str, bool]:
