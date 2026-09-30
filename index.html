@@ -308,18 +308,37 @@ function countBy(axis, value) {
 
 async function load() {
   try {
-    const res = await fetch(`data/performances.json?v=${Date.now()}`, { cache: "no-store" });
-    const data = await res.json();
-    // 안전장치: 대상 4개 공연장 공연만 표시한다.
-    // 수집 스크립트가 구버전이라 타 지역 "○○예술의전당"이 섞여 있어도
-    // 화면에는 나오지 않게 한다.
-    all = (data.performances || []).filter(p => VENUE_ORDER.includes(p.venue));
+    const [kopisRes, venueRes] = await Promise.all([
+      fetch(`data/performances.json?v=${Date.now()}`, { cache: "no-store" }),
+      fetch(`data/venue_schedules.json?v=${Date.now()}`, { cache: "no-store" })
+    ]);
+    const data = await kopisRes.json();
+    const venueData = venueRes.ok ? await venueRes.json() : { performances: [] };
+
+    const kopis = (data.performances || []).filter(p => VENUE_ORDER.includes(p.venue));
+    const venueOnly = (venueData.performances || []).filter(p => VENUE_ORDER.includes(p.venue));
+
+    // 공연장 자체 일정과 KOPIS가 같은 공연을 각각 보여주지 않도록 병합한다.
+    // 날짜 + 공연장 + 제목의 정규화 값으로 비교하고,
+    // KOPIS가 있으면 KOPIS 카드를 우선한다.
+    const keyOf = p =>
+      `${p.venue}|${norm(p.start_date)}|${normTitle(p.name)}`;
+
+    const kopisKeys = new Set(kopis.map(keyOf));
+    const supplemental = venueOnly
+      .filter(p => !kopisKeys.has(keyOf(p)))
+      .map(p => ({ ...p, venue_only: true }));
+
+    all = [...kopis, ...supplemental];
+
     // 티켓오픈 공지 원본. KOPIS는 티켓이 열린 뒤에 공연을 등록하는 경향이 있어서,
     // 정작 "곧 열리는" 공연은 KOPIS에 아직 없는 경우가 많다.
-    // 그래서 공지 자체를 카드로 보여준다.
     opens = (data.ticket_opens || []);
+
     document.getElementById("meta").textContent =
-      `기준일 ${data.generated_at || "-"} · 총 ${all.length}건`;
+      `기준일 ${data.generated_at || "-"} · KOPIS ${kopis.length}건` +
+      (supplemental.length ? ` · 공연장 자체 일정 ${supplemental.length}건` : "") +
+      (opens.length ? ` · 예매오픈 공지 ${opens.length}건` : "");
     document.getElementById("banner").classList.remove("show");
   } catch (e) {
     document.getElementById("meta").textContent = "데이터를 불러오지 못했습니다";
@@ -599,6 +618,9 @@ function dayDiff(a, b) {
 
 function bookingHtml(p) {
   const links = p.booking_links || [];
+  if (!links.length && p.source_url) {
+    return `<div class="booking"><a class="bookbtn" href="${esc(p.source_url)}" target="_blank" rel="noopener">공식 공연정보</a></div>`;
+  }
   if (!links.length) {
     return '<div class="nolink">예매 링크 정보 없음</div>';
   }
@@ -623,17 +645,19 @@ function cardHtml(p) {
   const irregular = p.irregular_long_run
     ? '<span class="badge">회차별 날짜 다름 — 예매처 확인</span>' : "";
   const gtag = `<span class="gtag">${esc(p.genre)}</span>`;
+  const sourceBadge = p.venue_only
+    ? '<span class="badge">공연장 공식 일정</span>' : '';
   const isNew = p.is_new || isUpcomingOpen(p);
   const newBadge = isNew ? '<span class="newbadge">NEW</span>' : "";
   const cast = p.cast ? `<div class="pcast">${esc(p.cast)}</div>` : "";
   const poster = p.poster
-    ? `<img class="poster" src="${esc(p.poster)}" alt="" loading="lazy">`
+    ? `<img class="poster" src="${esc(p.poster)}" alt="" loading="lazy" onerror="this.style.display='none'">`
     : `<div class="poster"></div>`;
   return `
     <div class="card">
       ${poster}
       <div class="info">
-        <div class="pname">${esc(p.name)}${newBadge}${gtag}${badge}${irregular}</div>
+        <div class="pname">${esc(p.name)}${newBadge}${gtag}${sourceBadge}${badge}${irregular}</div>
         <div class="pvenue">${esc(p.venue)} · ${esc(p.facility_name)}</div>
         <div class="pdate">${range}</div>
         ${cast}
