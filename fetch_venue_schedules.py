@@ -45,8 +45,8 @@ SOURCES = {
     "롯데콘서트홀": {
         "base": "https://m.lotteconcerthall.com",
         "list_urls": [
-            "https://m.lotteconcerthall.com/kor/performance",
-            "https://www.lotteconcerthall.com/kor/performance",
+            "https://m.lotteconcerthall.com/ko/performance",
+            "https://www.lotteconcerthall.com/ko/performance",
         ],
     },
     "고양아람누리": {
