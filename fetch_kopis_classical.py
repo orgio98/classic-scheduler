@@ -139,70 +139,81 @@ def resolve_venue(fcltynm: str) -> str | None:
 
 def find_facilities() -> list[dict]:
     """
-    SEARCH_TERMS 로 KOPIS 시설을 검색하고, 시설명으로 기관을 판정해서 목록을 만든다.
-    검색 결과를 그대로 믿지 않고 resolve_venue() 로 직접 걸러낸다.
+    대상 4개 기관의 KOPIS 시설을 검색한다.
+
+    누락 방지 원칙:
+      1) shprfnmfct / fcltynm 두 검색 조건을 모두 시도한다.
+      2) 시설 API도 100건 단위로 모든 페이지를 순회한다.
+      3) 검색 결과는 반드시 resolve_venue()로 재검증한다.
+      4) mt10id로 중복 시설을 제거한다.
     """
     facilities = []
     seen = set()
 
     for term in SEARCH_TERMS:
-        got = False
         for param in ("shprfnmfct", "fcltynm"):
-            try:
-                root = _get("prfplc", cpage="1", rows="100", **{param: term})
-            except Exception as ex:
-                print(f"  경고: 시설 검색 실패 ({term}/{param}): {ex}", file=sys.stderr)
-                continue
+            page = 1
+            while True:
+                try:
+                    root = _get("prfplc", cpage=str(page), rows="100", **{param: term})
+                except Exception as ex:
+                    print(f"  경고: 시설 검색 실패 ({term}/{param}/p{page}): {ex}", file=sys.stderr)
+                    break
 
-            for db in root.findall("db"):
-                mt10id = (db.findtext("mt10id") or "").strip()
-                fcltynm = (db.findtext("fcltynm") or "").strip()
-                if not mt10id or mt10id in seen:
-                    continue
-                label = resolve_venue(fcltynm)
-                if label is None:
-                    continue
-                seen.add(mt10id)
-                facilities.append({"mt10id": mt10id, "fcltynm": fcltynm, "venue": label})
-                got = True
+                dbs = root.findall("db")
+                if not dbs:
+                    break
 
-            if got:
-                break
+                for db in dbs:
+                    mt10id = (db.findtext("mt10id") or "").strip()
+                    fcltynm = (db.findtext("fcltynm") or "").strip()
+                    if not mt10id or mt10id in seen:
+                        continue
+                    label = resolve_venue(fcltynm)
+                    if label is None:
+                        continue
+                    seen.add(mt10id)
+                    facilities.append({
+                        "mt10id": mt10id,
+                        "fcltynm": fcltynm,
+                        "venue": label,
+                    })
+
+                if len(dbs) < 100:
+                    break
+                page += 1
+                time.sleep(0.2)
             time.sleep(0.2)
-        time.sleep(0.2)
 
     return facilities
 
 
-def find_performance_ids(
-    fcltynm: str,
-    shcate: str,
-    stdate: str,
-    eddate: str,
-) -> list[str]:
-    """
-    KOPIS 공연목록 API는 한 번의 조회기간을 최대 31일로 제한한다.
-    기존 코드는 180일을 한 번에 요청해서 많은 공연이 누락될 수 있었다.
+def _date_windows(stdate: str, eddate: str):
+    """KOPIS pblprfr의 최대 31일 조회기간에 맞춰 날짜 구간을 만든다."""
+    start = date(int(stdate[:4]), int(stdate[4:6]), int(stdate[6:8]))
+    end = date(int(eddate[:4]), int(eddate[4:6]), int(eddate[6:8]))
+    cur = start
+    while cur <= end:
+        window_end = min(cur + timedelta(days=30), end)
+        yield cur.strftime("%Y%m%d"), window_end.strftime("%Y%m%d")
+        cur = window_end + timedelta(days=1)
 
-    또한 prfplccd는 최신 API 가이드에서 '공연장코드(mt13id)'로 정의되어
-    있으므로, 여기서는 시설명(shprfnmfct)으로 조회하고 상세 조회 후
-    resolve_venue()로 최종 검증한다. 이 방식은 시설 ID/공연장 ID 혼동도 피한다.
+
+def find_performance_ids(fcltynm: str, shcate: str, stdate: str, eddate: str) -> list[str]:
+    """
+    공연 목록을 기간 분할 + 전체 페이지 방식으로 수집한다.
+
+    중요:
+      - KOPIS stdate~eddate는 최대 31일이다.
+      - prfplccd는 공연장 '코드'이므로 시설 ID(mt10id)를 넣지 않는다.
+      - 시설명(shprfnmfct)을 사용하고, 최종 상세 조회에서 시설명을 다시 검증한다.
     """
     ids = []
     seen = set()
 
-    start = date.fromisoformat(f"{stdate[:4]}-{stdate[4:6]}-{stdate[6:8]}")
-    end = date.fromisoformat(f"{eddate[:4]}-{eddate[4:6]}-{eddate[6:8]}")
-
-    window_start = start
-    while window_start <= end:
-        window_end = min(window_start + timedelta(days=30), end)
-        ws = window_start.strftime("%Y%m%d")
-        we = window_end.strftime("%Y%m%d")
-
+    for ws, we in _date_windows(stdate, eddate):
         page = 1
         window_count = 0
-
         while True:
             try:
                 root = _get(
@@ -216,8 +227,7 @@ def find_performance_ids(
                 )
             except Exception as e:
                 print(
-                    f"  경고: 공연목록 조회 실패 "
-                    f"({fcltynm}, {shcate}, {ws}~{we}, page={page}): {e}",
+                    f"  경고: 공연목록 조회 실패 ({fcltynm}/{shcate}/{ws}~{we}/p{page}): {e}",
                     file=sys.stderr,
                 )
                 break
@@ -235,20 +245,13 @@ def find_performance_ids(
 
             if len(dbs) < 100:
                 break
-
             page += 1
             time.sleep(0.15)
 
-        print(
-            f"    {shcate} {ws}~{we}: {window_count}건",
-            flush=True,
-        )
-
-        window_start = window_end + timedelta(days=1)
+        print(f"    {shcate} {ws}~{we}: {window_count}건", flush=True)
         time.sleep(0.15)
 
     return ids
-
 
 def norm_date(s: str) -> str:
     """
@@ -412,17 +415,26 @@ def fetch_detail(mt20id: str) -> dict:
 
 
 def guess_genre(perf: dict, shcate: str) -> tuple[str, bool]:
+    """KOPIS 장르코드와 상세 장르/공연명을 함께 사용해 화면 장르를 정한다."""
+    raw = f"{perf.get('genre_raw', '')} {perf.get('name', '')}".lower()
+
+    # EEEA(복합)는 무용이라는 뜻이 아니다. 상세 텍스트로 재분류한다.
     if shcate == "BBBC":
         return GENRE_DANCE, False
-    hay = f"{perf.get('name', '')} {perf.get('genre_raw', '')}"
-    if "오페라" in hay:
+    if "오페라" in raw:
         return GENRE_OPERA, False
-    if "합창" in hay or "칸타타" in hay:
+    if "합창" in raw or "칸타타" in raw:
         return GENRE_CHOIR, False
-    if any(k in hay for k in ("오케스트라", "필하모닉", "교향악단", "심포니", "관현악")):
+    if any(k in raw for k in ("오케스트라", "필하모닉", "교향악단", "심포니", "관현악")):
         return GENRE_ORCHESTRA, False
-    return GENRE_CHAMBER, True
+    if any(k in raw for k in ("발레", "무용", "댄스")):
+        return GENRE_DANCE, False
+    if any(k in raw for k in ("피아노", "바이올린", "첼로", "비올라", "실내악", "독주", "리사이틀", "앙상블", "듀오", "트리오", "콰르텟", "퀄텟")):
+        return GENRE_CHAMBER, False
 
+    # CCCA 또는 EEEA에서 들어온 공연은 최소한 실내악·독주로 표시하되
+    # 화면에 장르 추정임을 알려준다.
+    return GENRE_CHAMBER, True
 
 def main():
     today = date.today()
@@ -446,14 +458,9 @@ def main():
     print(f"\n공연 목록 조회 중 ({stdate} ~ {eddate})...")
     results = {}
     for f in facilities:
-        for shcate in ("CCCA", "BBBC"):
-            ids = find_performance_ids(
-                f["fcltynm"], shcate, stdate, eddate
-            )
-            print(
-                f"  {f['fcltynm']} / {shcate}: 목록 {len(ids)}건",
-                flush=True,
-            )
+        for shcate in ("CCCA", "EEEA", "BBBC"):
+            ids = find_performance_ids(f["fcltynm"], shcate, stdate, eddate)
+            print(f"  {f['fcltynm']} / {shcate}: 목록 {len(ids)}건", flush=True)
             for mt20id in ids:
                 if mt20id in results:
                     continue
