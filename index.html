@@ -319,7 +319,8 @@ async function load() {
     // 그래서 공지 자체를 카드로 보여준다.
     opens = (data.ticket_opens || []);
     document.getElementById("meta").textContent =
-      `기준일 ${data.generated_at || "-"} · 총 ${all.length}건`;
+      `기준일 ${data.generated_at || "-"} · KOPIS 등록 ${all.length}건` +
+      (opens.length ? ` · 예매오픈 공지 ${opens.length}건` : "");
     document.getElementById("banner").classList.remove("show");
   } catch (e) {
     document.getElementById("meta").textContent = "데이터를 불러오지 못했습니다";
@@ -627,7 +628,7 @@ function cardHtml(p) {
   const newBadge = isNew ? '<span class="newbadge">NEW</span>' : "";
   const cast = p.cast ? `<div class="pcast">${esc(p.cast)}</div>` : "";
   const poster = p.poster
-    ? `<img class="poster" src="${esc(p.poster)}" alt="" loading="lazy">`
+    ? `<img class="poster" src="${esc(p.poster)}" alt="" loading="lazy" onerror="this.style.display='none'">`
     : `<div class="poster"></div>`;
   return `
     <div class="card">
