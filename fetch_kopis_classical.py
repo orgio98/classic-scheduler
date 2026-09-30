@@ -1,94 +1,529 @@
-import os
+"""
+클래식 공연 통합 사이트 - KOPIS 데이터 파이프라인
+
+세종문화회관 / 예술의전당 / 롯데콘서트홀 / 고양아람누리 네 곳의 클래식(서양음악)·무용 공연을
+KOPIS API로 가져와서 장르별로 분류한 뒤 data/performances.json 으로 저장한다.
+
+필요 환경변수:
+    KOPIS_API_KEY - KOPIS 오픈API 서비스키
+
+사용법:
+    KOPIS_API_KEY=xxxx python fetch_kopis_classical.py
+
+수집 항목:
+    공연명 / 기간 / 공연장 / 포스터 / 출연진(지휘·협연) / 제작진 /
+    좌석별 가격 / 예매처 링크(relates) / 공연시간 안내
+
+[중요] 공연장 필터링
+  KOPIS 시설검색은 파라미터가 무시되면 전국 시설을 그대로 반환한다.
+  (부산 영화의전당 공연이 "세종문화회관"으로 잡히던 버그의 원인)
+  그래서 응답을 그대로 믿지 않고 시설명으로 직접 검증 + 상세에서 교차 검증한다.
+"""
+
 import json
+import os
 import re
-import requests
-from bs4 import BeautifulSoup
+import sys
+import time
 import xml.etree.ElementTree as ET
-from datetime import datetime, timedelta
+from datetime import date, timedelta
+from pathlib import Path
+from urllib.parse import urlencode
+from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
 
-KOPIS_API_KEY = os.environ.get("KOPIS_API_KEY", "YOUR_API_KEY")
+from fetch_ticket_open import collect_ticket_opens, match_ticket_opens
 
-TARGET_VENUE_CODES = {
-    "롯데콘서트홀": "FC000858",
-    "고양아람누리": "FC000282"
-}
+API_BASE = "http://www.kopis.or.kr/openApi/restful"
+SERVICE_KEY = os.environ.get("KOPIS_API_KEY", "").strip()
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-}
+# ── 공연장 정의 ────────────────────────────────────────────────────────────
+# 시설명(fcltynm)으로 어느 기관인지 판정한다.
+#
+# [중요] 지역명 블랙리스트 방식은 쓰지 않는다.
+#   전국에 "경주예술의전당, 계룡문화예술의전당, 군산예술의전당, 서귀포예술의전당,
+#   안동문화예술의전당, 영광예술의전당, 완도문화예술의전당, 제천예술의전당,
+#   진천예술의전당, 화성예술의전당..." 처럼 같은 이름이 끝없이 많아서
+#   제외 목록을 아무리 늘려도 계속 새는 구조였다.
+#
+#   대신 "이름이 그 기관명으로 시작하는가"로 판정한다.
+#   앞에 지역명이 붙어 있으면(예: 경주예술의전당) 다른 기관이므로 자동 제외된다.
+#     "예술의전당 [서울] (콘서트홀)"  -> 시작함  -> 서울 예술의전당 O
+#     "경주예술의전당"                -> 시작 안 함 -> 제외
+#
+# prefix 는 순서가 중요하다. 더 구체적인 이름이 먼저 와야 한다.
+VENUE_RULES = [
+    {
+        "label": "세종문화회관",
+        "prefix": ["세종문화회관"],
+        # 홀 이름만 들어오는 경우도 대비
+        "contains": ["세종대극장", "세종체임버홀", "세종S씨어터", "세종M씨어터"],
+    },
+    {
+        "label": "예술의전당",              # 서울 서초구 소재
+        "prefix": ["예술의전당"],
+    },
+    {
+        "label": "롯데콘서트홀",            # 서울 잠실 롯데월드타워 소재
+        "prefix": ["롯데콘서트홀"],
+        "contains": ["롯데콘서트홀"],
+    },
+    {
+        "label": "고양아람누리",
+        "prefix": ["고양아람누리", "아람누리"],
+        "contains": ["아람음악당", "아람극장"],
+    },
+]
 
-def fetch_kopis_by_venue(venue_id, start_date, end_date):
-    """KOPIS API 전체 페이지 순회하며 12월 말 공연까지 모두 수집"""
-    url = "http://www.kopis.or.kr/openApi/restful/pblprfr"
-    performances = []
-    cpage = 1
+# KOPIS 시설 검색에 사용할 키워드
+SEARCH_TERMS = ["세종문화회관", "예술의전당", "롯데콘서트홀", "고양아람누리"]
 
-    while True:
-        params = {
-            "service": KOPIS_API_KEY,
-            "stdate": start_date,
-            "eddate": end_date,
-            "cpage": cpage,
-            "rows": 100,
-            "prfplcid": venue_id
-            # 카테고리(shcate) 제한을 풀어 클래식/연주회/기획 전체를 수집
-        }
-        
+LOOKAHEAD_DAYS = 180
+
+GENRE_ORCHESTRA = "오케스트라"
+GENRE_OPERA = "오페라"
+GENRE_DANCE = "발레·무용"
+GENRE_CHAMBER = "실내악·독주"
+GENRE_CHOIR = "합창"
+
+OUTPUT_PATH = Path("data/performances.json")
+
+
+def _get(path: str, **params) -> ET.Element:
+    if not SERVICE_KEY:
+        print("오류: KOPIS_API_KEY 환경변수가 설정되어 있지 않습니다.", file=sys.stderr)
+        sys.exit(1)
+    params = {"service": SERVICE_KEY, **params}
+    url = f"{API_BASE}/{path}?{urlencode(params)}"
+    try:
+        with urlopen(url, timeout=20) as res:
+            body = res.read()
+    except HTTPError as e:
+        # 지금까지는 "HTTP Error 400: Bad Request" 라는 뭉뚱그려진 메시지만 보였다.
+        # KOPIS는 400/401 등에서도 실제 원인(서비스키 문제 / 트래픽(호출량) 초과 /
+        # 파라미터 오류 등)을 응답 본문에 담아 보내는 경우가 많으므로, 그 본문을
+        # 함께 노출해야 정확한 진단이 가능하다.
+        detail = ""
         try:
-            res = requests.get(url, params=params, timeout=10)
-            if res.status_code != 200:
+            detail = e.read().decode("utf-8", errors="replace").strip()[:300]
+        except Exception:
+            pass
+        raise RuntimeError(f"HTTP {e.code} {e.reason}" + (f" | 응답: {detail}" if detail else "")) from None
+    except URLError as e:
+        raise RuntimeError(f"네트워크 오류: {e.reason}") from None
+    return ET.fromstring(body)
+
+
+def _clean_name(fcltynm: str) -> str:
+    """시설명 앞의 법인 표기 등을 떼어내 접두 비교가 가능하게 만든다."""
+    s = (fcltynm or "").strip()
+    s = re.sub(r"^\(\s*(재|사|주|재단법인|사단법인)\s*\)\s*", "", s)
+    return s.strip()
+
+
+def resolve_venue(fcltynm: str) -> str | None:
+    """
+    시설명으로 기관을 판정한다. 해당 없으면 None(= 대상 아님, 제외).
+    접두 일치를 쓰므로 "경주예술의전당" 같은 타 지역 시설은 자동으로 걸러진다.
+    """
+    name = _clean_name(fcltynm)
+    if not name:
+        return None
+    for rule in VENUE_RULES:
+        if any(name.startswith(p) for p in rule.get("prefix", [])):
+            return rule["label"]
+        if any(k in name for k in rule.get("contains", [])):
+            return rule["label"]
+    return None
+
+
+def find_facilities() -> list[dict]:
+    """
+    SEARCH_TERMS 로 KOPIS 시설을 검색하고, 시설명으로 기관을 판정해서 목록을 만든다.
+    검색 결과를 그대로 믿지 않고 resolve_venue() 로 직접 걸러낸다.
+    """
+    facilities = []
+    seen = set()
+
+    for term in SEARCH_TERMS:
+        got = False
+        for param in ("shprfnmfct", "fcltynm"):
+            try:
+                root = _get("prfplc", cpage="1", rows="100", **{param: term})
+            except Exception as ex:
+                print(f"  경고: 시설 검색 실패 ({term}/{param}): {ex}", file=sys.stderr)
+                continue
+
+            for db in root.findall("db"):
+                mt10id = (db.findtext("mt10id") or "").strip()
+                fcltynm = (db.findtext("fcltynm") or "").strip()
+                if not mt10id or mt10id in seen:
+                    continue
+                label = resolve_venue(fcltynm)
+                if label is None:
+                    continue
+                seen.add(mt10id)
+                facilities.append({"mt10id": mt10id, "fcltynm": fcltynm, "venue": label})
+                got = True
+
+            if got:
                 break
-                
-            root = ET.fromstring(res.text)
-            dbs = root.findall(".//db")
+            time.sleep(0.2)
+        time.sleep(0.2)
+
+    return facilities
+
+
+def find_performance_ids(
+    fcltynm: str,
+    shcate: str,
+    stdate: str,
+    eddate: str,
+) -> list[str]:
+    """
+    KOPIS 공연목록 API는 한 번의 조회기간을 최대 31일로 제한한다.
+    기존 코드는 180일을 한 번에 요청해서 많은 공연이 누락될 수 있었다.
+
+    또한 prfplccd는 최신 API 가이드에서 '공연장코드(mt13id)'로 정의되어
+    있으므로, 여기서는 시설명(shprfnmfct)으로 조회하고 상세 조회 후
+    resolve_venue()로 최종 검증한다. 이 방식은 시설 ID/공연장 ID 혼동도 피한다.
+    """
+    ids = []
+    seen = set()
+
+    start = date.fromisoformat(f"{stdate[:4]}-{stdate[4:6]}-{stdate[6:8]}")
+    end = date.fromisoformat(f"{eddate[:4]}-{eddate[4:6]}-{eddate[6:8]}")
+
+    window_start = start
+    while window_start <= end:
+        window_end = min(window_start + timedelta(days=30), end)
+        ws = window_start.strftime("%Y%m%d")
+        we = window_end.strftime("%Y%m%d")
+
+        page = 1
+        window_count = 0
+
+        while True:
+            try:
+                root = _get(
+                    "pblprfr",
+                    stdate=ws,
+                    eddate=we,
+                    cpage=str(page),
+                    rows="100",
+                    shprfnmfct=fcltynm,
+                    shcate=shcate,
+                )
+            except Exception as e:
+                print(
+                    f"  경고: 공연목록 조회 실패 "
+                    f"({fcltynm}, {shcate}, {ws}~{we}, page={page}): {e}",
+                    file=sys.stderr,
+                )
+                break
+
+            dbs = root.findall("db")
             if not dbs:
-                break # 더 이상 결과가 없으면 종료
-                
+                break
+
             for db in dbs:
-                p_id = db.findtext("mt20id")
-                p_name = db.findtext("prfnm")
-                p_start = db.findtext("prfpdfrom")
-                p_end = db.findtext("prfpdto")
-                fcltynm = db.findtext("fcltynm")
-                
-                performances.append({
-                    "id": p_id,
-                    "title": p_name,
-                    "startDate": p_start,
-                    "endDate": p_end,
-                    "venue": fcltynm,
-                    "source": "KOPIS_API"
-                })
-            
-            cpage += 1 # 다음 페이지 이동
-        except Exception as e:
-            print(f"[KOPIS API Error] {venue_id} page {cpage}: {e}")
-            break
-        
-    return performances
+                mt20id = (db.findtext("mt20id") or "").strip()
+                if mt20id and mt20id not in seen:
+                    seen.add(mt20id)
+                    ids.append(mt20id)
+                    window_count += 1
+
+            if len(dbs) < 100:
+                break
+
+            page += 1
+            time.sleep(0.15)
+
+        print(
+            f"    {shcate} {ws}~{we}: {window_count}건",
+            flush=True,
+        )
+
+        window_start = window_end + timedelta(days=1)
+        time.sleep(0.15)
+
+    return ids
+
+
+def norm_date(s: str) -> str:
+    """
+    KOPIS는 날짜를 '2026.08.30' 형식으로 주기도 하고 '20260830' 으로 주기도 한다.
+    문자열 비교(달력/목록 필터)가 올바르게 동작하려면 YYYYMMDD로 통일해야 한다.
+    """
+    digits = re.sub(r"[^0-9]", "", s or "")
+    return digits if len(digits) == 8 else (s or "").strip()
+
+
+def parse_prices(pcseguidance: str) -> list[dict]:
+    """
+    '전석 30,000원' / 'R석 50,000원, S석 30,000원' 같은 자유텍스트를
+    [{"seat": "R석", "amount": 50000, "text": "R석 50,000원"}, ...] 로 파싱한다.
+    형식이 제각각이라 실패할 수 있으므로 원문(price_text)도 함께 보존한다.
+    """
+    if not pcseguidance:
+        return []
+    items = []
+    # "OO석 12,000원" 패턴을 모두 찾는다
+    for m in re.finditer(r"([가-힣A-Za-z\s·()]{0,10}?석|전석|일반|학생|청소년|어린이)?\s*([\d,]+)\s*원", pcseguidance):
+        seat = (m.group(1) or "").strip()
+        seat = re.sub(r"^(년|월|일|회|차)\s*", "", seat).strip()
+        raw = m.group(2).replace(",", "")
+        if not raw.isdigit():
+            continue
+        amount = int(raw)
+        if amount < 1000:  # 오탐 방지 (예: '2026년' 같은 숫자)
+            continue
+        items.append({
+            "seat": seat or "가격",
+            "amount": amount,
+            "text": m.group(0).strip(),
+        })
+    return items
+
+
+def parse_booking_links(db: ET.Element) -> list[dict]:
+    """KOPIS 상세의 <relates><relate> 에서 예매처 이름/링크를 뽑는다."""
+    links = []
+    relates = db.find("relates")
+    if relates is None:
+        return links
+    for rel in relates.findall("relate"):
+        name = (rel.findtext("relatenm") or "").strip()
+        url = (rel.findtext("relateurl") or "").strip()
+        if url and url.startswith("http"):
+            links.append({"name": name or "예매처", "url": url})
+    return links
+
+
+# 장기간(예: 몇 달) 걸친 공연 중에는 매일 여는 게 아니라 시즌마다 한 번씩만
+# 여는 '연간 시리즈'가 있다. 예: 롯데콘서트홀 '오르간 오딧세이'는 2.25 / 7.22 / 12.16
+# 세 번뿐인데, KOPIS API에는 시작일(2.25)~종료일(12.16)만 있고 그 사이 모든 날에
+# 공연이 있는 것처럼 보인다. (KOPIS 자체의 한계 — 회차별 날짜 목록을 제공하지 않는다)
+#
+# '공연시간 안내'(dtguidance) 텍스트에 실제 날짜가 적혀있는 경우가 있어 이를 파싱해
+# 시도해본다. 실패하면 최소한 '매일 공연'으로는 보이지 않도록 시작일/종료일만 남긴다.
+LONG_RUN_THRESHOLD_DAYS = 30  # 이보다 길면 '연속 공연'이 아닐 수 있다고 의심
+
+_DATE_PATTERNS = [
+    re.compile(r"(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})"),      # 2026.02.25 / 2026-02-25
+    re.compile(r"(?<!\d)(\d{1,2})[.\-](\d{1,2})(?!\d)"),      # 02.25 (연도 없음, start_date 연도 사용)
+]
+
+
+def extract_specific_dates(dtguidance: str, start_date: str, end_date: str) -> list[str]:
+    """
+    '공연시간 안내' 텍스트에서 구체적인 날짜들을 뽑아본다.
+    start_date~end_date 범위 밖의 숫자(예: 상영시간 90분의 '90')는 자연히 걸러진다.
+    2개 미만이면(=구체적 날짜 나열이 아니라고 판단) 빈 리스트를 반환한다.
+    """
+    if not dtguidance or not start_date or not end_date:
+        return []
+
+    year = start_date[:4]
+    found = set()
+
+    for m in re.finditer(r"(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})", dtguidance):
+        y, mo, d = m.group(1), m.group(2).zfill(2), m.group(3).zfill(2)
+        found.add(f"{y}{mo}{d}")
+
+    # 연도 없이 "월.일"만 있는 경우 (예: "2.25, 7.22, 12.16")도 시도.
+    # 단, 위에서 이미 연도 포함 날짜를 찾았다면 혼선을 피하기 위해 생략한다.
+    if not found:
+        for m in re.finditer(r"(?<!\d)(\d{1,2})[.\-](\d{1,2})(?!\d)", dtguidance):
+            mo, d = m.group(1).zfill(2), m.group(2).zfill(2)
+            if 1 <= int(mo) <= 12 and 1 <= int(d) <= 31:
+                found.add(f"{year}{mo}{d}")
+
+    valid = sorted(d for d in found if start_date <= d <= end_date)
+    return valid if len(valid) >= 2 else []
+
+
+def fetch_detail(mt20id: str) -> dict:
+    try:
+        root = _get(f"pblprfr/{mt20id}")
+    except Exception as e:
+        print(f"  경고: 상세 조회 실패 ({mt20id}): {e}", file=sys.stderr)
+        return {}
+    db = root.find("db")
+    if db is None:
+        return {}
+
+    def text(tag):
+        return (db.findtext(tag) or "").strip()
+
+    price_text = text("pcseguidance")
+    prices = parse_prices(price_text)
+
+    result = {
+        "mt20id": mt20id,
+        "name": text("prfnm"),
+        "start_date": norm_date(text("prfpdfrom")),
+        "end_date": norm_date(text("prfpdto")),
+        "facility_name": text("fcltynm"),
+        "poster": text("poster"),
+        "cast": text("prfcast"),
+        "crew": text("prfcrew"),
+        "runtime": text("prfruntime"),
+        "age": text("prfage"),
+        "company": text("entrpsnmH"),
+        "price_text": price_text,                       # 원문 그대로
+        "prices": prices,                               # 좌석별 파싱 결과
+        "price_min": min([p["amount"] for p in prices]) if prices else None,
+        "price_max": max([p["amount"] for p in prices]) if prices else None,
+        "booking_links": parse_booking_links(db),       # 예매처 링크
+        "schedule": text("dtguidance"),                 # 요일별 공연시간
+        "genre_raw": text("genrenm"),
+        "state": text("prfstate"),
+    }
+
+    # 장기 시리즈 감지: 기간이 길고, 공연시간 안내에서 구체적 날짜를 뽑을 수 있으면
+    # 그 날짜만 실제 공연일로 표시한다. 못 뽑으면 최소한 '매일 공연'으로는 안 보이게
+    # 시작일/종료일만 남긴다 (완전히 정확하진 않지만 훨씬 낫다).
+    start_date, end_date = result["start_date"], result["end_date"]
+    if start_date and end_date and len(start_date) == 8 and len(end_date) == 8:
+        try:
+            span_days = (
+                date(int(end_date[:4]), int(end_date[4:6]), int(end_date[6:8]))
+                - date(int(start_date[:4]), int(start_date[4:6]), int(start_date[6:8]))
+            ).days
+        except ValueError:
+            span_days = 0
+
+        if span_days >= LONG_RUN_THRESHOLD_DAYS:
+            specific = extract_specific_dates(result["schedule"], start_date, end_date)
+            if specific:
+                result["specific_dates"] = specific
+                result["irregular_long_run"] = False
+                print(f"    날짜 파싱 성공: {result['name']} -> {specific}")
+            else:
+                # 파싱 실패: 시작일/종료일 두 곳에만 표시하도록 프론트에 신호를 준다.
+                result["specific_dates"] = [start_date, end_date]
+                result["irregular_long_run"] = True
+                print(f"    경고: 장기 공연인데 날짜 파싱 실패 (시작/종료일만 표시): "
+                      f"{result['name']} ({start_date}~{end_date}) "
+                      f"dtguidance={result['schedule'][:60]!r}")
+
+    return result
+
+
+def guess_genre(perf: dict, shcate: str) -> tuple[str, bool]:
+    if shcate == "BBBC":
+        return GENRE_DANCE, False
+    hay = f"{perf.get('name', '')} {perf.get('genre_raw', '')}"
+    if "오페라" in hay:
+        return GENRE_OPERA, False
+    if "합창" in hay or "칸타타" in hay:
+        return GENRE_CHOIR, False
+    if any(k in hay for k in ("오케스트라", "필하모닉", "교향악단", "심포니", "관현악")):
+        return GENRE_ORCHESTRA, False
+    return GENRE_CHAMBER, True
+
 
 def main():
-    start_date = datetime.now().strftime("%Y%m%d")
-    # 검색 범위를 올해 말 또는 1년 전체로 충분히 확대
-    end_date = (datetime.now() + timedelta(days=200)).strftime("%Y%m%d")
-    
-    all_events = {}
+    today = date.today()
+    stdate = today.strftime("%Y%m%d")
+    eddate = (today + timedelta(days=LOOKAHEAD_DAYS)).strftime("%Y%m%d")
 
-    print("KOPIS 주요 공연장 API 전수 수집 중...")
-    for venue_name, venue_code in TARGET_VENUE_CODES.items():
-        kopis_events = fetch_kopis_by_venue(venue_code, start_date, end_date)
-        for event in kopis_events:
-            all_events[event["id"]] = event
+    print(f"[{today}] 공연장 코드 조회 중...")
+    facilities = find_facilities()
+    by_label = {}
+    for f in facilities:
+        by_label.setdefault(f["venue"], []).append(f)
+    for label, fs in by_label.items():
+        print(f"  {label}: {len(fs)}개 공연장")
+        for f in fs:
+            print(f"     - {f['fcltynm']} ({f['mt10id']})")
 
-    output_dir = "data"
-    os.makedirs(output_dir, exist_ok=True)
-    output_file = os.path.join(output_dir, "performances.json")
-    
-    result_list = list(all_events.values())
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(result_list, f, ensure_ascii=False, indent=2)
-        
-    print(f"완료: 총 {len(result_list)}개 공연 저장됨 -> {output_file}")
+    if not facilities:
+        print("오류: 공연장을 하나도 찾지 못했습니다. API 키/응답을 확인하세요.", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"\n공연 목록 조회 중 ({stdate} ~ {eddate})...")
+    results = {}
+    for f in facilities:
+        for shcate in ("CCCA", "BBBC"):
+            ids = find_performance_ids(
+                f["fcltynm"], shcate, stdate, eddate
+            )
+            print(
+                f"  {f['fcltynm']} / {shcate}: 목록 {len(ids)}건",
+                flush=True,
+            )
+            for mt20id in ids:
+                if mt20id in results:
+                    continue
+                detail = fetch_detail(mt20id)
+                if not detail:
+                    print(f"  상세정보 없음: {mt20id}", file=sys.stderr)
+                    continue
+                # 교차 검증: 상세의 시설명으로 다시 판정한다.
+                # 목록 API가 엉뚱한 공연을 섞어 보내는 경우를 여기서 최종적으로 걸러낸다.
+                label = resolve_venue(detail.get("facility_name", ""))
+                if label is None:
+                    print(f"  제외(대상 아님): {detail.get('name')} @ {detail.get('facility_name')}")
+                    continue
+                genre, guessed = guess_genre(detail, shcate)
+                detail["venue"] = label   # 검색어가 아니라 실제 시설명 기준
+                detail["genre"] = genre
+                detail["genre_guessed"] = guessed
+                results[mt20id] = detail
+                time.sleep(0.15)
+
+    performances = sorted(results.values(), key=lambda p: p.get("start_date", ""))
+    print(f"\n총 {len(performances)}건 수집")
+
+    by_venue = {}
+    no_link = 0
+    for p in performances:
+        by_venue[p["venue"]] = by_venue.get(p["venue"], 0) + 1
+        if not p.get("booking_links"):
+            no_link += 1
+    for v, c in by_venue.items():
+        print(f"  {v}: {c}건")
+    print(f"  예매링크 없는 공연: {no_link}건")
+
+    # ── 티켓오픈 공지 수집 후 공연에 매칭 ──────────────────────────────
+    print("\n티켓오픈 공지 수집 중...")
+    opens = collect_ticket_opens()
+    matched = match_ticket_opens(performances, opens)
+    print(f"  공연과 매칭된 티켓오픈 공지: {matched}건")
+
+    # ── 신규 공연 감지 ────────────────────────────────────────────────
+    # 지난 실행 결과와 비교해서 이번에 새로 등장한 공연을 표시한다.
+    # KOPIS에 공연이 올라오는 시점은 대체로 예매 오픈과 가까워서,
+    # 티켓오픈 공지가 없는 공연장(예술의전당 등)에도 NEW 표시가 붙는다.
+    prev_ids = set()
+    if OUTPUT_PATH.exists():
+        try:
+            with OUTPUT_PATH.open(encoding="utf-8") as fp:
+                prev = json.load(fp)
+            prev_ids = {p.get("mt20id") for p in prev.get("performances", [])}
+        except Exception as e:
+            print(f"  경고: 이전 데이터 읽기 실패(첫 실행이면 정상): {e}", file=sys.stderr)
+
+    new_count = 0
+    for p in performances:
+        # 이전 실행에 없던 공연 = 신규. 단 첫 실행(prev_ids 비어있음)에는 표시하지 않는다.
+        p["is_new"] = bool(prev_ids) and p.get("mt20id") not in prev_ids
+        if p["is_new"]:
+            new_count += 1
+    print(f"  신규 등록 공연: {new_count}건" + ("  (첫 실행이라 표시 안 함)" if not prev_ids else ""))
+
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with OUTPUT_PATH.open("w", encoding="utf-8") as fp:
+        json.dump({
+            "generated_at": today.isoformat(),
+            "facilities": facilities,
+            "ticket_opens": opens,
+            "performances": performances,
+        }, fp, ensure_ascii=False, indent=2)
+    print(f"저장 완료: {OUTPUT_PATH}")
+
 
 if __name__ == "__main__":
     main()
