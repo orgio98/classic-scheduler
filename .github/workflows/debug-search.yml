@@ -1,0 +1,25 @@
+name: Debug search
+
+on:
+  workflow_dispatch:
+    inputs:
+      keyword:
+        description: "KOPIS에서 검색할 공연명 (예: 손열음, 서울시향)"
+        required: true
+        type: string
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run debug search
+        env:
+          KOPIS_API_KEY: ${{ secrets.KOPIS_API_KEY }}
+          DEBUG_KEYWORD: ${{ inputs.keyword }}
+        run: python debug_search.py
