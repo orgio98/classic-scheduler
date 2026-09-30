@@ -30,6 +30,7 @@ from datetime import date, timedelta
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
 
 from fetch_ticket_open import collect_ticket_opens, match_ticket_opens
 
@@ -94,8 +95,22 @@ def _get(path: str, **params) -> ET.Element:
         sys.exit(1)
     params = {"service": SERVICE_KEY, **params}
     url = f"{API_BASE}/{path}?{urlencode(params)}"
-    with urlopen(url, timeout=20) as res:
-        body = res.read()
+    try:
+        with urlopen(url, timeout=20) as res:
+            body = res.read()
+    except HTTPError as e:
+        # 지금까지는 "HTTP Error 400: Bad Request" 라는 뭉뚱그려진 메시지만 보였다.
+        # KOPIS는 400/401 등에서도 실제 원인(서비스키 문제 / 트래픽(호출량) 초과 /
+        # 파라미터 오류 등)을 응답 본문에 담아 보내는 경우가 많으므로, 그 본문을
+        # 함께 노출해야 정확한 진단이 가능하다.
+        detail = ""
+        try:
+            detail = e.read().decode("utf-8", errors="replace").strip()[:300]
+        except Exception:
+            pass
+        raise RuntimeError(f"HTTP {e.code} {e.reason}" + (f" | 응답: {detail}" if detail else "")) from None
+    except URLError as e:
+        raise RuntimeError(f"네트워크 오류: {e.reason}") from None
     return ET.fromstring(body)
 
 
