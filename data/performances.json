@@ -1312,124 +1312,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF297438",
-      "name": "유니버설 발레단, 잠자는 숲속의 미녀 [서울]",
-      "start_date": "20261002",
-      "end_date": "20261004",
-      "facility_name": "예술의전당 [서울] (오페라극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297438_260731_174311.gif",
-      "cast": "홍향기, 이유림, 서혜원, 전여진, 콘스탄튼 노보셀로프, 임선우, 이승민 등",
-      "crew": "마리우스 프티파, 콘스탄틴 세르게예프, 시몬 파스투크 등",
-      "runtime": "2시간 35분",
-      "age": "만 7세 이상",
-      "company": "(재)한국문화재단",
-      "price_text": "R석 140,000원, S석 120,000원, A석 90,000원, B석 60,000원, C석 30,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 140000,
-          "text": "R석 140,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 120000,
-          "text": "S석 120,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 90000,
-          "text": "A석 90,000원"
-        },
-        {
-          "seat": "B석",
-          "amount": 60000,
-          "text": "B석 60,000원"
-        },
-        {
-          "seat": "C석",
-          "amount": 30000,
-          "text": "C석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 140000,
-      "booking_links": [
-        {
-          "name": "네이버N예약",
-          "url": "https://booking.naver.com/booking/12/bizes/1604917"
-        },
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010622"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59480"
-        }
-      ],
-      "schedule": "금요일(19:30), 토요일(14:00,19:00), 일요일(14:00)",
-      "genre_raw": "무용(서양/한국무용)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "발레·무용",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF297256",
-      "name": "국립현대무용단, 트리플 빌",
-      "start_date": "20261002",
-      "end_date": "20261004",
-      "facility_name": "예술의전당 [서울] (CJ 토월극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297256_260730_102835.gif",
-      "cast": "고동훈, 권재현, 김건, 김수인, 김예은, 김은서, 김희준 등",
-      "crew": "톰 웰렘스, 김혜진, 최태현 등",
-      "runtime": "1시간 50분",
-      "age": "만 7세 이상",
-      "company": "(재)국립현대무용단",
-      "price_text": "R석 60,000원, S석 40,000원, A석 20,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 60000,
-          "text": "R석 60,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 40000,
-          "text": "S석 40,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 20000,
-          "text": "A석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 60000,
-      "booking_links": [
-        {
-          "name": "나눔티켓",
-          "url": "https://www.nanumticket.or.kr/pe/detail.html?p_marking=&p_new=&start2=0&page_no2=1&p_idx=14000"
-        },
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011220"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59483"
-        }
-      ],
-      "schedule": "금요일(19:30), 토요일 ~ 일요일(15:00)",
-      "genre_raw": "무용(서양/한국무용)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "발레·무용",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
       "mt20id": "PF300999",
       "name": "제4회 뮤제스트 앙상블 정기연주회",
       "start_date": "20261003",
@@ -1609,97 +1491,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF298318",
-      "name": "첼리스트 주연선 리사이틀",
-      "start_date": "20261003",
-      "end_date": "20261003",
-      "facility_name": "예술의전당 [서울] (IBK챔버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298318_260812_113729.gif",
-      "cast": "주연선, 문정재, 박종호",
-      "crew": "",
-      "runtime": "1시간 20분",
-      "age": "만 7세 이상",
-      "company": "(주)프레스토컴퍼니",
-      "price_text": "R석 50,000원, S석 30,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 50000,
-          "text": "R석 50,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 30000,
-          "text": "S석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 50000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011675"
-        }
-      ],
-      "schedule": "토요일(14:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF297984",
-      "name": "임현정의 베토벤 소나타 시리즈, 불멸",
-      "start_date": "20261003",
-      "end_date": "20261003",
-      "facility_name": "예술의전당 [서울] (콘서트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297984_260807_142344.gif",
-      "cast": "임현정",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "녹색병원 전태일의료센터, 다나기획사",
-      "price_text": "R석 160,000원, S석 130,000원, A석 100,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 160000,
-          "text": "R석 160,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 130000,
-          "text": "S석 130,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 100000,
-          "text": "A석 100,000원"
-        }
-      ],
-      "price_min": 100000,
-      "price_max": 160000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011437"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59630"
-        }
-      ],
-      "schedule": "토요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
       "is_new": false
     },
     {
@@ -2253,7 +2044,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF301052",
@@ -2802,51 +2593,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF296276",
-      "name": "한화생명과 함께하는 예술의전당 11시 콘서트 (10월)",
-      "start_date": "20261008",
-      "end_date": "20261008",
-      "facility_name": "예술의전당 [서울] (콘서트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296276_260716_143857.gif",
-      "cast": "홍석원, 임주희, 강석우 등",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 7세 이상",
-      "company": "예술의전당",
-      "price_text": "일반석 30,000원, 3층석 15,000원",
-      "prices": [
-        {
-          "seat": "반석",
-          "amount": 30000,
-          "text": "일반석 30,000원"
-        },
-        {
-          "seat": "층석",
-          "amount": 15000,
-          "text": "층석 15,000원"
-        }
-      ],
-      "price_min": 15000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010143"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59285"
-        }
-      ],
-      "schedule": "목요일(11:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
       "mt20id": "PF300431",
       "name": "제5회 앙상블 누보 정기연주회",
       "start_date": "20261009",
@@ -3264,7 +3010,7 @@
       "venue": "고양아람누리",
       "genre": "발레·무용",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300342",
@@ -3552,7 +3298,7 @@
       "venue": "예술의전당",
       "genre": "발레·무용",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300031",
@@ -4022,66 +3768,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF300747",
-      "name": "국립발레단, 지젤",
-      "start_date": "20261013",
-      "end_date": "20261018",
-      "facility_name": "예술의전당 [서울] (오페라극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF300747_260911_164228.gif",
-      "cast": "박슬기, 박종석, 정은영, 이유홍, 이하연, 김기완, 정은지 등",
-      "crew": "",
-      "runtime": "2시간",
-      "age": "만 7세 이상",
-      "company": "(재)국립발레단",
-      "price_text": "R석 120,000원, S석 100,000원, A석 60,000원, B석 30,000원, C석 10,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 120000,
-          "text": "R석 120,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 100000,
-          "text": "S석 100,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 60000,
-          "text": "A석 60,000원"
-        },
-        {
-          "seat": "B석",
-          "amount": 30000,
-          "text": "B석 30,000원"
-        },
-        {
-          "seat": "C석",
-          "amount": 10000,
-          "text": "C석 10,000원"
-        }
-      ],
-      "price_min": 10000,
-      "price_max": 120000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012731"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/60115"
-        }
-      ],
-      "schedule": "화요일 ~ 금요일(19:30), 토요일(14:00,18:30), 일요일(14:00)",
-      "genre_raw": "무용(서양/한국무용)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "발레·무용",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
       "mt20id": "PF302080",
       "name": "박준선 작곡발표회, 머리카락 보일라",
       "start_date": "20261014",
@@ -4115,7 +3801,7 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300769",
@@ -4151,7 +3837,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299391",
@@ -4193,61 +3879,6 @@
         {
           "name": "예스24",
           "url": "https://ticket.yes24.com/Perf/59882"
-        }
-      ],
-      "schedule": "수요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF296572",
-      "name": "프레디 켐프: 쇼팽 피아노 협주곡",
-      "start_date": "20261014",
-      "end_date": "20261014",
-      "facility_name": "예술의전당 [서울] (콘서트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296572_260722_103500.gif",
-      "cast": "프레디 켐프 등",
-      "crew": "",
-      "runtime": "2시간",
-      "age": "만 7세 이상",
-      "company": "(주)토마토클래식, 뉴스토마토",
-      "price_text": "R석 150,000원, S석 120,000원, A석 80,000원, B석 50,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 150000,
-          "text": "R석 150,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 120000,
-          "text": "S석 120,000원"
-        },
-        {
-          "seat": "A석",
-          "amount": 80000,
-          "text": "A석 80,000원"
-        },
-        {
-          "seat": "B석",
-          "amount": 50000,
-          "text": "B석 50,000원"
-        }
-      ],
-      "price_min": 50000,
-      "price_max": 150000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010485"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59345"
         }
       ],
       "schedule": "수요일(19:30)",
@@ -4438,7 +4069,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300532",
@@ -4533,7 +4164,7 @@
       "venue": "고양아람누리",
       "genre": "실내악·독주",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299027",
@@ -6083,51 +5714,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF297771",
-      "name": "KT그룹희망나눔재단과 함께하는 예술의전당 마음을 담은 클래식 (10월)",
-      "start_date": "20261023",
-      "end_date": "20261023",
-      "facility_name": "예술의전당 [서울] (콘서트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF297771_260805_142642.gif",
-      "cast": "김성진, 김응수, 오윤아, 김용배 등",
-      "crew": "",
-      "runtime": "2시간",
-      "age": "만 7세 이상",
-      "company": "예술의전당",
-      "price_text": "일반석 30,000원, 3층석 15,000원",
-      "prices": [
-        {
-          "seat": "반석",
-          "amount": 30000,
-          "text": "일반석 30,000원"
-        },
-        {
-          "seat": "층석",
-          "amount": 15000,
-          "text": "층석 15,000원"
-        }
-      ],
-      "price_min": 15000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011395"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59568"
-        }
-      ],
-      "schedule": "금요일(11:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
-      "is_new": false
-    },
-    {
       "mt20id": "PF283070",
       "name": "함신익과 심포니 송 마스터즈 시리즈 VI, 차이코프스키 스페셜",
       "start_date": "20261024",
@@ -6199,7 +5785,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF301736",
@@ -6811,7 +6397,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF302021",
@@ -7094,7 +6680,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF298506",
@@ -7333,47 +6919,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF296182",
-      "name": "아레테 콰르텟 바르톡 현악 사중주 전곡 연주2",
-      "start_date": "20261030",
-      "end_date": "20261030",
-      "facility_name": "예술의전당 [서울] (IBK챔버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF296182_260715_145512.gif",
-      "cast": "",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 7세 이상",
-      "company": "아레테 콰르텟",
-      "price_text": "R석 55,000원, S석 33,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 55000,
-          "text": "R석 55,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 33000,
-          "text": "S석 33,000원"
-        }
-      ],
-      "price_min": 33000,
-      "price_max": 55000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26009965"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
       "mt20id": "PF280938",
       "name": "제831회 KBS교향악단 정기연주회",
       "start_date": "20261030",
@@ -7587,7 +7132,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF301835",
@@ -8201,7 +7746,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF287353",
@@ -8246,53 +7791,6 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF299388",
-      "name": "조성현 바흐 플루트 소나타 전곡 리사이틀 [서울]",
-      "start_date": "20261106",
-      "end_date": "20261106",
-      "facility_name": "예술의전당 [서울] (IBK챔버홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299388_260826_110356.gif",
-      "cast": "조성현, 조현근, 이은지",
-      "crew": "",
-      "runtime": "1시간 40분",
-      "age": "만 7세 이상",
-      "company": "(주)파이플랜즈 (pie plans)",
-      "price_text": "R석 55,000원, S석 40,000원",
-      "prices": [
-        {
-          "seat": "R석",
-          "amount": 55000,
-          "text": "R석 55,000원"
-        },
-        {
-          "seat": "S석",
-          "amount": 40000,
-          "text": "S석 40,000원"
-        }
-      ],
-      "price_min": 40000,
-      "price_max": 55000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012418"
-        }
-      ],
-      "schedule": "금요일(19:30)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "ticket_open": {
-        "open_at": "2026-08-25",
-        "dday": null,
-        "url": "https://www.sac.or.kr/site/main/show/show_view?SN=77873",
-        "source": "예술의전당 선예매 티켓오픈공지"
-      },
       "is_new": false
     },
     {
@@ -8616,7 +8114,7 @@
       "venue": "롯데콘서트홀",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300261",
@@ -9077,46 +8575,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF299008",
-      "name": "리: 바운드 축제, 오즈의 마법사: 도로시의 모험",
-      "start_date": "20261114",
-      "end_date": "20261114",
-      "facility_name": "예술의전당 [서울] (자유소극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF299008_260820_153754.gif",
-      "cast": "박은정, 송준명, 이현우, 김규빈, 문원섭, 임소라, 이상훈 등",
-      "crew": "박진서, 김광민, 조미영 등",
-      "runtime": "1시간",
-      "age": "36개월 이상",
-      "company": "문화체육관광부",
-      "price_text": "전석 20,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 20000,
-          "text": "전석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 20000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26011921"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59816"
-        }
-      ],
-      "schedule": "토요일(15:00)",
-      "genre_raw": "무용(서양/한국무용)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "발레·무용",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
       "mt20id": "PF300213",
       "name": "지브리 & 디즈니 오케스트라 콘서트 (11.15)",
       "start_date": "20261115",
@@ -9304,7 +8762,7 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF297330",
@@ -9566,7 +9024,7 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF282166",
@@ -9824,51 +9282,6 @@
       "venue": "롯데콘서트홀",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": false
-    },
-    {
-      "mt20id": "PF298970",
-      "name": "예술의전당 토요콘서트, 프리뷰 베토벤 (11월)",
-      "start_date": "20261121",
-      "end_date": "20261121",
-      "facility_name": "예술의전당 [서울] (콘서트홀)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF298970_260820_140153.gif",
-      "cast": "여자경, 김준형 등",
-      "crew": "",
-      "runtime": "1시간 30분",
-      "age": "만 7세 이상",
-      "company": "예술의전당",
-      "price_text": "일반석 40,000원, 3층석 20,000원",
-      "prices": [
-        {
-          "seat": "반석",
-          "amount": 40000,
-          "text": "일반석 40,000원"
-        },
-        {
-          "seat": "층석",
-          "amount": 20000,
-          "text": "층석 20,000원"
-        }
-      ],
-      "price_min": 20000,
-      "price_max": 40000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26012174"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/59820"
-        }
-      ],
-      "schedule": "토요일(17:00)",
-      "genre_raw": "서양음악(클래식)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "실내악·독주",
-      "genre_guessed": true,
       "is_new": false
     },
     {
@@ -10205,46 +9618,6 @@
       "is_new": false
     },
     {
-      "mt20id": "PF301296",
-      "name": "국립현대무용단, 코레오 커넥션: 서울",
-      "start_date": "20261127",
-      "end_date": "20261129",
-      "facility_name": "예술의전당 [서울] (자유소극장)",
-      "poster": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF301296_260918_132300.gif",
-      "cast": "강한나, 김동일, 김명선, 김지형, 문형수, 이지혜, 김민경 등",
-      "crew": "정윤정, 하임, 신승민 등",
-      "runtime": "1시간 50분",
-      "age": "만 7세 이상",
-      "company": "(재)국립현대무용단",
-      "price_text": "전석 30,000원",
-      "prices": [
-        {
-          "seat": "전석",
-          "amount": 30000,
-          "text": "전석 30,000원"
-        }
-      ],
-      "price_min": 30000,
-      "price_max": 30000,
-      "booking_links": [
-        {
-          "name": "놀유니버스",
-          "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26013290"
-        },
-        {
-          "name": "예스24",
-          "url": "https://ticket.yes24.com/Perf/60295"
-        }
-      ],
-      "schedule": "금요일(19:30), 토요일 ~ 일요일(15:00)",
-      "genre_raw": "무용(서양/한국무용)",
-      "state": "공연예정",
-      "venue": "예술의전당",
-      "genre": "발레·무용",
-      "genre_guessed": false,
-      "is_new": false
-    },
-    {
       "mt20id": "PF302120",
       "name": "심삼종 색소폰 독주회",
       "start_date": "20261129",
@@ -10278,7 +9651,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF301346",
@@ -10350,7 +9723,7 @@
       "venue": "세종문화회관",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF285072",
@@ -10692,7 +10065,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF300061",
@@ -10864,7 +10237,7 @@
       "venue": "예술의전당",
       "genre": "실내악·독주",
       "genre_guessed": true,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF282131",
@@ -10999,7 +10372,7 @@
       "venue": "예술의전당",
       "genre": "오케스트라",
       "genre_guessed": false,
-      "is_new": true
+      "is_new": false
     },
     {
       "mt20id": "PF299647",
