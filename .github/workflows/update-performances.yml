@@ -17,7 +17,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
+          
+# 크롤링 및 API 호출에 필요한 라이브러리 설치 (ModuleNotFoundError 방지)
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+          
       - name: Run KOPIS pipeline
         env:
           KOPIS_API_KEY: ${{ secrets.KOPIS_API_KEY }}
