@@ -174,27 +174,79 @@ def find_facilities() -> list[dict]:
     return facilities
 
 
-def find_performance_ids(mt10id: str, shcate: str, stdate: str, eddate: str) -> list[str]:
+def find_performance_ids(
+    fcltynm: str,
+    shcate: str,
+    stdate: str,
+    eddate: str,
+) -> list[str]:
+    """
+    KOPIS 공연목록 API는 한 번의 조회기간을 최대 31일로 제한한다.
+    기존 코드는 180일을 한 번에 요청해서 많은 공연이 누락될 수 있었다.
+
+    또한 prfplccd는 최신 API 가이드에서 '공연장코드(mt13id)'로 정의되어
+    있으므로, 여기서는 시설명(shprfnmfct)으로 조회하고 상세 조회 후
+    resolve_venue()로 최종 검증한다. 이 방식은 시설 ID/공연장 ID 혼동도 피한다.
+    """
     ids = []
-    page = 1
-    while True:
-        try:
-            root = _get("pblprfr", stdate=stdate, eddate=eddate, cpage=str(page),
-                        rows="100", prfplccd=mt10id, shcate=shcate)
-        except Exception as e:
-            print(f"  경고: 공연목록 조회 실패 ({mt10id}): {e}", file=sys.stderr)
-            break
-        dbs = root.findall("db")
-        if not dbs:
-            break
-        for db in dbs:
-            mt20id = (db.findtext("mt20id") or "").strip()
-            if mt20id:
-                ids.append(mt20id)
-        if len(dbs) < 100:
-            break
-        page += 1
-        time.sleep(0.2)
+    seen = set()
+
+    start = date.fromisoformat(f"{stdate[:4]}-{stdate[4:6]}-{stdate[6:8]}")
+    end = date.fromisoformat(f"{eddate[:4]}-{eddate[4:6]}-{eddate[6:8]}")
+
+    window_start = start
+    while window_start <= end:
+        window_end = min(window_start + timedelta(days=30), end)
+        ws = window_start.strftime("%Y%m%d")
+        we = window_end.strftime("%Y%m%d")
+
+        page = 1
+        window_count = 0
+
+        while True:
+            try:
+                root = _get(
+                    "pblprfr",
+                    stdate=ws,
+                    eddate=we,
+                    cpage=str(page),
+                    rows="100",
+                    shprfnmfct=fcltynm,
+                    shcate=shcate,
+                )
+            except Exception as e:
+                print(
+                    f"  경고: 공연목록 조회 실패 "
+                    f"({fcltynm}, {shcate}, {ws}~{we}, page={page}): {e}",
+                    file=sys.stderr,
+                )
+                break
+
+            dbs = root.findall("db")
+            if not dbs:
+                break
+
+            for db in dbs:
+                mt20id = (db.findtext("mt20id") or "").strip()
+                if mt20id and mt20id not in seen:
+                    seen.add(mt20id)
+                    ids.append(mt20id)
+                    window_count += 1
+
+            if len(dbs) < 100:
+                break
+
+            page += 1
+            time.sleep(0.15)
+
+        print(
+            f"    {shcate} {ws}~{we}: {window_count}건",
+            flush=True,
+        )
+
+        window_start = window_end + timedelta(days=1)
+        time.sleep(0.15)
+
     return ids
 
 
@@ -360,7 +412,7 @@ def fetch_detail(mt20id: str) -> dict:
 
 
 def guess_genre(perf: dict, shcate: str) -> tuple[str, bool]:
-    if shcate == "EEEA":
+    if shcate == "BBBC":
         return GENRE_DANCE, False
     hay = f"{perf.get('name', '')} {perf.get('genre_raw', '')}"
     if "오페라" in hay:
@@ -394,12 +446,20 @@ def main():
     print(f"\n공연 목록 조회 중 ({stdate} ~ {eddate})...")
     results = {}
     for f in facilities:
-        for shcate in ("CCCA", "EEEA"):
-            for mt20id in find_performance_ids(f["mt10id"], shcate, stdate, eddate):
+        for shcate in ("CCCA", "BBBC"):
+            ids = find_performance_ids(
+                f["fcltynm"], shcate, stdate, eddate
+            )
+            print(
+                f"  {f['fcltynm']} / {shcate}: 목록 {len(ids)}건",
+                flush=True,
+            )
+            for mt20id in ids:
                 if mt20id in results:
                     continue
                 detail = fetch_detail(mt20id)
                 if not detail:
+                    print(f"  상세정보 없음: {mt20id}", file=sys.stderr)
                     continue
                 # 교차 검증: 상세의 시설명으로 다시 판정한다.
                 # 목록 API가 엉뚱한 공연을 섞어 보내는 경우를 여기서 최종적으로 걸러낸다.
