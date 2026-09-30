@@ -22,7 +22,6 @@ import json
 import re
 import sys
 import time
-import requests
 
 from datetime import date, timedelta
 from html.parser import HTMLParser
@@ -35,12 +34,6 @@ OUT = Path("data/venue_schedules.json")
 LOOKAHEAD_DAYS = 180
 TIMEOUT = 20
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-    'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
-}
-"""
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (compatible; ClassicalPerformanceCollector/1.0; "
@@ -48,7 +41,7 @@ HEADERS = {
     ),
     "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
 }
-"""
+
 SOURCES = {
     "롯데콘서트홀": {
         "base": "https://m.lotteconcerthall.com",
