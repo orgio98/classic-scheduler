@@ -17,13 +17,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-#  이 부분을 추가하여 필요 패키지 설치
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests urllib3 beautifulsoup4  # 사용 중인 패키지 명시
-
           
       - name: Run KOPIS pipeline
         env:
