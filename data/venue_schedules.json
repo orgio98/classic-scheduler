@@ -1,5 +1,5 @@
 {
-  "generated_at": "",
-  "source_policy": "공식 공연장의 사실정보와 원문 URL만 저장",
+  "generated_at": "2026-09-30",
+  "source_policy": "공연명/공연일/공연장/장르 등 사실정보와 공식 원문 URL만 저장. 공연 설명문·포스터 이미지는 저장하지 않음.",
   "performances": []
 }
