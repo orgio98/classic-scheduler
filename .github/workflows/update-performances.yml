@@ -17,23 +17,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          
+
       - name: Run KOPIS pipeline
         env:
           KOPIS_API_KEY: ${{ secrets.KOPIS_API_KEY }}
-          # stdout을 버퍼링 없이 즉시 흘려보낸다.
-          # 이게 없으면 print()로 찍는 진행 로그(stdout)가 경고 메시지(stderr)보다
-          # 늦게 출력돼서, 실제 실행 순서와 다르게 보여 원인 파악이 어려워진다.
           PYTHONUNBUFFERED: "1"
         run: python fetch_kopis_classical.py
 
-      - name: Run venue schedule pipeline
+      - name: Run official venue schedule pipeline
+        env:
+          PYTHONUNBUFFERED: "1"
+        continue-on-error: true
         run: python fetch_venue_schedules.py
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/performances.json data/venue_schedules.json
+          git add data/performances.json
+          if [ -f data/venue_schedules.json ]; then
+            git add data/venue_schedules.json
+          fi
           git diff --staged --quiet || git commit -m "chore: update performances data"
           git push
