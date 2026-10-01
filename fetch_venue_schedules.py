@@ -22,7 +22,6 @@ import json
 import re
 import sys
 import time
-
 from datetime import date, timedelta
 from html.parser import HTMLParser
 from pathlib import Path
@@ -46,8 +45,8 @@ SOURCES = {
     "롯데콘서트홀": {
         "base": "https://m.lotteconcerthall.com",
         "list_urls": [
-            "https://m.lotteconcerthall.com/ko/performance",
-            "https://www.lotteconcerthall.com/ko/performance",
+            "https://m.lotteconcerthall.com/kor/performance",
+            "https://www.lotteconcerthall.com/kor/performance",
         ],
     },
     "고양아람누리": {
