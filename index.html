@@ -321,79 +321,15 @@ async function load() {
     // 공연장 자체 일정과 KOPIS가 같은 공연을 각각 보여주지 않도록 병합한다.
     // 날짜 + 공연장 + 제목의 정규화 값으로 비교하고,
     // KOPIS가 있으면 KOPIS 카드를 우선한다.
-    // 공연장 공식 일정과 KOPIS의 시설명 표기가 다를 수 있다.
-    // 예: 고양아람누리 / 고양아람누리(음악당)
-    // 따라서 시설명(facility_name)은 중복 판정에서 제외하고,
-    // 기관 + 실제 공연일 + 제목으로 같은 공연을 하나로 합친다.
-    function actualDates(p) {
-      if (p.specific_dates && p.specific_dates.length) {
-        return p.specific_dates.map(norm).filter(Boolean);
-      }
-      const s = norm(p.start_date), e = norm(p.end_date) || s;
-      if (!s) return [];
-      if (s === e) return [s];
+    const keyOf = p =>
+      `${p.venue}|${norm(p.start_date)}|${normTitle(p.name)}`;
 
-      // 짧은 연속 공연은 날짜별로 비교한다.
-      const out = [];
-      const d = new Date(
-        Number(s.slice(0,4)), Number(s.slice(4,6)) - 1, Number(s.slice(6,8))
-      );
-      const last = new Date(
-        Number(e.slice(0,4)), Number(e.slice(4,6)) - 1, Number(e.slice(6,8))
-      );
-      while (d <= last && out.length < 370) {
-        out.push(
-          `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`
-        );
-        d.setDate(d.getDate() + 1);
-      }
-      return out;
-    }
-
-    const keysOf = p => actualDates(p).map(d =>
-      `${p.venue}|${d}|${normTitle(p.name)}`
-    );
-
-    // KOPIS가 같은 공연을 가지고 있으면 공식 일정의 중복 카드를 버린다.
-    const kopisKeys = new Set(kopis.flatMap(keysOf));
+    const kopisKeys = new Set(kopis.map(keyOf));
     const supplemental = venueOnly
-      .filter(p => !keysOf(p).some(k => kopisKeys.has(k)))
+      .filter(p => !kopisKeys.has(keyOf(p)))
       .map(p => ({ ...p, venue_only: true }));
 
-    // 최종 화면에서도 시설명 차이에 따른 중복을 한 번 더 제거한다.
-    const merged = [];
-    const seen = new Set();
-    for (const p of [...kopis, ...supplemental]) {
-      const keys = keysOf(p);
-      const duplicate = keys.length > 0 && keys.some(k => seen.has(k));
-      if (duplicate) continue;
-      keys.forEach(k => seen.add(k));
-      merged.push(p);
-    }
-
-    // 2026 서울시향 공식 일정에 따른 명시적 회차 보정.
-    // 10/23 롯데 = 레퀴엠 ①, 10/24 예술의전당 = 레퀴엠 ②
-    // 주피터는 10/15·10/16 예술의전당에만 존재한다.
-    all = merged.filter(p => {
-      const venue = p.venue || "";
-      const title = p.name || "";
-      const dates = actualDates(p);
-
-      if (title.includes("주피터")) {
-        return venue === "예술의전당" &&
-          dates.every(d => d === "20261015" || d === "20261016");
-      }
-
-      if (title.includes("레퀴엠")) {
-        if (title.includes("①")) {
-          return venue === "롯데콘서트홀" && dates.every(d => d === "20261023");
-        }
-        if (title.includes("②")) {
-          return venue === "예술의전당" && dates.every(d => d === "20261024");
-        }
-      }
-      return true;
-    });
+    all = [...kopis, ...supplemental];
 
     // 티켓오픈 공지 원본. KOPIS는 티켓이 열린 뒤에 공연을 등록하는 경향이 있어서,
     // 정작 "곧 열리는" 공연은 KOPIS에 아직 없는 경우가 많다.
