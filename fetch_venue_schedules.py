@@ -373,6 +373,73 @@ def add_seoul_phil_lotte(items, lo, hi):
     return items
 
 
+def repair_known_schedule_errors(items):
+    """
+    공식 일정에서 확인된 회차/장소를 기준으로 잘못 확장된 범위를 보정한다.
+
+    서울시향 공식 홈페이지 기준:
+      - 주피터 ②: 2026-10-16, 예술의전당 콘서트홀
+      - 레퀴엠 ①: 2026-10-23, 롯데콘서트홀
+      - 레퀴엠 ②: 2026-10-24, 예술의전당 콘서트홀
+    """
+    repaired = []
+
+    for p in items:
+        venue = p.get("venue", "")
+        title = p.get("name", "")
+        start = norm_date(p.get("start_date", ""))
+        end = norm_date(p.get("end_date", "")) or start
+        dates = [norm_date(x) for x in (p.get("specific_dates") or []) if norm_date(x)]
+
+        # 서울시향 '주피터'는 10/15·10/16 예술의전당 공연만 허용.
+        if "주피터" in title:
+            if venue != "예술의전당":
+                continue
+            allowed = {"20261015", "20261016"}
+            if dates:
+                dates = [d for d in dates if d in allowed]
+                if not dates:
+                    continue
+                p["specific_dates"] = dates
+                p["start_date"] = min(dates)
+                p["end_date"] = max(dates)
+            elif not (start in allowed and end in allowed):
+                continue
+
+        # 서울시향 '레퀴엠 ①'은 10/23 롯데, ②는 10/24 예술의전당.
+        if "레퀴엠" in title:
+            if "①" in title:
+                if venue == "롯데콘서트홀":
+                    p["start_date"] = p["end_date"] = "20261023"
+                    p["specific_dates"] = ["20261023"]
+                else:
+                    continue
+            elif "②" in title:
+                if venue == "예술의전당":
+                    p["start_date"] = p["end_date"] = "20261024"
+                    p["specific_dates"] = ["20261024"]
+                else:
+                    continue
+
+        repaired.append(p)
+
+    # 같은 공연이 시설명만 달라져 중복되는 경우를 제거한다.
+    # venue + 날짜 + 정규화 제목을 기준으로 하나만 남긴다.
+    dedup = {}
+    for p in repaired:
+        actual_dates = p.get("specific_dates") or [p.get("start_date")]
+        for d in actual_dates:
+            key = (p.get("venue", ""), norm_date(d), norm_title(p.get("name", "")))
+            if key not in dedup:
+                q = dict(p)
+                q["start_date"] = d
+                q["end_date"] = d
+                q["specific_dates"] = [d]
+                dedup[key] = q
+
+    return list(dedup.values())
+
+
 def load_previous():
     if not OUT.exists():
         return []
@@ -410,8 +477,9 @@ def main():
             if p.get("venue") == "고양아람누리":
                 merged[(p["venue"], p["start_date"], norm_title(p["name"]))] = p
 
+    items = repair_known_schedule_errors(list(merged.values()))
     items = sorted(
-        merged.values(),
+        items,
         key=lambda p: (p.get("start_date", ""), p.get("venue", ""), p.get("name", "")),
     )
 
