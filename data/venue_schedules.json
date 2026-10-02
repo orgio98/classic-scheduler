@@ -1,5 +1,184 @@
 {
-  "generated_at": "2026-10-02",
-  "source_policy": "공연명/공연일/공연장/장르 등 사실정보와 공식 원문 URL만 저장. 공연 설명문·포스터 이미지는 저장하지 않음.",
-  "performances": []
+  "generated_at": "2026-10-02T10:45:47",
+  "lookahead_days": 180,
+  "source_policy": {
+    "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
+    "goyang": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+    "seoul_phil_fallback": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
+  },
+  "performances": [
+    {
+      "id": "롯데콘서트홀:20261016:2026서울시향얍판츠베덴의모차르트주피터",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "2026 서울시향 얍 판 츠베덴의 모차르트 ‘주피터’ ②",
+      "start_date": "20261016",
+      "end_date": "20261023",
+      "specific_dates": [
+        "20261016",
+        "20261023"
+      ],
+      "time": "19:30",
+      "genre": "클래식",
+      "genre_guessed": true,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/",
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.seoulphil.or.kr/"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261023:2026서울시향얍판츠베덴의모차르트레퀴엠",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "2026 서울시향 얍 판 츠베덴의 모차르트 레퀴엠 ①",
+      "start_date": "20261023",
+      "end_date": "20261023",
+      "specific_dates": [
+        "20261023"
+      ],
+      "time": "19:30",
+      "genre": "클래식",
+      "genre_guessed": true,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/",
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.seoulphil.or.kr/"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261023:모차르트레퀴엠",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "모차르트 레퀴엠",
+      "start_date": "20261023",
+      "end_date": "20261024",
+      "specific_dates": [
+        "20261023",
+        "20261024"
+      ],
+      "time": "19:30",
+      "genre": "클래식",
+      "genre_guessed": true,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/",
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.seoulphil.or.kr/"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261119:프로코피예프로미오와줄리엣",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "프로코피예프 ‘로미오와 줄리엣’",
+      "start_date": "20261119",
+      "end_date": "20261120",
+      "specific_dates": [
+        "20261119",
+        "20261120"
+      ],
+      "time": "19:30",
+      "genre": "클래식",
+      "genre_guessed": true,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/",
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.seoulphil.or.kr/"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261121:말러교향곡4번",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "말러 교향곡 4번",
+      "start_date": "20261121",
+      "end_date": "20261127",
+      "specific_dates": [
+        "20261121",
+        "20261126",
+        "20261127"
+      ],
+      "time": "17:00",
+      "genre": "클래식",
+      "genre_guessed": true,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/",
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.seoulphil.or.kr/"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261126:2026서울시향얍판츠베덴의말러교향곡4번",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번 ①",
+      "start_date": "20261126",
+      "end_date": "20261126",
+      "specific_dates": [
+        "20261126"
+      ],
+      "time": "19:30",
+      "genre": "클래식",
+      "genre_guessed": true,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186",
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261127:2026서울시향얍판츠베덴의말러교향곡4번",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번 ②",
+      "start_date": "20261127",
+      "end_date": "20261127",
+      "specific_dates": [
+        "20261127"
+      ],
+      "time": "19:30",
+      "genre": "클래식",
+      "genre_guessed": true,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186",
+      "booking_links": [
+        {
+          "name": "롯데콘서트홀",
+          "url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
+        }
+      ],
+      "is_kopis": false
+    }
+  ]
 }
