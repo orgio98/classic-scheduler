@@ -59,6 +59,14 @@ def norm_title(s):
     return re.sub(r"[^0-9A-Za-z가-힣]", "", s or "").lower()
 
 
+def norm_date(s):
+    """날짜 문자열(2026-10-16, 2026.10.16, 20261016 등)을 YYYYMMDD로 정규화. 실패 시 ''."""
+    if not s:
+        return ""
+    digits = re.sub(r"\D", "", str(s))
+    return digits[:8] if len(digits) >= 8 else ""
+
+
 def fetch(url, jina=True):
     errors = []
 
