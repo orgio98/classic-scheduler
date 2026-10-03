@@ -356,14 +356,43 @@ async function load() {
 
     // KOPIS가 같은 공연을 가지고 있으면 공식 일정의 중복 카드를 버린다.
     const kopisKeys = new Set(kopis.flatMap(keysOf));
+
+    // 서울시향 등 주최측 공식 일정은 제목 표기가 KOPIS와 달라도(예: '레퀴엠 ①')
+    // 같은 공연장 + 같은 날짜에 KOPIS 공연이 있으면 중복으로 보고 제외한다.
+    // 즉 KOPIS에 없는 공연(예: 11/26·27 롯데콘서트홀)만 남긴다.
+    const ORGANIZER = "venue_schedule_official_organizer";
+    const kopisVD = new Set(
+      kopis.flatMap(p => actualDates(p).map(d => `${p.venue}|${d}`))
+    );
+    const hasNol = p => (p.booking_links || []).some(l => /nol\.yanolja\.com/.test(l.url || ""));
+
     const supplemental = venueOnly
       .filter(p => !keysOf(p).some(k => kopisKeys.has(k)))
-      .map(p => ({ ...p, venue_only: true }));
+      .map(p => ({ ...p, venue_only: true }))
+      // 실제 예매 링크(NOL)가 있는 항목을 먼저 두어 중복 시 그쪽이 남게 한다.
+      .sort((a, b) => (hasNol(b) ? 1 : 0) - (hasNol(a) ? 1 : 0));
+
+    const orgSeen = new Set();
+    const supplementalFiltered = [];
+    for (const p of supplemental) {
+      if (p.source_type !== ORGANIZER) { supplementalFiltered.push(p); continue; }
+      const dates = actualDates(p).filter(d =>
+        !kopisVD.has(`${p.venue}|${d}`) && !orgSeen.has(`${p.venue}|${d}`)
+      );
+      if (!dates.length) continue;
+      dates.forEach(d => orgSeen.add(`${p.venue}|${d}`));
+      supplementalFiltered.push({
+        ...p,
+        specific_dates: dates.length > 1 ? dates : [],
+        start_date: dates[0],
+        end_date: dates[dates.length - 1]
+      });
+    }
 
     // 최종 화면에서도 시설명 차이에 따른 중복을 한 번 더 제거한다.
     const merged = [];
     const seen = new Set();
-    for (const p of [...kopis, ...supplemental]) {
+    for (const p of [...kopis, ...supplementalFiltered]) {
       const keys = keysOf(p);
       const duplicate = keys.length > 0 && keys.some(k => seen.has(k));
       if (duplicate) continue;
@@ -401,7 +430,7 @@ async function load() {
 
     document.getElementById("meta").textContent =
       `기준일 ${data.generated_at || "-"} · KOPIS ${kopis.length}건` +
-      (supplemental.length ? ` · 공연장 자체 일정 ${supplemental.length}건` : "") +
+      (supplementalFiltered.length ? ` · 공연장 자체 일정 ${supplementalFiltered.length}건` : "") +
       (opens.length ? ` · 예매오픈 공지 ${opens.length}건` : "");
     document.getElementById("banner").classList.remove("show");
   } catch (e) {

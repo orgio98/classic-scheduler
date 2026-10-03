@@ -27,6 +27,8 @@ from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 
 OUT = Path("data/venue_schedules.json")
+KOPIS_JSON = Path("data/performances.json")
+ORGANIZER_TYPE = "venue_schedule_official_organizer"
 LOOKAHEAD_DAYS = 180
 TIMEOUT = 30
 
@@ -44,6 +46,9 @@ LOTTE_YEAR = "https://www.lotteconcerthall.com/product/ko/performance/year"
 GOYANG_LIST = "https://www.artgy.or.kr/PF/PF0201L.aspx"
 SEOUL_PHIL_HOME = "https://www.seoulphil.or.kr/"
 SEOUL_PHIL_SEASON = "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
+
+# 서울시향 말러 4번(11/26·27, 롯데콘서트홀)의 실제 예매 페이지 (NOL 티켓)
+MAHLER4_TICKET = "https://nol.yanolja.com/ticket/products/25013766"
 
 IGNORE_LINES = {
     "상세", "상세 예매", "예매", "찜", "Image", "이미지",
@@ -350,9 +355,10 @@ def add_seoul_phil_lotte(items, lo, hi):
             max(valid),
             SEOUL_PHIL_HOME,
             block,
-            source_type="venue_schedule_official_organizer",
+            source_type=ORGANIZER_TYPE,
             specific_dates=valid,
         )
+        item["booking_links"] = [{"name": "서울시향", "url": SEOUL_PHIL_HOME}]
         items[item["id"]] = item
         found += 1
 
@@ -372,9 +378,13 @@ def add_seoul_phil_lotte(items, lo, hi):
                 d,
                 SEOUL_PHIL_SEASON,
                 f"{title} / 롯데콘서트홀 / 19:30",
-                source_type="venue_schedule_official_organizer",
+                source_type=ORGANIZER_TYPE,
                 specific_dates=[d],
             )
+            item["booking_links"] = [
+                {"name": "NOL 티켓", "url": MAHLER4_TICKET},
+                {"name": "서울시향", "url": SEOUL_PHIL_SEASON},
+            ]
             items[item["id"]] = item
 
     print(f"[서울시향 보완] 롯데콘서트홀 {found}건 + 공식 11/26·11/27 보장")
@@ -448,6 +458,74 @@ def repair_known_schedule_errors(items):
     return list(dedup.values())
 
 
+def expand_dates(p):
+    """공연의 실제 날짜 목록(YYYYMMDD). specific_dates 우선, 없으면 시작~종료 전개."""
+    sd = [norm_date(x) for x in (p.get("specific_dates") or []) if norm_date(x)]
+    if sd:
+        return sd
+    s = norm_date(p.get("start_date", ""))
+    e = norm_date(p.get("end_date", "")) or s
+    if not s:
+        return []
+    try:
+        d = datetime.strptime(s, "%Y%m%d").date()
+        last = datetime.strptime(e, "%Y%m%d").date()
+    except ValueError:
+        return [s]
+    out = []
+    while d <= last and len(out) < 370:
+        out.append(d.strftime("%Y%m%d"))
+        d += timedelta(days=1)
+    return out
+
+
+def drop_kopis_duplicates(items):
+    """
+    서울시향 공식 일정(ORGANIZER_TYPE) 중
+      1) KOPIS에 같은 공연장+날짜 공연이 이미 있으면 제거하고 (제목 표기가 달라도),
+      2) 서울시향 항목끼리 같은 공연장+날짜로 겹치면 하나만 남긴다.
+    즉 KOPIS에 없는 공연(예: 11/26·27 롯데콘서트홀)만 남는다.
+    """
+    kopis_vd = set()
+    if KOPIS_JSON.exists():
+        try:
+            kp = json.loads(KOPIS_JSON.read_text(encoding="utf-8")).get("performances", [])
+            for k in kp:
+                for d in expand_dates(k):
+                    kopis_vd.add((k.get("venue", ""), d))
+        except Exception as e:
+            print(f"[WARN] KOPIS 중복 비교용 파일 읽기 실패: {e}", file=sys.stderr)
+
+    normal = [p for p in items if p.get("source_type") != ORGANIZER_TYPE]
+    org = [p for p in items if p.get("source_type") == ORGANIZER_TYPE]
+
+    # 실제 예매 링크(NOL)가 있는 항목을 우선 보존
+    org.sort(key=lambda p: 0 if any(
+        "nol.yanolja.com" in (b.get("url") or "") for b in p.get("booking_links", [])
+    ) else 1)
+
+    seen = set()
+    kept, removed = [], 0
+    for p in org:
+        v = p.get("venue", "")
+        dates = [
+            d for d in expand_dates(p)
+            if (v, d) not in kopis_vd and (v, d) not in seen
+        ]
+        if not dates:
+            removed += 1
+            continue
+        for d in dates:
+            seen.add((v, d))
+        q = dict(p)
+        q["specific_dates"] = dates if len(dates) > 1 else []
+        q["start_date"], q["end_date"] = min(dates), max(dates)
+        kept.append(q)
+
+    print(f"[중복 제거] 서울시향 공식 일정 {len(org)}건 -> {len(kept)}건 (KOPIS/자체 중복 {removed}건 제거)")
+    return normal + kept
+
+
 def load_previous():
     if not OUT.exists():
         return []
@@ -486,6 +564,7 @@ def main():
                 merged[(p["venue"], p["start_date"], norm_title(p["name"]))] = p
 
     items = repair_known_schedule_errors(list(merged.values()))
+    items = drop_kopis_duplicates(items)
     items = sorted(
         items,
         key=lambda p: (p.get("start_date", ""), p.get("venue", ""), p.get("name", "")),
