@@ -389,6 +389,53 @@ async function load() {
       });
     }
 
+    // 공연장 자체 일정 정리: 클래식/무용이 아닌 공연 제외 + 제목이 비슷한 중복 제거.
+    // (KOPIS에 이미 있는 공연, 그리고 자체 일정끼리의 중복 모두)
+    const NON_CLASSICAL = ["뮤지컬","연극","트로트","가요","재즈","힙합","아이돌","마술","서커스",
+      "인형극","아동극","어린이극","토크","강연","전시","영화","국악","판소리","사물놀이","코미디","개그","시낭송"];
+    const CLASSICAL = ["교향","시향","오케스트라","필하모닉","심포니","관현악","오페라","합창","칸타타",
+      "발레","무용","댄스","피아노","바이올린","첼로","비올라","플루트","클라리넷","오보에","바순",
+      "호른","트럼펫","하프","실내악","독주","리사이틀","앙상블","듀오","트리오","콰르텟","퀄텟",
+      "협주곡","콘체르토","클래식","음악회","아리아","성악","레퀴엠"];
+    const isClassicalTitle = t => {
+      const x = (t || "").toLowerCase();
+      if (NON_CLASSICAL.some(k => x.includes(k)) || /musical|jazz|trot/.test(x)) return false;
+      return CLASSICAL.some(k => x.includes(k)) ||
+        /orchestra|symphony|philharmonic|opera|ballet|dance|choir|choral|quartet|recital|chamber|classic/.test(x);
+    };
+    const coreTitle = t => normTitle(
+      (t || "").replace(/[\[\(<【].*?[\]\)>】]/g, " ").replace(/[①-⑩]/g, "").replace(/20\d{2}/g, "")
+        .replace(/예매하기|예매|상세|진행|예정|종료|아람누리|아람|어울림|고양|롯데콘서트홀/g, "")
+    );
+    const bigrams = s => { const m = new Map(); for (let i = 0; i < s.length - 1; i++) { const g = s.slice(i, i + 2); m.set(g, (m.get(g) || 0) + 1); } return m; };
+    const dice = (a, b) => {
+      if (a.length < 2 || b.length < 2) return a === b ? 1 : 0;
+      const A = bigrams(a), B = bigrams(b); let hit = 0;
+      A.forEach((n, g) => { hit += Math.min(n, B.get(g) || 0); });
+      return 2 * hit / ((a.length - 1) + (b.length - 1));
+    };
+    const sameTitle = (x, y) => {
+      const a = coreTitle(x), b = coreTitle(y);
+      if (!a || !b) return false;
+      if (a === b) return true;
+      const [sh, lg] = a.length <= b.length ? [a, b] : [b, a];
+      return (sh.length >= 5 && lg.includes(sh)) || dice(a, b) >= 0.75;
+    };
+    const overlapDates = (A, B) => A.some(d => B.includes(d));
+
+    const kopisInfo = kopis.map(p => ({ v: p.venue, d: actualDates(p), n: p.name || "" }));
+    const cleaned = [];
+    // 제목이 긴(정보가 많은) 항목을 우선 남긴다.
+    [...supplementalFiltered].sort((a, b) => (b.name || "").length - (a.name || "").length).forEach(p => {
+      if (p.source_type !== ORGANIZER && !isClassicalTitle(p.name)) return;
+      const d = actualDates(p);
+      if (kopisInfo.some(k => k.v === p.venue && overlapDates(d, k.d) && sameTitle(p.name, k.n))) return;
+      if (cleaned.some(q => q.venue === p.venue && overlapDates(d, actualDates(q)) && sameTitle(p.name, q.name))) return;
+      cleaned.push(p);
+    });
+    supplementalFiltered.length = 0;
+    cleaned.forEach(p => supplementalFiltered.push(p));
+
     // 최종 화면에서도 시설명 차이에 따른 중복을 한 번 더 제거한다.
     const merged = [];
     const seen = new Set();

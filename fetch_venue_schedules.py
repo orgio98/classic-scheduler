@@ -22,6 +22,7 @@ import re
 import subprocess
 import sys
 from datetime import date, timedelta, datetime
+from difflib import SequenceMatcher
 from pathlib import Path
 from urllib.parse import urljoin
 from urllib.request import Request, urlopen
@@ -145,21 +146,42 @@ def extract_time(text):
     return f"{int(m.group(1)):02d}:{m.group(2)}" if m else ""
 
 
+NON_CLASSICAL_KEYS = (
+    "뮤지컬", "연극", "트로트", "가요", "재즈", "힙합",
+    "아이돌", "마술", "서커스", "인형극", "아동극", "어린이극", "토크", "강연",
+    "전시", "영화", "국악", "판소리", "사물놀이", "코미디", "개그", "시낭송",
+    "musical", "jazz", "trot",
+)
+CLASSICAL_KEYS = (
+    "교향", "시향", "오케스트라", "필하모닉", "심포니", "관현악", "philharmonic",
+    "orchestra", "symphony", "오페라", "opera", "합창", "칸타타", "choir", "choral",
+    "발레", "무용", "댄스", "ballet", "dance",
+    "피아노", "바이올린", "첼로", "비올라", "플루트", "클라리넷", "오보에", "바순",
+    "호른", "트럼펫", "하프", "실내악", "독주", "리사이틀", "앙상블",
+    "듀오", "트리오", "콰르텟", "퀄텟", "quartet", "recital", "chamber",
+    "협주곡", "콘체르토", "클래식", "classic", "음악회", "아리아", "성악", "레퀴엠",
+)
+
+
 def genre(title):
-    t = title.lower()
+    """클래식/무용 공연이면 화면용 장르, 아니면 None. (KOPIS 쪽 분류와 같은 이름 사용)"""
+    t = (title or "").lower()
+    if any(k in t for k in NON_CLASSICAL_KEYS):
+        return None
     if any(k in t for k in ("발레", "무용", "댄스", "ballet", "dance")):
         return "발레·무용"
     if "오페라" in t or "opera" in t:
         return "오페라"
-    if "합창" in t or "choral" in t or "choir" in t:
+    if any(k in t for k in ("합창", "칸타타", "choral", "choir")):
         return "합창"
     if any(k in t for k in (
-        "교향", "필하모닉", "오케스트라", "심포니", "관현악",
-        "피아노", "바이올린", "첼로", "비올라", "실내악",
-        "리사이틀", "콘체르토", "협주곡", "클래식"
+        "교향", "시향", "필하모닉", "오케스트라", "심포니", "관현악",
+        "orchestra", "symphony", "philharmonic",
     )):
-        return "클래식"
-    return "클래식"
+        return "오케스트라"
+    if any(k in t for k in CLASSICAL_KEYS):
+        return "실내악·독주"
+    return None
 
 
 def make_item(venue, title, start, end, source_url, raw="",
@@ -174,7 +196,7 @@ def make_item(venue, title, start, end, source_url, raw="",
         "specific_dates": specific_dates or [],
         "time": extract_time(raw),
         "genre": genre(title),
-        "genre_guessed": True,
+        "genre_guessed": False,
         "source": venue,
         "source_type": source_type,
         "source_url": source_url,
@@ -526,6 +548,77 @@ def drop_kopis_duplicates(items):
     return normal + kept
 
 
+def core_title(s):
+    """괄호/상태어/회차표시 등을 걷어낸 비교용 제목."""
+    t = clean(s or "")
+    t = re.sub(r"[\[\(<【].*?[\]\)>】]", " ", t)
+    t = re.sub(r"[①-⑩]", "", t)
+    t = re.sub(r"20\d{2}", "", t)
+    for w in ("예매하기", "예매", "상세", "진행", "예정", "종료", "아람", "어울림",
+              "아람누리", "고양", "롯데콘서트홀"):
+        t = t.replace(w, "")
+    return norm_title(t)
+
+
+def same_title(a, b):
+    ca, cb = core_title(a), core_title(b)
+    if not ca or not cb:
+        return False
+    if ca == cb:
+        return True
+    short, long_ = sorted((ca, cb), key=len)
+    if len(short) >= 5 and short in long_:
+        return True
+    return SequenceMatcher(None, ca, cb).ratio() >= 0.75
+
+
+def dedupe_items(items):
+    """
+    같은 공연장 + 날짜가 겹치고 제목이 비슷하면 같은 공연으로 보고 하나만 남긴다.
+    1) KOPIS(data/performances.json)에 이미 있는 공연은 공연장 자체 일정에서 제외
+    2) 공연장 자체 일정끼리도 중복 제거
+    """
+    kopis = []
+    if KOPIS_JSON.exists():
+        try:
+            for k in json.loads(KOPIS_JSON.read_text(encoding="utf-8")).get("performances", []):
+                kopis.append((k.get("venue", ""), set(expand_dates(k)), k.get("name", "")))
+        except Exception as e:
+            print(f"[WARN] KOPIS 비교용 파일 읽기 실패: {e}", file=sys.stderr)
+
+    kept, dropped_kopis, dropped_self = [], 0, 0
+    # 제목이 긴(정보가 많은) 항목을 먼저 두어 그쪽을 남긴다
+    for p in sorted(items, key=lambda x: -len(x.get("name", ""))):
+        v, ds, nm = p.get("venue", ""), set(expand_dates(p)), p.get("name", "")
+        if any(kv == v and ds & kd and same_title(nm, kn) for kv, kd, kn in kopis):
+            dropped_kopis += 1
+            continue
+        if any(q.get("venue") == v and ds & set(expand_dates(q)) and same_title(nm, q.get("name", ""))
+               for q in kept):
+            dropped_self += 1
+            continue
+        kept.append(p)
+    print(f"[유사 중복 제거] KOPIS와 중복 {dropped_kopis}건, 자체 중복 {dropped_self}건 제거")
+    return kept
+
+
+def filter_classical(items):
+    """클래식/무용이 아닌 공연 제거 + 장르명 재판정 (이전 수집분 포함)."""
+    out, dropped = [], 0
+    for p in items:
+        g = genre(p.get("name", ""))
+        if g is None and p.get("source_type") == ORGANIZER_TYPE:
+            g = "오케스트라"  # 서울시향 공식 일정은 항상 클래식
+        if g is None:
+            dropped += 1
+            continue
+        q = dict(p)
+        q["genre"], q["genre_guessed"] = g, False
+        out.append(q)
+    print(f"[장르 필터] 클래식/무용 아님 {dropped}건 제외")
+    return out
+
+
 def load_previous():
     if not OUT.exists():
         return []
@@ -564,7 +657,9 @@ def main():
                 merged[(p["venue"], p["start_date"], norm_title(p["name"]))] = p
 
     items = repair_known_schedule_errors(list(merged.values()))
+    items = filter_classical(items)
     items = drop_kopis_duplicates(items)
+    items = dedupe_items(items)
     items = sorted(
         items,
         key=lambda p: (p.get("start_date", ""), p.get("venue", ""), p.get("name", "")),
