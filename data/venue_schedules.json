@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T23:59:25",
+  "generated_at": "2026-10-06T01:44:54",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -232,6 +232,54 @@
       "end_date": "20261029",
       "specific_dates": [
         "20261029"
+      ],
+      "time": "",
+      "genre": "실내악·독주",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261029:합창할고양제3회정기연주회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "합창할고양 제3회 정기연주회",
+      "start_date": "20261029",
+      "end_date": "20261029",
+      "specific_dates": [
+        "20261029"
+      ],
+      "time": "",
+      "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261101:제32회꿈씨음악회나눔이꿈이될때",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "제32회 꿈씨음악회 “나눔이 꿈이 될 때”",
+      "start_date": "20261101",
+      "end_date": "20261101",
+      "specific_dates": [
+        "20261101"
       ],
       "time": "",
       "genre": "실내악·독주",
