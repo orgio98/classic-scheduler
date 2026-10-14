@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T02:41:57",
+  "generated_at": "2026-10-14T00:27:03",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -7,28 +7,6 @@
     "seoul_phil_fallback": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
   },
   "performances": [
-    {
-      "id": "롯데콘서트홀:20261023:모차르트레퀴엠",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "모차르트 레퀴엠",
-      "start_date": "20261023",
-      "end_date": "20261023",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/",
-      "booking_links": [
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/"
-        }
-      ],
-      "is_kopis": false
-    },
     {
       "id": "롯데콘서트홀:20261126:2026서울시향얍판츠베덴의말러교향곡4번",
       "venue": "롯데콘서트홀",
