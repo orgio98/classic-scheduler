@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T00:01:02",
+  "generated_at": "2026-10-23T23:53:30",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -32,50 +32,6 @@
       "is_kopis": false
     },
     {
-      "id": "롯데콘서트홀:20261023:모차르트레퀴엠",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "모차르트 레퀴엠",
-      "start_date": "20261023",
-      "end_date": "20261023",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/",
-      "booking_links": [
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "롯데콘서트홀:20261023:모차르트레퀴엠",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "모차르트 레퀴엠",
-      "start_date": "20261024",
-      "end_date": "20261024",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/",
-      "booking_links": [
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
       "id": "고양아람누리:20261027:솔빛소리합창단제4회정기연주회",
       "venue": "고양아람누리",
       "facility_name": "고양아람누리",
@@ -87,54 +43,6 @@
       ],
       "time": "",
       "genre": "합창",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261028:국군교향악단순회연주회",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "국군교향악단 순회연주회",
-      "start_date": "20261028",
-      "end_date": "20261028",
-      "specific_dates": [
-        "20261028"
-      ],
-      "time": "",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261029:2026아람클래식비킹구르올라프손피아노리사이틀",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "2026 아람 클래식 - 비킹구르 올라프손 피아노 리사이틀",
-      "start_date": "20261029",
-      "end_date": "20261029",
-      "specific_dates": [
-        "20261029"
-      ],
-      "time": "",
-      "genre": "실내악·독주",
       "genre_guessed": false,
       "source": "고양아람누리",
       "source_type": "venue_schedule",
@@ -196,30 +104,6 @@
       "is_kopis": false
     },
     {
-      "id": "고양아람누리:20261101:제32회꿈씨음악회나눔이꿈이될때",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "제32회 꿈씨음악회 “나눔이 꿈이 될 때”",
-      "start_date": "20261101",
-      "end_date": "20261101",
-      "specific_dates": [
-        "20261101"
-      ],
-      "time": "",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
       "id": "고양아람누리:20261103:제7회평화합창제",
       "venue": "고양아람누리",
       "facility_name": "고양아람누리",
@@ -231,30 +115,6 @@
       ],
       "time": "",
       "genre": "합창",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261105:2026고양시민을위한orchestraukulele콜라보",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "2026 고양시민을 위한 \"Orchestra + Ukulele\" 콜라보",
-      "start_date": "20261105",
-      "end_date": "20261105",
-      "specific_dates": [
-        "20261105"
-      ],
-      "time": "",
-      "genre": "오케스트라",
       "genre_guessed": false,
       "source": "고양아람누리",
       "source_type": "venue_schedule",
@@ -388,50 +248,6 @@
       "is_kopis": false
     },
     {
-      "id": "롯데콘서트홀:20261119:프로코피예프로미오와줄리엣",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "프로코피예프 ‘로미오와 줄리엣’",
-      "start_date": "20261119",
-      "end_date": "20261119",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/",
-      "booking_links": [
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "롯데콘서트홀:20261119:프로코피예프로미오와줄리엣",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "프로코피예프 ‘로미오와 줄리엣’",
-      "start_date": "20261120",
-      "end_date": "20261120",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/",
-      "booking_links": [
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
       "id": "고양아람누리:20261121:오페라서울라보엠",
       "venue": "고양아람누리",
       "facility_name": "고양아람누리",
@@ -499,58 +315,6 @@
         {
           "name": "고양아람누리",
           "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "롯데콘서트홀:20261126:2026서울시향얍판츠베덴의말러교향곡4번",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번 ①",
-      "start_date": "20261126",
-      "end_date": "20261126",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186",
-      "booking_links": [
-        {
-          "name": "NOL 티켓",
-          "url": "https://nol.yanolja.com/ticket/products/25013766"
-        },
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "롯데콘서트홀:20261127:2026서울시향얍판츠베덴의말러교향곡4번",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번 ②",
-      "start_date": "20261127",
-      "end_date": "20261127",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186",
-      "booking_links": [
-        {
-          "name": "NOL 티켓",
-          "url": "https://nol.yanolja.com/ticket/products/25013766"
-        },
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
         }
       ],
       "is_kopis": false
