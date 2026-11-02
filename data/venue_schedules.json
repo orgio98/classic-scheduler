@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T00:05:34",
+  "generated_at": "2026-11-02T00:32:07",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -19,6 +19,30 @@
       ],
       "time": "",
       "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261105:2026고양시민을위한orchestraukulele콜라보",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "2026 고양시민을 위한 \"Orchestra + Ukulele\" 콜라보",
+      "start_date": "20261105",
+      "end_date": "20261105",
+      "specific_dates": [
+        "20261105"
+      ],
+      "time": "",
+      "genre": "오케스트라",
       "genre_guessed": false,
       "source": "고양아람누리",
       "source_type": "venue_schedule",
@@ -241,6 +265,58 @@
         {
           "name": "고양아람누리",
           "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261126:2026서울시향얍판츠베덴의말러교향곡4번",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번 ①",
+      "start_date": "20261126",
+      "end_date": "20261126",
+      "specific_dates": [],
+      "time": "19:30",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186",
+      "booking_links": [
+        {
+          "name": "NOL 티켓",
+          "url": "https://nol.yanolja.com/ticket/products/25013766"
+        },
+        {
+          "name": "서울시향",
+          "url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "롯데콘서트홀:20261127:2026서울시향얍판츠베덴의말러교향곡4번",
+      "venue": "롯데콘서트홀",
+      "facility_name": "롯데콘서트홀",
+      "name": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번 ②",
+      "start_date": "20261127",
+      "end_date": "20261127",
+      "specific_dates": [],
+      "time": "19:30",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "source": "롯데콘서트홀",
+      "source_type": "venue_schedule_official_organizer",
+      "source_url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186",
+      "booking_links": [
+        {
+          "name": "NOL 티켓",
+          "url": "https://nol.yanolja.com/ticket/products/25013766"
+        },
+        {
+          "name": "서울시향",
+          "url": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
         }
       ],
       "is_kopis": false
