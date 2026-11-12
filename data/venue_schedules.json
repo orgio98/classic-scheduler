@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T01:20:40",
+  "generated_at": "2026-11-12T02:16:29",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -7,6 +7,294 @@
     "seoul_phil_fallback": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
   },
   "performances": [
+    {
+      "id": "고양아람누리:20261113:고양시민합창단제10회정기연주회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "고양시민합창단 제10회 정기연주회",
+      "start_date": "20261113",
+      "end_date": "20261113",
+      "specific_dates": [
+        "20261113"
+      ],
+      "time": "",
+      "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261118:제7회한국식오카리나교원앙상블강물처럼정기연주회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "제7회 한국식오카리나 교원앙상블 강물처럼 정기연주회",
+      "start_date": "20261118",
+      "end_date": "20261118",
+      "specific_dates": [
+        "20261118"
+      ],
+      "time": "",
+      "genre": "실내악·독주",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261119:장애인을위한세상의빛음악회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "장애인을 위한 \"세상의 빛\" 음악회",
+      "start_date": "20261119",
+      "end_date": "20261119",
+      "specific_dates": [
+        "20261119"
+      ],
+      "time": "",
+      "genre": "실내악·독주",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261121:오페라서울라보엠",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "오페라 [서울*라보엠]",
+      "start_date": "20261121",
+      "end_date": "20261121",
+      "specific_dates": [
+        "20261121"
+      ],
+      "time": "",
+      "genre": "오페라",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261121:한국항공대학교아마추어오케스트라kauao제11회정기연주회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "한국항공대학교 아마추어 오케스트라 KAUAO 제11회 정기연주회",
+      "start_date": "20261121",
+      "end_date": "20261121",
+      "specific_dates": [
+        "20261121"
+      ],
+      "time": "",
+      "genre": "오케스트라",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261122:바로크오라토리오합창단제15회정기연주회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "바로크오라토리오 합창단 제 15회 정기연주회",
+      "start_date": "20261122",
+      "end_date": "20261122",
+      "specific_dates": [
+        "20261122"
+      ],
+      "time": "",
+      "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261121:오페라서울라보엠",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "오페라 [서울*라보엠]",
+      "start_date": "20261122",
+      "end_date": "20261122",
+      "specific_dates": [
+        "20261122"
+      ],
+      "time": "",
+      "genre": "오페라",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261202:시스띠나일산합창단제2회정기연주회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "시스띠나일산합창단 제2회 정기연주회",
+      "start_date": "20261202",
+      "end_date": "20261202",
+      "specific_dates": [
+        "20261202"
+      ],
+      "time": "",
+      "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261206:고양상주단체고잉홈프로젝트베토벤교향곡제9번합창",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "고양상주단체 - 고잉홈프로젝트 [베토벤 교향곡 제9번 '합창']",
+      "start_date": "20261206",
+      "end_date": "20261206",
+      "specific_dates": [
+        "20261206"
+      ],
+      "time": "",
+      "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261210:고양시립합창단제86회정기연주회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "고양시립합창단 제86회 정기연주회",
+      "start_date": "20261210",
+      "end_date": "20261210",
+      "specific_dates": [
+        "20261210"
+      ],
+      "time": "",
+      "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261216:2026고양월드클래식패키지패키지",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "2026 고양월드클래식 패키지 [패키지]",
+      "start_date": "20261216",
+      "end_date": "20261216",
+      "specific_dates": [
+        "20261216"
+      ],
+      "time": "",
+      "genre": "실내악·독주",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261216:2026고양월드클래식패키지패키지",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "2026 고양월드클래식 패키지 [패키지]",
+      "start_date": "20261220",
+      "end_date": "20261220",
+      "specific_dates": [
+        "20261220"
+      ],
+      "time": "",
+      "genre": "실내악·독주",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
     {
       "id": "롯데콘서트홀:20270109:2027서울시향신년음악회",
       "venue": "롯데콘서트홀",
