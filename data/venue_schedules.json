@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T02:16:29",
+  "generated_at": "2026-11-13T01:48:45",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -235,6 +235,30 @@
       ],
       "time": "",
       "genre": "합창",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261216:2026고양월드클래식콘서트오페라비제카르멘",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "2026 고양월드클래식 - 콘서트 오페라 비제 [카르멘]",
+      "start_date": "20261216",
+      "end_date": "20261216",
+      "specific_dates": [
+        "20261216"
+      ],
+      "time": "",
+      "genre": "오페라",
       "genre_guessed": false,
       "source": "고양아람누리",
       "source_type": "venue_schedule",
