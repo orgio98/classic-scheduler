@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T01:00:44",
+  "generated_at": "2026-11-16T00:59:30",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -267,28 +267,6 @@
         {
           "name": "고양아람누리",
           "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "롯데콘서트홀:20270109:2027서울시향신년음악회",
-      "venue": "롯데콘서트홀",
-      "facility_name": "롯데콘서트홀",
-      "name": "2027 서울시향 신년 음악회",
-      "start_date": "20270109",
-      "end_date": "20270109",
-      "specific_dates": [],
-      "time": "19:30",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "source": "롯데콘서트홀",
-      "source_type": "venue_schedule_official_organizer",
-      "source_url": "https://www.seoulphil.or.kr/",
-      "booking_links": [
-        {
-          "name": "서울시향",
-          "url": "https://www.seoulphil.or.kr/"
         }
       ],
       "is_kopis": false
