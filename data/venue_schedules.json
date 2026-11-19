@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T00:59:30",
+  "generated_at": "2026-11-19T02:25:46",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -7,30 +7,6 @@
     "seoul_phil_fallback": "https://www.seoulphil.or.kr/srvc/bbs/1/detail?dynmPstNo=1186"
   },
   "performances": [
-    {
-      "id": "고양아람누리:20261118:제7회한국식오카리나교원앙상블강물처럼정기연주회",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "제7회 한국식오카리나 교원앙상블 강물처럼 정기연주회",
-      "start_date": "20261118",
-      "end_date": "20261118",
-      "specific_dates": [
-        "20261118"
-      ],
-      "time": "",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
     {
       "id": "고양아람누리:20261119:장애인을위한세상의빛음악회",
       "venue": "고양아람누리",
@@ -259,6 +235,30 @@
       ],
       "time": "",
       "genre": "실내악·독주",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20270101:2027빈필하모닉신년음악회라이브",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "2027 빈 필하모닉 신년음악회 라이브",
+      "start_date": "20270101",
+      "end_date": "20270101",
+      "specific_dates": [
+        "20270101"
+      ],
+      "time": "",
+      "genre": "오케스트라",
       "genre_guessed": false,
       "source": "고양아람누리",
       "source_type": "venue_schedule",
