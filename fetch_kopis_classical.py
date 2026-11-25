@@ -95,9 +95,11 @@ LIST_ERRORS: list[str] = []
 # KOPIS 방화벽은 2026년 11월 말부터 파이썬 기본 User-Agent 요청을 "400 Request Blocked"로 막는다.
 # 앱 이름을 밝히고, 요청 간격을 두고, 막히면 잠시 기다렸다 다시 시도한다.
 USER_AGENT = "classic-scheduler/1.0 (+https://github.com/orgio98/classic-scheduler)"
-MIN_INTERVAL = 0.6        # 초. KOPIS 호출 사이 최소 간격
-BLOCK_RETRIES = 3         # Request Blocked를 받으면 다시 시도할 횟수
-BLOCK_WAIT = 15           # 초. 다시 시도하기 전 기다리는 시간
+MIN_INTERVAL = 1.0        # 초. KOPIS 호출 사이 최소 간격 (막히면 자동으로 늘어난다)
+MAX_INTERVAL = 6.0
+BLOCK_RETRIES = 4         # Request Blocked를 받으면 다시 시도할 횟수
+BLOCK_WAIT = 20           # 초. 다시 시도하기 전 기다리는 시간 (시도할수록 길어진다)
+DETAIL_REFRESH_DAYS = 7   # 이미 받은 공연의 상세정보는 이 주기로만 다시 받는다
 _last_call = 0.0
 
 
@@ -141,10 +143,13 @@ def _get(path: str, **params) -> ET.Element:
                 body = _fetch(url)
                 break
             except KopisBlocked as e:
+                global MIN_INTERVAL
+                MIN_INTERVAL = min(MAX_INTERVAL, MIN_INTERVAL * 1.5)   # 막히면 속도를 늦춘다
                 if attempt == BLOCK_RETRIES:
                     raise RuntimeError(str(e)) from None
-                print(f"  KOPIS 차단 응답 → {BLOCK_WAIT}초 뒤 다시 시도 ({attempt + 1}/{BLOCK_RETRIES})", file=sys.stderr, flush=True)
-                time.sleep(BLOCK_WAIT)
+                wait = BLOCK_WAIT * (attempt + 1)
+                print(f"  KOPIS 차단 응답 → {wait}초 뒤 다시 시도 ({attempt + 1}/{BLOCK_RETRIES}), 간격 {MIN_INTERVAL:.1f}초", file=sys.stderr, flush=True)
+                time.sleep(wait)
     except HTTPError as e:
         # 지금까지는 "HTTP Error 400: Bad Request" 라는 뭉뚱그려진 메시지만 보였다.
         # KOPIS는 400/401 등에서도 실제 원인(서비스키 문제 / 트래픽(호출량) 초과 /
@@ -531,6 +536,32 @@ def main():
         print("오류: 공연장을 하나도 찾지 못했습니다. API 키/응답을 확인하세요.", file=sys.stderr)
         sys.exit(1)
 
+    # 지난 실행 결과: 상세정보를 다시 받지 않고 재사용하거나, 상세 조회가 막혔을 때 대신 쓴다.
+    prev_by_id = {}
+    prev_generated = today
+    if OUTPUT_PATH.exists():
+        try:
+            _prev = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+            prev_by_id = {p.get("mt20id"): p for p in _prev.get("performances", []) if p.get("mt20id")}
+            prev_generated = date.fromisoformat(_prev.get("generated_at") or today.isoformat())
+        except Exception:
+            prev_by_id = {}
+    DERIVED = ("venue", "genre", "genre_guessed", "is_new", "ticket_open")
+
+    def reusable(prev: dict) -> bool:
+        """이미 받은 상세정보를 이번엔 재사용해도 되는지. 공연마다 요일을 나눠 일주일에 한 번씩 새로 받는다."""
+        try:
+            fetched = date.fromisoformat(prev.get("detail_fetched") or prev_generated.isoformat())
+        except ValueError:
+            return False
+        age = (today - fetched).days
+        if age >= DETAIL_REFRESH_DAYS + 3:
+            return False
+        digits = "".join(ch for ch in prev.get("mt20id", "") if ch.isdigit()) or "0"
+        return not (age >= 1 and int(digits) % DETAIL_REFRESH_DAYS == today.toordinal() % DETAIL_REFRESH_DAYS)
+
+    stats = {"reused": 0, "fetched": 0, "fallback": 0}
+
     print(f"\n공연 목록 조회 중 ({stdate} ~ {eddate})...")
     results = {}
     hall_counts = {}
@@ -547,10 +578,23 @@ def main():
             if mt20id in results:
                 continue
 
-            detail = fetch_detail(mt20id)
-            if not detail:
-                print(f"  상세정보 없음: {mt20id}", file=sys.stderr)
-                continue
+            prev = prev_by_id.get(mt20id)
+            if prev and reusable(prev):
+                detail = {k: v for k, v in prev.items() if k not in DERIVED}
+                detail.setdefault("detail_fetched", prev_generated.isoformat())
+                stats["reused"] += 1
+            else:
+                detail = fetch_detail(mt20id)
+                if detail:
+                    detail["detail_fetched"] = today.isoformat()
+                    stats["fetched"] += 1
+                elif prev:
+                    # 상세 조회가 막혀도 공연을 빼지 않고 지난번 정보를 그대로 쓴다.
+                    detail = {k: v for k, v in prev.items() if k not in DERIVED}
+                    stats["fallback"] += 1
+                else:
+                    print(f"  상세정보 없음: {mt20id}", file=sys.stderr)
+                    continue
 
             label = resolve_venue(detail.get("facility_name", ""))
             if label is None:
@@ -569,6 +613,7 @@ def main():
         hall_counts[f["venue"]] += 1
 
     performances = sorted(results.values(), key=lambda p: p.get("start_date", ""))
+    print(f"  상세정보: 새로 받음 {stats['fetched']}건 · 재사용 {stats['reused']}건 · 막혀서 지난 정보 사용 {stats['fallback']}건")
 
     # API 장애/차단으로 0건 또는 비정상적으로 적은 결과가 나온 경우
     # 기존 정상 데이터를 통째로 덮어쓰지 않는다.
