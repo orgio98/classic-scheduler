@@ -25,7 +25,7 @@ import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 API_BASE = "http://www.kopis.or.kr/openApi/restful"
 SERVICE_KEY = os.environ.get("KOPIS_API_KEY", "").strip()
@@ -46,8 +46,10 @@ OUR_GENRE_CODES = {"CCCA": "서양음악(클래식)", "EEEA": "무용"}
 def _get(path: str, **params) -> ET.Element:
     params = {"service": SERVICE_KEY, **params}
     url = f"{API_BASE}/{path}?{urlencode(params)}"
+    time.sleep(0.6)  # KOPIS 방화벽을 자극하지 않도록 간격을 둔다
+    req = Request(url, headers={"User-Agent": "classic-scheduler-debug/1.0 (+https://github.com/orgio98/classic-scheduler)"})
     try:
-        with urlopen(url, timeout=20) as res:
+        with urlopen(req, timeout=20) as res:
             body = res.read()
     except HTTPError as e:
         detail = ""
@@ -62,7 +64,22 @@ def _get(path: str, **params) -> ET.Element:
 
 
 def search_by_title(keyword: str, stdate: str, eddate: str) -> list[dict]:
-    """공연장·장르 필터 없이 공연명으로만 전체 검색한다."""
+    """공연장·장르 필터 없이 공연명으로만 전체 검색한다.
+    KOPIS 목록 조회는 한 번에 31일까지만 되므로 30일씩 나눠서 찾는다."""
+    results, seen = [], set()
+    start = date(int(stdate[:4]), int(stdate[4:6]), int(stdate[6:8]))
+    end = date(int(eddate[:4]), int(eddate[4:6]), int(eddate[6:8]))
+    cur = start
+    while cur <= end:
+        we = min(cur + timedelta(days=30), end)
+        for r in _search_window(keyword, cur.strftime("%Y%m%d"), we.strftime("%Y%m%d")):
+            if r["mt20id"] not in seen:
+                seen.add(r["mt20id"]); results.append(r)
+        cur = we + timedelta(days=1)
+    return results
+
+
+def _search_window(keyword: str, stdate: str, eddate: str) -> list[dict]:
     results = []
     page = 1
     while True:

@@ -29,7 +29,7 @@ import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 from pathlib import Path
 from urllib.parse import urlencode
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
 from fetch_ticket_open import collect_ticket_opens, match_ticket_opens
@@ -88,6 +88,46 @@ GENRE_CHOIR = "합창"
 
 OUTPUT_PATH = Path("data/performances.json")
 
+# 목록 조회 실패를 모아 두었다가, 결과가 비면 원인과 함께 '실패'로 끝낸다.
+LIST_ERRORS: list[str] = []
+
+
+# KOPIS 방화벽은 2026년 11월 말부터 파이썬 기본 User-Agent 요청을 "400 Request Blocked"로 막는다.
+# 앱 이름을 밝히고, 요청 간격을 두고, 막히면 잠시 기다렸다 다시 시도한다.
+USER_AGENT = "classic-scheduler/1.0 (+https://github.com/orgio98/classic-scheduler)"
+MIN_INTERVAL = 0.6        # 초. KOPIS 호출 사이 최소 간격
+BLOCK_RETRIES = 3         # Request Blocked를 받으면 다시 시도할 횟수
+BLOCK_WAIT = 15           # 초. 다시 시도하기 전 기다리는 시간
+_last_call = 0.0
+
+
+class KopisBlocked(RuntimeError):
+    pass
+
+
+def _fetch(url: str) -> bytes:
+    global _last_call
+    wait = MIN_INTERVAL - (time.time() - _last_call)
+    if wait > 0:
+        time.sleep(wait)
+    _last_call = time.time()
+    req = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/xml, text/xml"})
+    try:
+        with urlopen(req, timeout=20) as res:
+            body = res.read()
+    except HTTPError as e:
+        detail = ""
+        try:
+            detail = e.read().decode("utf-8", errors="replace")
+        except Exception:
+            pass
+        if "Request Blocked" in detail:
+            raise KopisBlocked("KOPIS 방화벽이 요청을 막았습니다 (400 Request Blocked)") from None
+        raise
+    if b"Request Blocked" in body[:2000]:
+        raise KopisBlocked("KOPIS 방화벽이 요청을 막았습니다 (Request Blocked)")
+    return body
+
 
 def _get(path: str, **params) -> ET.Element:
     if not SERVICE_KEY:
@@ -96,8 +136,15 @@ def _get(path: str, **params) -> ET.Element:
     params = {"service": SERVICE_KEY, **params}
     url = f"{API_BASE}/{path}?{urlencode(params)}"
     try:
-        with urlopen(url, timeout=20) as res:
-            body = res.read()
+        for attempt in range(BLOCK_RETRIES + 1):
+            try:
+                body = _fetch(url)
+                break
+            except KopisBlocked as e:
+                if attempt == BLOCK_RETRIES:
+                    raise RuntimeError(str(e)) from None
+                print(f"  KOPIS 차단 응답 → {BLOCK_WAIT}초 뒤 다시 시도 ({attempt + 1}/{BLOCK_RETRIES})", file=sys.stderr, flush=True)
+                time.sleep(BLOCK_WAIT)
     except HTTPError as e:
         # 지금까지는 "HTTP Error 400: Bad Request" 라는 뭉뚱그려진 메시지만 보였다.
         # KOPIS는 400/401 등에서도 실제 원인(서비스키 문제 / 트래픽(호출량) 초과 /
@@ -221,6 +268,7 @@ def find_performance_ids(prfplccd: str, stdate: str, eddate: str) -> list[dict]:
                     prfplccd=prfplccd,
                 )
             except Exception as e:
+                LIST_ERRORS.append(f"{prfplccd}/{ws}~{we}/p{page}: {e}")
                 print(
                     f"  경고: 공연목록 조회 실패 ({prfplccd}/{ws}~{we}/p{page}): {e}",
                     file=sys.stderr,
@@ -267,10 +315,10 @@ def find_performance_ids(prfplccd: str, stdate: str, eddate: str) -> list[dict]:
             if len(dbs) < 100:
                 break
             page += 1
-            time.sleep(0.10)
+            pass  # 간격은 _fetch()의 MIN_INTERVAL이 맡는다
 
         print(f"    {prfplccd} {ws}~{we}: 후보 {window_count}건", flush=True)
-        time.sleep(0.10)
+        pass  # 간격은 _fetch()의 MIN_INTERVAL이 맡는다
 
     return rows
 
@@ -516,7 +564,7 @@ def main():
             detail["genre"] = genre
             detail["genre_guessed"] = guessed
             results[mt20id] = detail
-            time.sleep(0.10)
+            pass  # 간격은 _fetch()의 MIN_INTERVAL이 맡는다
 
         hall_counts[f["venue"]] += 1
 
@@ -533,20 +581,21 @@ def main():
         except Exception:
             previous = None
 
+    def keep_previous_and_fail(reason: str):
+        # 기존 데이터는 그대로 두되, 실행은 '실패'로 끝내서 GitHub이 알림을 보내게 한다.
+        # (예전에는 성공으로 끝나서 며칠째 갱신이 멈춘 걸 알아채기 어려웠다.)
+        print(f"오류 방지: {reason} 기존 {len(previous_perfs)}건을 유지합니다.", file=sys.stderr)
+        if LIST_ERRORS:
+            print(f"  공연목록 조회 실패 {len(LIST_ERRORS)}회. 첫 오류: {LIST_ERRORS[0]}", file=sys.stderr)
+        sys.exit(1)
+
     if not performances and previous_perfs:
-        print(
-            f"오류 방지: 이번 실행 결과가 0건이라 기존 {len(previous_perfs)}건을 유지합니다.",
-            file=sys.stderr,
-        )
-        return
+        keep_previous_and_fail("이번 실행 결과가 0건이라")
 
     if previous_perfs and len(performances) < max(10, int(len(previous_perfs) * 0.60)):
-        print(
-            f"오류 방지: 이번 결과 {len(performances)}건이 이전 {len(previous_perfs)}건의 "
-            "60% 미만이므로 기존 데이터를 유지합니다.",
-            file=sys.stderr,
-        )
-        return
+        keep_previous_and_fail(f"이번 결과 {len(performances)}건이 이전 {len(previous_perfs)}건의 60% 미만이라")
+    if LIST_ERRORS:
+        print(f"  참고: 공연목록 조회 실패 {len(LIST_ERRORS)}회 (첫 오류: {LIST_ERRORS[0]})", file=sys.stderr)
     print(f"\n총 {len(performances)}건 수집")
 
     by_venue = {}
