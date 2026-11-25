@@ -34,7 +34,8 @@ from urllib.error import HTTPError, URLError
 
 from fetch_ticket_open import collect_ticket_opens, match_ticket_opens
 
-API_BASE = "https://www.kopis.or.kr/openApi/restful"
+API_BASES = ["https://www.kopis.or.kr/openApi/restful", "http://www.kopis.or.kr/openApi/restful"]
+API_BASE = API_BASES[0]   # 연결이 안 되면 다른 주소로 바꿔 시도하고, 되는 주소를 계속 쓴다
 SERVICE_KEY = os.environ.get("KOPIS_API_KEY", "").strip()
 
 # ── 공연장 정의 ────────────────────────────────────────────────────────────
@@ -103,8 +104,17 @@ DETAIL_REFRESH_DAYS = 7   # 이미 받은 공연의 상세정보는 이 주기�
 _last_call = 0.0
 
 
+REQUEST_TIMEOUT = 15      # 초
+NET_FAIL_LIMIT = 6        # 두 주소 모두 연결이 안 되는 일이 연달아 이만큼이면 수집을 멈춘다
+_net_fails = 0
+
+
 class KopisBlocked(RuntimeError):
     pass
+
+
+class KopisUnreachable(RuntimeError):
+    """KOPIS에 계속 연결되지 않음. 시간만 쓰지 말고 수집을 멈춘다 (기존 데이터는 유지)."""
 
 
 def _fetch(url: str) -> bytes:
@@ -115,7 +125,7 @@ def _fetch(url: str) -> bytes:
     _last_call = time.time()
     req = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/xml, text/xml"})
     try:
-        with urlopen(req, timeout=20) as res:
+        with urlopen(req, timeout=REQUEST_TIMEOUT) as res:
             body = res.read()
     except HTTPError as e:
         detail = ""
@@ -132,24 +142,53 @@ def _fetch(url: str) -> bytes:
 
 
 def _get(path: str, **params) -> ET.Element:
+    global MIN_INTERVAL
+    for attempt in range(BLOCK_RETRIES + 1):
+        try:
+            return _get_once(path, **params)
+        except KopisBlocked as e:
+            MIN_INTERVAL = min(MAX_INTERVAL, MIN_INTERVAL * 1.5)   # 막히면 속도를 늦춘다
+            if attempt == BLOCK_RETRIES:
+                raise RuntimeError(str(e)) from None
+            wait = BLOCK_WAIT * (attempt + 1)
+            print(f"  KOPIS 차단 응답 → {wait}초 뒤 다시 시도 ({attempt + 1}/{BLOCK_RETRIES}), 간격 {MIN_INTERVAL:.1f}초", file=sys.stderr, flush=True)
+            time.sleep(wait)
+
+
+def _get_once(path: str, **params) -> ET.Element:
     if not SERVICE_KEY:
         print("오류: KOPIS_API_KEY 환경변수가 설정되어 있지 않습니다.", file=sys.stderr)
         sys.exit(1)
+    global API_BASE, MIN_INTERVAL, _net_fails
     params = {"service": SERVICE_KEY, **params}
-    url = f"{API_BASE}/{path}?{urlencode(params)}"
+    query = urlencode(params)
     try:
-        for attempt in range(BLOCK_RETRIES + 1):
-            try:
-                body = _fetch(url)
+        while True:
+            body, net_err = None, None
+            for base in [API_BASE] + [b for b in API_BASES if b != API_BASE]:
+                try:
+                    body = _fetch(f"{base}/{path}?{query}")
+                except KopisBlocked:
+                    raise
+                except HTTPError:
+                    raise
+                except (URLError, TimeoutError, OSError) as e:
+                    net_err = getattr(e, "reason", e)
+                    continue
+                if base != API_BASE:
+                    print(f"  ! {API_BASE} 연결 안 됨 → {base} 로 바꿔 씁니다", file=sys.stderr, flush=True)
+                    API_BASE = base
                 break
-            except KopisBlocked as e:
-                global MIN_INTERVAL
-                MIN_INTERVAL = min(MAX_INTERVAL, MIN_INTERVAL * 1.5)   # 막히면 속도를 늦춘다
-                if attempt == BLOCK_RETRIES:
-                    raise RuntimeError(str(e)) from None
-                wait = BLOCK_WAIT * (attempt + 1)
-                print(f"  KOPIS 차단 응답 → {wait}초 뒤 다시 시도 ({attempt + 1}/{BLOCK_RETRIES}), 간격 {MIN_INTERVAL:.1f}초", file=sys.stderr, flush=True)
-                time.sleep(wait)
+            if body is not None:
+                _net_fails = 0
+                break
+            _net_fails += 1
+            if _net_fails >= NET_FAIL_LIMIT:
+                raise KopisUnreachable(f"KOPIS에 {_net_fails}번 연달아 연결하지 못했습니다 (https·http 모두): {net_err}")
+            raise RuntimeError(f"네트워크 오류: {net_err}")
+    except KopisBlocked as e:
+        # 차단은 기다렸다 다시 시도한다 (재귀 대신 아래에서 반복)
+        raise
     except HTTPError as e:
         # 지금까지는 "HTTP Error 400: Bad Request" 라는 뭉뚱그려진 메시지만 보였다.
         # KOPIS는 400/401 등에서도 실제 원인(서비스키 문제 / 트래픽(호출량) 초과 /
@@ -272,6 +311,8 @@ def find_performance_ids(prfplccd: str, stdate: str, eddate: str) -> list[dict]:
                     rows="100",
                     prfplccd=prfplccd,
                 )
+            except KopisUnreachable:
+                raise
             except Exception as e:
                 LIST_ERRORS.append(f"{prfplccd}/{ws}~{we}/p{page}: {e}")
                 print(
@@ -423,6 +464,8 @@ def extract_specific_dates(dtguidance: str, start_date: str, end_date: str) -> l
 def fetch_detail(mt20id: str) -> dict:
     try:
         root = _get(f"pblprfr/{mt20id}")
+    except KopisUnreachable:
+        raise
     except Exception as e:
         print(f"  경고: 상세 조회 실패 ({mt20id}): {e}", file=sys.stderr)
         return {}
@@ -685,4 +728,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KopisUnreachable as e:
+        print(f"오류 방지: {e}. 수집을 멈추고 기존 데이터를 그대로 둡니다.", file=sys.stderr)
+        sys.exit(1)
