@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T02:25:46",
+  "generated_at": "2026-11-26T02:03:48",
   "lookahead_days": 180,
   "source_policy": {
     "lotte": "https://www.lotteconcerthall.com/product/ko/performance/year",
@@ -8,134 +8,14 @@
   },
   "performances": [
     {
-      "id": "고양아람누리:20261119:장애인을위한세상의빛음악회",
+      "id": "고양아람누리:20261126:2026경기합창제",
       "venue": "고양아람누리",
       "facility_name": "고양아람누리",
-      "name": "장애인을 위한 \"세상의 빛\" 음악회",
-      "start_date": "20261119",
-      "end_date": "20261119",
+      "name": "2026 경기합창제",
+      "start_date": "20261126",
+      "end_date": "20261126",
       "specific_dates": [
-        "20261119"
-      ],
-      "time": "",
-      "genre": "실내악·독주",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261121:오페라서울라보엠",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "오페라 [서울*라보엠]",
-      "start_date": "20261121",
-      "end_date": "20261121",
-      "specific_dates": [
-        "20261121"
-      ],
-      "time": "",
-      "genre": "오페라",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261121:한국항공대학교아마추어오케스트라kauao제11회정기연주회",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "한국항공대학교 아마추어 오케스트라 KAUAO 제11회 정기연주회",
-      "start_date": "20261121",
-      "end_date": "20261121",
-      "specific_dates": [
-        "20261121"
-      ],
-      "time": "",
-      "genre": "오케스트라",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261122:바로크오라토리오합창단제15회정기연주회",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "바로크오라토리오 합창단 제 15회 정기연주회",
-      "start_date": "20261122",
-      "end_date": "20261122",
-      "specific_dates": [
-        "20261122"
-      ],
-      "time": "",
-      "genre": "합창",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261121:오페라서울라보엠",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "오페라 [서울*라보엠]",
-      "start_date": "20261122",
-      "end_date": "20261122",
-      "specific_dates": [
-        "20261122"
-      ],
-      "time": "",
-      "genre": "오페라",
-      "genre_guessed": false,
-      "source": "고양아람누리",
-      "source_type": "venue_schedule",
-      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
-      "booking_links": [
-        {
-          "name": "고양아람누리",
-          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
-        }
-      ],
-      "is_kopis": false
-    },
-    {
-      "id": "고양아람누리:20261202:시스띠나일산합창단제2회정기연주회",
-      "venue": "고양아람누리",
-      "facility_name": "고양아람누리",
-      "name": "시스띠나일산합창단 제2회 정기연주회",
-      "start_date": "20261202",
-      "end_date": "20261202",
-      "specific_dates": [
-        "20261202"
+        "20261126"
       ],
       "time": "",
       "genre": "합창",
@@ -232,6 +112,30 @@
       "end_date": "20261220",
       "specific_dates": [
         "20261220"
+      ],
+      "time": "",
+      "genre": "실내악·독주",
+      "genre_guessed": false,
+      "source": "고양아람누리",
+      "source_type": "venue_schedule",
+      "source_url": "https://www.artgy.or.kr/PF/PF0201L.aspx",
+      "booking_links": [
+        {
+          "name": "고양아람누리",
+          "url": "https://www.artgy.or.kr/PF/PF0201L.aspx"
+        }
+      ],
+      "is_kopis": false
+    },
+    {
+      "id": "고양아람누리:20261224:이탈리아음악협회28회2026년정기음악회",
+      "venue": "고양아람누리",
+      "facility_name": "고양아람누리",
+      "name": "이탈리아음악협회-2.8회 2026년 정기음악회",
+      "start_date": "20261224",
+      "end_date": "20261224",
+      "specific_dates": [
+        "20261224"
       ],
       "time": "",
       "genre": "실내악·독주",
